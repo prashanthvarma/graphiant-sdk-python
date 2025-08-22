@@ -21,7 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from graphiant_sdk.models.v1_alarm_history_get200_response_history_inner_time import V1AlarmHistoryGet200ResponseHistoryInnerTime
-from graphiant_sdk.models.v1_edges_hardware_assigned_get200_response_edges_summary_inner_upgrade_summary_running_version import V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryRunningVersion
+from graphiant_sdk.models.v1_edges_hardware_assigned_get200_response_edges_summary_inner_upgrade_summary_last_running_version import V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,7 +35,7 @@ class V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummarySchedu
     failure_reason: Optional[StrictStr] = Field(default=None, alias="failureReason")
     state: Optional[StrictStr] = None
     ts: Optional[V1AlarmHistoryGet200ResponseHistoryInnerTime] = None
-    version: Optional[V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryRunningVersion] = None
+    version: Optional[V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion] = None
     __properties: ClassVar[List[str]] = ["action", "deviceId", "downloadProgress", "failureReason", "state", "ts", "version"]
 
     model_config = ConfigDict(
@@ -101,7 +101,7 @@ class V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummarySchedu
             "failureReason": obj.get("failureReason"),
             "state": obj.get("state"),
             "ts": V1AlarmHistoryGet200ResponseHistoryInnerTime.from_dict(obj["ts"]) if obj.get("ts") is not None else None,
-            "version": V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryRunningVersion.from_dict(obj["version"]) if obj.get("version") is not None else None
+            "version": V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion.from_dict(obj["version"]) if obj.get("version") is not None else None
         })
         return _obj
 

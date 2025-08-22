@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
 from graphiant_sdk.models.v2_assistant_get_conversations_post200_response_conversation_list_inner import V2AssistantGetConversationsPost200ResponseConversationListInner
 from typing import Optional, Set
@@ -28,7 +28,8 @@ class V2AssistantGetConversationsPost200Response(BaseModel):
     V2AssistantGetConversationsPost200Response
     """ # noqa: E501
     conversation_list: Optional[List[V2AssistantGetConversationsPost200ResponseConversationListInner]] = Field(default=None, alias="conversationList")
-    __properties: ClassVar[List[str]] = ["conversationList"]
+    enable_context_history: Optional[StrictBool] = Field(default=None, alias="enableContextHistory")
+    __properties: ClassVar[List[str]] = ["conversationList", "enableContextHistory"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,7 +89,8 @@ class V2AssistantGetConversationsPost200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "conversationList": [V2AssistantGetConversationsPost200ResponseConversationListInner.from_dict(_item) for _item in obj["conversationList"]] if obj.get("conversationList") is not None else None
+            "conversationList": [V2AssistantGetConversationsPost200ResponseConversationListInner.from_dict(_item) for _item in obj["conversationList"]] if obj.get("conversationList") is not None else None,
+            "enableContextHistory": obj.get("enableContextHistory")
         })
         return _obj
 

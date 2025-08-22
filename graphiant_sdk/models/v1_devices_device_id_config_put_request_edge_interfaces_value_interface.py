@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from graphiant_sdk.models.v1_devices_device_id_config_put_request_core_interfaces_value_interface_gw_gw import V1DevicesDeviceIdConfigPutRequestCoreInterfacesValueInterfaceGwGw
@@ -36,6 +36,7 @@ class V1DevicesDeviceIdConfigPutRequestEdgeInterfacesValueInterface(BaseModel):
     alias: Optional[StrictStr] = None
     circuit: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
+    duplex: Optional[StrictStr] = None
     ipsec: Optional[V1DevicesDeviceIdConfigPutRequestCoreInterfacesValueInterfaceIpsec] = None
     ipv4: Optional[V1DevicesDeviceIdConfigPutRequestCoreInterfacesValueInterfaceGwGw] = None
     ipv6: Optional[V1DevicesDeviceIdConfigPutRequestCoreInterfacesValueInterfaceGwGw] = None
@@ -44,13 +45,14 @@ class V1DevicesDeviceIdConfigPutRequestEdgeInterfacesValueInterface(BaseModel):
     loopback: Optional[StrictBool] = None
     max_transmission_unit: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="maxTransmissionUnit")
     security_zone: Optional[StrictStr] = Field(default=None, alias="securityZone")
+    speed: Optional[StrictInt] = None
     subinterfaces: Optional[Dict[str, V1DevicesDeviceIdConfigPutRequestEdgeInterfacesValueInterfaceSubinterfacesValue]] = None
     tcp_mss: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="tcpMss")
     tcp_mss_v4: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="tcpMssV4")
     tcp_mss_v6: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="tcpMssV6")
     v4_tcp_mss: Optional[V1DevicesDeviceIdConfigPutRequestEdgeInterfacesValueInterfaceSubinterfacesValueInterfaceV4TcpMss] = Field(default=None, alias="v4TcpMss")
     v6_tcp_mss: Optional[V1DevicesDeviceIdConfigPutRequestEdgeInterfacesValueInterfaceSubinterfacesValueInterfaceV6TcpMss] = Field(default=None, alias="v6TcpMss")
-    __properties: ClassVar[List[str]] = ["adminStatus", "alias", "circuit", "description", "ipsec", "ipv4", "ipv6", "lan", "lldpEnabled", "loopback", "maxTransmissionUnit", "securityZone", "subinterfaces", "tcpMss", "tcpMssV4", "tcpMssV6", "v4TcpMss", "v6TcpMss"]
+    __properties: ClassVar[List[str]] = ["adminStatus", "alias", "circuit", "description", "duplex", "ipsec", "ipv4", "ipv6", "lan", "lldpEnabled", "loopback", "maxTransmissionUnit", "securityZone", "speed", "subinterfaces", "tcpMss", "tcpMssV4", "tcpMssV6", "v4TcpMss", "v6TcpMss"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -129,6 +131,7 @@ class V1DevicesDeviceIdConfigPutRequestEdgeInterfacesValueInterface(BaseModel):
             "alias": obj.get("alias"),
             "circuit": obj.get("circuit"),
             "description": obj.get("description"),
+            "duplex": obj.get("duplex"),
             "ipsec": V1DevicesDeviceIdConfigPutRequestCoreInterfacesValueInterfaceIpsec.from_dict(obj["ipsec"]) if obj.get("ipsec") is not None else None,
             "ipv4": V1DevicesDeviceIdConfigPutRequestCoreInterfacesValueInterfaceGwGw.from_dict(obj["ipv4"]) if obj.get("ipv4") is not None else None,
             "ipv6": V1DevicesDeviceIdConfigPutRequestCoreInterfacesValueInterfaceGwGw.from_dict(obj["ipv6"]) if obj.get("ipv6") is not None else None,
@@ -137,6 +140,7 @@ class V1DevicesDeviceIdConfigPutRequestEdgeInterfacesValueInterface(BaseModel):
             "loopback": obj.get("loopback"),
             "maxTransmissionUnit": obj.get("maxTransmissionUnit"),
             "securityZone": obj.get("securityZone"),
+            "speed": obj.get("speed"),
             "subinterfaces": dict(
                 (_k, V1DevicesDeviceIdConfigPutRequestEdgeInterfacesValueInterfaceSubinterfacesValue.from_dict(_v))
                 for _k, _v in obj["subinterfaces"].items()

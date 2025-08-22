@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**eos_ts** | [**V1AlarmHistoryGet200ResponseHistoryInnerTime**](V1AlarmHistoryGet200ResponseHistoryInnerTime.md) |  | [optional] 
 **key** | [**V1SoftwareReleasesSummaryGet200ResponseSummariesInnerKey**](V1SoftwareReleasesSummaryGet200ResponseSummariesInnerKey.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **release** | **str** |  | [optional] 

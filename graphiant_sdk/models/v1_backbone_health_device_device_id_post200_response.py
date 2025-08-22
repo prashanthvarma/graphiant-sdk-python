@@ -25,7 +25,7 @@ from graphiant_sdk.models.v1_backbone_health_device_device_id_post200_response_d
 from graphiant_sdk.models.v1_backbone_health_device_device_id_post200_response_issues_inner import V1BackboneHealthDeviceDeviceIdPost200ResponseIssuesInner
 from graphiant_sdk.models.v1_backbone_health_device_device_id_post200_response_qoe_matrix import V1BackboneHealthDeviceDeviceIdPost200ResponseQoeMatrix
 from graphiant_sdk.models.v1_backbone_health_device_device_id_post200_response_system_plane import V1BackboneHealthDeviceDeviceIdPost200ResponseSystemPlane
-from graphiant_sdk.models.v1_edges_hardware_assigned_get200_response_edges_summary_inner_upgrade_summary_running_version import V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryRunningVersion
+from graphiant_sdk.models.v1_edges_hardware_assigned_get200_response_edges_summary_inner_upgrade_summary_last_running_version import V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -40,7 +40,7 @@ class V1BackboneHealthDeviceDeviceIdPost200Response(BaseModel):
     role: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
     sw_version: Optional[StrictStr] = Field(default=None, alias="swVersion")
-    sw_version_v2: Optional[V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryRunningVersion] = Field(default=None, alias="swVersionV2")
+    sw_version_v2: Optional[V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion] = Field(default=None, alias="swVersionV2")
     system_plane: Optional[V1BackboneHealthDeviceDeviceIdPost200ResponseSystemPlane] = Field(default=None, alias="systemPlane")
     up_since_ts: Optional[V1AlarmHistoryGet200ResponseHistoryInnerTime] = Field(default=None, alias="upSinceTs")
     __properties: ClassVar[List[str]] = ["controlPlane", "dataPlane", "issues", "qoeMatrix", "role", "status", "swVersion", "swVersionV2", "systemPlane", "upSinceTs"]
@@ -128,7 +128,7 @@ class V1BackboneHealthDeviceDeviceIdPost200Response(BaseModel):
             "role": obj.get("role"),
             "status": obj.get("status"),
             "swVersion": obj.get("swVersion"),
-            "swVersionV2": V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryRunningVersion.from_dict(obj["swVersionV2"]) if obj.get("swVersionV2") is not None else None,
+            "swVersionV2": V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion.from_dict(obj["swVersionV2"]) if obj.get("swVersionV2") is not None else None,
             "systemPlane": V1BackboneHealthDeviceDeviceIdPost200ResponseSystemPlane.from_dict(obj["systemPlane"]) if obj.get("systemPlane") is not None else None,
             "upSinceTs": V1AlarmHistoryGet200ResponseHistoryInnerTime.from_dict(obj["upSinceTs"]) if obj.get("upSinceTs") is not None else None
         })

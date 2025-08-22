@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from graphiant_sdk.models.v1_alarm_history_get200_response_history_inner_time import V1AlarmHistoryGet200ResponseHistoryInnerTime
-from graphiant_sdk.models.v1_edges_hardware_assigned_get200_response_edges_summary_inner_upgrade_summary_running_version import V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryRunningVersion
+from graphiant_sdk.models.v1_edges_hardware_assigned_get200_response_edges_summary_inner_upgrade_summary_last_running_version import V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion
 from graphiant_sdk.models.v1_edges_hardware_assigned_get200_response_edges_summary_inner_upgrade_summary_schedule import V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummarySchedule
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,12 +30,15 @@ class V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummary(BaseM
     V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummary
     """ # noqa: E501
     device_id: Optional[StrictInt] = Field(default=None, alias="deviceId")
+    end_of_life: Optional[StrictBool] = Field(default=None, alias="endOfLife")
     last_discovered_ts: Optional[V1AlarmHistoryGet200ResponseHistoryInnerTime] = Field(default=None, alias="lastDiscoveredTs")
+    last_running_version: Optional[V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion] = Field(default=None, alias="lastRunningVersion")
     last_upgrade_ts: Optional[V1AlarmHistoryGet200ResponseHistoryInnerTime] = Field(default=None, alias="lastUpgradeTs")
-    running_version: Optional[V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryRunningVersion] = Field(default=None, alias="runningVersion")
+    ready_for_activation_version: Optional[V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion] = Field(default=None, alias="readyForActivationVersion")
+    running_version: Optional[V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion] = Field(default=None, alias="runningVersion")
     schedule: Optional[V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummarySchedule] = None
     status: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["deviceId", "lastDiscoveredTs", "lastUpgradeTs", "runningVersion", "schedule", "status"]
+    __properties: ClassVar[List[str]] = ["deviceId", "endOfLife", "lastDiscoveredTs", "lastRunningVersion", "lastUpgradeTs", "readyForActivationVersion", "runningVersion", "schedule", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,9 +82,15 @@ class V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummary(BaseM
         # override the default output from pydantic by calling `to_dict()` of last_discovered_ts
         if self.last_discovered_ts:
             _dict['lastDiscoveredTs'] = self.last_discovered_ts.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of last_running_version
+        if self.last_running_version:
+            _dict['lastRunningVersion'] = self.last_running_version.to_dict()
         # override the default output from pydantic by calling `to_dict()` of last_upgrade_ts
         if self.last_upgrade_ts:
             _dict['lastUpgradeTs'] = self.last_upgrade_ts.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of ready_for_activation_version
+        if self.ready_for_activation_version:
+            _dict['readyForActivationVersion'] = self.ready_for_activation_version.to_dict()
         # override the default output from pydantic by calling `to_dict()` of running_version
         if self.running_version:
             _dict['runningVersion'] = self.running_version.to_dict()
@@ -101,9 +110,12 @@ class V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummary(BaseM
 
         _obj = cls.model_validate({
             "deviceId": obj.get("deviceId"),
+            "endOfLife": obj.get("endOfLife"),
             "lastDiscoveredTs": V1AlarmHistoryGet200ResponseHistoryInnerTime.from_dict(obj["lastDiscoveredTs"]) if obj.get("lastDiscoveredTs") is not None else None,
+            "lastRunningVersion": V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion.from_dict(obj["lastRunningVersion"]) if obj.get("lastRunningVersion") is not None else None,
             "lastUpgradeTs": V1AlarmHistoryGet200ResponseHistoryInnerTime.from_dict(obj["lastUpgradeTs"]) if obj.get("lastUpgradeTs") is not None else None,
-            "runningVersion": V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryRunningVersion.from_dict(obj["runningVersion"]) if obj.get("runningVersion") is not None else None,
+            "readyForActivationVersion": V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion.from_dict(obj["readyForActivationVersion"]) if obj.get("readyForActivationVersion") is not None else None,
+            "runningVersion": V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion.from_dict(obj["runningVersion"]) if obj.get("runningVersion") is not None else None,
             "schedule": V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummarySchedule.from_dict(obj["schedule"]) if obj.get("schedule") is not None else None,
             "status": obj.get("status")
         })

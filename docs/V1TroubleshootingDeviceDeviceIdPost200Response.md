@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **lifecycle_status** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
 **sw_version** | **str** |  | [optional] 
-**sw_version_v2** | [**V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryRunningVersion**](V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryRunningVersion.md) |  | [optional] 
+**sw_version_v2** | [**V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion**](V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion.md) |  | [optional] 
 **system_plane** | [**V1TroubleshootingDeviceDeviceIdPost200ResponseSystemPlane**](V1TroubleshootingDeviceDeviceIdPost200ResponseSystemPlane.md) |  | [optional] 
 **up_since_ts** | [**V1AlarmHistoryGet200ResponseHistoryInnerTime**](V1AlarmHistoryGet200ResponseHistoryInnerTime.md) |  | [optional] 
 

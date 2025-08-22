@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,8 @@ class V2AssistantGetConversationsPost200ResponseConversationListInner(BaseModel)
     conversation_header: Optional[StrictStr] = Field(default=None, alias="conversationHeader")
     conversation_id: Optional[StrictStr] = Field(default=None, alias="conversationId")
     conversation_recent_timestamp: Optional[StrictInt] = Field(default=None, alias="conversationRecentTimestamp")
-    __properties: ClassVar[List[str]] = ["conversationHeader", "conversationId", "conversationRecentTimestamp"]
+    enable_context_history: Optional[StrictBool] = Field(default=None, alias="enableContextHistory")
+    __properties: ClassVar[List[str]] = ["conversationHeader", "conversationId", "conversationRecentTimestamp", "enableContextHistory"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,7 +85,8 @@ class V2AssistantGetConversationsPost200ResponseConversationListInner(BaseModel)
         _obj = cls.model_validate({
             "conversationHeader": obj.get("conversationHeader"),
             "conversationId": obj.get("conversationId"),
-            "conversationRecentTimestamp": obj.get("conversationRecentTimestamp")
+            "conversationRecentTimestamp": obj.get("conversationRecentTimestamp"),
+            "enableContextHistory": obj.get("enableContextHistory")
         })
         return _obj
 

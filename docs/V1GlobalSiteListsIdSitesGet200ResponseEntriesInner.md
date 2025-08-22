@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **created_at** | [**V1AlarmHistoryGet200ResponseHistoryInnerTime**](V1AlarmHistoryGet200ResponseHistoryInnerTime.md) |  | [optional] 
 **edge_references** | **int** |  | [optional] 
 **site_name** | **str** |  | [optional] 
-**tag** | [**List[V1GlobalSiteListsIdSitesGet200ResponseEntriesInnerTagInner]**](V1GlobalSiteListsIdSitesGet200ResponseEntriesInnerTagInner.md) |  | [optional] 
+**tag** | [**List[V1GlobalSiteListsPostRequestEntriesInnerTag]**](V1GlobalSiteListsPostRequestEntriesInnerTag.md) |  | [optional] 
 
 ## Example
 

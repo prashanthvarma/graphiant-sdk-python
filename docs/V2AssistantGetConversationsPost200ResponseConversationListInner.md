@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **conversation_header** | **str** |  | [optional] 
 **conversation_id** | **str** |  | [optional] 
 **conversation_recent_timestamp** | **int** |  | [optional] 
+**enable_context_history** | **bool** |  | [optional] 
 
 ## Example
 

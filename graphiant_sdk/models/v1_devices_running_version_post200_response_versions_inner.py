@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from graphiant_sdk.models.v1_edges_hardware_assigned_get200_response_edges_summary_inner_upgrade_summary_running_version import V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryRunningVersion
+from graphiant_sdk.models.v1_edges_hardware_assigned_get200_response_edges_summary_inner_upgrade_summary_last_running_version import V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class V1DevicesRunningVersionPost200ResponseVersionsInner(BaseModel):
     V1DevicesRunningVersionPost200ResponseVersionsInner
     """ # noqa: E501
     device_id: Optional[StrictInt] = Field(default=None, alias="deviceId")
-    version: Optional[V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryRunningVersion] = None
+    version: Optional[V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion] = None
     __properties: ClassVar[List[str]] = ["deviceId", "version"]
 
     model_config = ConfigDict(
@@ -86,7 +86,7 @@ class V1DevicesRunningVersionPost200ResponseVersionsInner(BaseModel):
 
         _obj = cls.model_validate({
             "deviceId": obj.get("deviceId"),
-            "version": V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryRunningVersion.from_dict(obj["version"]) if obj.get("version") is not None else None
+            "version": V1EdgesHardwareAssignedGet200ResponseEdgesSummaryInnerUpgradeSummaryLastRunningVersion.from_dict(obj["version"]) if obj.get("version") is not None else None
         })
         return _obj
 

@@ -30,7 +30,8 @@ class V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetails(BaseModel):
     """ # noqa: E501
     bwusage_region: Optional[List[V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetailsBwusageRegionInner]] = Field(default=None, alias="bwusageRegion")
     bwusage_site: Optional[List[V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetailsBwusageSiteInner]] = Field(default=None, alias="bwusageSite")
-    __properties: ClassVar[List[str]] = ["bwusageRegion", "bwusageSite"]
+    bwusage_site_gateway: Optional[List[V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetailsBwusageSiteInner]] = Field(default=None, alias="bwusageSiteGateway")
+    __properties: ClassVar[List[str]] = ["bwusageRegion", "bwusageSite", "bwusageSiteGateway"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,6 +86,13 @@ class V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetails(BaseModel):
                 if _item_bwusage_site:
                     _items.append(_item_bwusage_site.to_dict())
             _dict['bwusageSite'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in bwusage_site_gateway (list)
+        _items = []
+        if self.bwusage_site_gateway:
+            for _item_bwusage_site_gateway in self.bwusage_site_gateway:
+                if _item_bwusage_site_gateway:
+                    _items.append(_item_bwusage_site_gateway.to_dict())
+            _dict['bwusageSiteGateway'] = _items
         return _dict
 
     @classmethod
@@ -98,7 +106,8 @@ class V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetails(BaseModel):
 
         _obj = cls.model_validate({
             "bwusageRegion": [V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetailsBwusageRegionInner.from_dict(_item) for _item in obj["bwusageRegion"]] if obj.get("bwusageRegion") is not None else None,
-            "bwusageSite": [V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetailsBwusageSiteInner.from_dict(_item) for _item in obj["bwusageSite"]] if obj.get("bwusageSite") is not None else None
+            "bwusageSite": [V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetailsBwusageSiteInner.from_dict(_item) for _item in obj["bwusageSite"]] if obj.get("bwusageSite") is not None else None,
+            "bwusageSiteGateway": [V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetailsBwusageSiteInner.from_dict(_item) for _item in obj["bwusageSiteGateway"]] if obj.get("bwusageSiteGateway") is not None else None
         })
         return _obj
 

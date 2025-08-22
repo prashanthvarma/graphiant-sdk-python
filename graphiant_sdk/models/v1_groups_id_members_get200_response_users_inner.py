@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from graphiant_sdk.models.v1_alarm_history_get200_response_history_inner_time import V1AlarmHistoryGet200ResponseHistoryInnerTime
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,13 +30,14 @@ class V1GroupsIdMembersGet200ResponseUsersInner(BaseModel):
     email: Optional[StrictStr] = None
     enterprise_id: Optional[StrictInt] = Field(default=None, alias="enterpriseId")
     first_name: Optional[StrictStr] = Field(default=None, alias="firstName")
+    last_active_at: Optional[V1AlarmHistoryGet200ResponseHistoryInnerTime] = Field(default=None, alias="lastActiveAt")
     last_name: Optional[StrictStr] = Field(default=None, alias="lastName")
     mfa_factor: Optional[StrictStr] = Field(default=None, alias="mfaFactor")
     phone_number: Optional[StrictStr] = Field(default=None, alias="phoneNumber")
     time_zone: Optional[StrictStr] = Field(default=None, alias="timeZone")
     user_id: Optional[StrictStr] = Field(default=None, alias="userId")
     verified: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["email", "enterpriseId", "firstName", "lastName", "mfaFactor", "phoneNumber", "timeZone", "userId", "verified"]
+    __properties: ClassVar[List[str]] = ["email", "enterpriseId", "firstName", "lastActiveAt", "lastName", "mfaFactor", "phoneNumber", "timeZone", "userId", "verified"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,6 +78,9 @@ class V1GroupsIdMembersGet200ResponseUsersInner(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of last_active_at
+        if self.last_active_at:
+            _dict['lastActiveAt'] = self.last_active_at.to_dict()
         return _dict
 
     @classmethod
@@ -91,6 +96,7 @@ class V1GroupsIdMembersGet200ResponseUsersInner(BaseModel):
             "email": obj.get("email"),
             "enterpriseId": obj.get("enterpriseId"),
             "firstName": obj.get("firstName"),
+            "lastActiveAt": V1AlarmHistoryGet200ResponseHistoryInnerTime.from_dict(obj["lastActiveAt"]) if obj.get("lastActiveAt") is not None else None,
             "lastName": obj.get("lastName"),
             "mfaFactor": obj.get("mfaFactor"),
             "phoneNumber": obj.get("phoneNumber"),

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **email** | **str** |  | [optional] 
 **enterprise_id** | **int** |  | [optional] 
 **first_name** | **str** |  | [optional] 
+**last_active_at** | [**V1AlarmHistoryGet200ResponseHistoryInnerTime**](V1AlarmHistoryGet200ResponseHistoryInnerTime.md) |  | [optional] 
 **last_name** | **str** |  | [optional] 
 **mfa_factor** | **str** |  | [optional] 
 **phone_number** | **str** |  | [optional] 

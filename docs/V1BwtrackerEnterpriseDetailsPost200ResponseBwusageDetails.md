@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bwusage_region** | [**List[V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetailsBwusageRegionInner]**](V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetailsBwusageRegionInner.md) |  | [optional] 
 **bwusage_site** | [**List[V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetailsBwusageSiteInner]**](V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetailsBwusageSiteInner.md) |  | [optional] 
+**bwusage_site_gateway** | [**List[V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetailsBwusageSiteInner]**](V1BwtrackerEnterpriseDetailsPost200ResponseBwusageDetailsBwusageSiteInner.md) |  | [optional] 
 
 ## Example
 

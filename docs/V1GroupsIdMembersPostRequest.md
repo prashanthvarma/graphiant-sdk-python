@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **member_ids** | **List[str]** |  | [optional] 
+**replace_existing** | **bool** |  | [optional] 
 
 ## Example
 
