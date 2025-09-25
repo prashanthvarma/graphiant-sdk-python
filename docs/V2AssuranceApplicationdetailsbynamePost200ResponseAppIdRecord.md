@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **category** | **str** |  | [optional] 
 **classfication_field** | **str** |  | [optional] 
 **classification_field** | **str** |  | [optional] 
+**clients** | **List[str]** |  | [optional] 
+**exchange_service** | [**List[V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordExchangeServiceInner]**](V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordExchangeServiceInner.md) |  | [optional] 
 **first_seen** | **int** |  | [optional] 
 **flex_algo** | [**List[V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordFlexAlgoInner]**](V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordFlexAlgoInner.md) |  | [optional] 
 **flows_analyzed** | **int** |  | [optional] 

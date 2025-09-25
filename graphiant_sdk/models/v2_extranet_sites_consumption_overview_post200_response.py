@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from graphiant_sdk.models.v2_extranet_sites_consumption_overview_post200_response_lan_segments_inner import V2ExtranetSitesConsumptionOverviewPost200ResponseLanSegmentsInner
+from graphiant_sdk.models.v1_extranet_b2b_monitoring_peering_service_consumption_overview_post200_response_first_level_inner import V1ExtranetB2bMonitoringPeeringServiceConsumptionOverviewPost200ResponseFirstLevelInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,9 +27,9 @@ class V2ExtranetSitesConsumptionOverviewPost200Response(BaseModel):
     """
     V2ExtranetSitesConsumptionOverviewPost200Response
     """ # noqa: E501
-    lan_segments: Optional[List[V2ExtranetSitesConsumptionOverviewPost200ResponseLanSegmentsInner]] = Field(default=None, alias="lanSegments")
-    regions: Optional[List[V2ExtranetSitesConsumptionOverviewPost200ResponseLanSegmentsInner]] = None
-    sites: Optional[List[V2ExtranetSitesConsumptionOverviewPost200ResponseLanSegmentsInner]] = None
+    lan_segments: Optional[List[V1ExtranetB2bMonitoringPeeringServiceConsumptionOverviewPost200ResponseFirstLevelInner]] = Field(default=None, alias="lanSegments")
+    regions: Optional[List[V1ExtranetB2bMonitoringPeeringServiceConsumptionOverviewPost200ResponseFirstLevelInner]] = None
+    sites: Optional[List[V1ExtranetB2bMonitoringPeeringServiceConsumptionOverviewPost200ResponseFirstLevelInner]] = None
     total_usage: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalUsage")
     __properties: ClassVar[List[str]] = ["lanSegments", "regions", "sites", "totalUsage"]
 
@@ -105,9 +105,9 @@ class V2ExtranetSitesConsumptionOverviewPost200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "lanSegments": [V2ExtranetSitesConsumptionOverviewPost200ResponseLanSegmentsInner.from_dict(_item) for _item in obj["lanSegments"]] if obj.get("lanSegments") is not None else None,
-            "regions": [V2ExtranetSitesConsumptionOverviewPost200ResponseLanSegmentsInner.from_dict(_item) for _item in obj["regions"]] if obj.get("regions") is not None else None,
-            "sites": [V2ExtranetSitesConsumptionOverviewPost200ResponseLanSegmentsInner.from_dict(_item) for _item in obj["sites"]] if obj.get("sites") is not None else None,
+            "lanSegments": [V1ExtranetB2bMonitoringPeeringServiceConsumptionOverviewPost200ResponseFirstLevelInner.from_dict(_item) for _item in obj["lanSegments"]] if obj.get("lanSegments") is not None else None,
+            "regions": [V1ExtranetB2bMonitoringPeeringServiceConsumptionOverviewPost200ResponseFirstLevelInner.from_dict(_item) for _item in obj["regions"]] if obj.get("regions") is not None else None,
+            "sites": [V1ExtranetB2bMonitoringPeeringServiceConsumptionOverviewPost200ResponseFirstLevelInner.from_dict(_item) for _item in obj["sites"]] if obj.get("sites") is not None else None,
             "totalUsage": obj.get("totalUsage")
         })
         return _obj

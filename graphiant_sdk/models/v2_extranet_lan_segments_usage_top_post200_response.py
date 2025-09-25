@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from graphiant_sdk.models.v2_extranet_consumers_usage_top_post200_response_top_consumers_inner import V2ExtranetConsumersUsageTopPost200ResponseTopConsumersInner
+from graphiant_sdk.models.v1_extranet_b2b_monitoring_peering_service_consumers_usage_top_post200_response_top_consumers_inner import V1ExtranetB2bMonitoringPeeringServiceConsumersUsageTopPost200ResponseTopConsumersInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class V2ExtranetLanSegmentsUsageTopPost200Response(BaseModel):
     """
     V2ExtranetLanSegmentsUsageTopPost200Response
     """ # noqa: E501
-    top_vrfs: Optional[List[V2ExtranetConsumersUsageTopPost200ResponseTopConsumersInner]] = Field(default=None, alias="topVrfs")
+    top_vrfs: Optional[List[V1ExtranetB2bMonitoringPeeringServiceConsumersUsageTopPost200ResponseTopConsumersInner]] = Field(default=None, alias="topVrfs")
     __properties: ClassVar[List[str]] = ["topVrfs"]
 
     model_config = ConfigDict(
@@ -88,7 +88,7 @@ class V2ExtranetLanSegmentsUsageTopPost200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "topVrfs": [V2ExtranetConsumersUsageTopPost200ResponseTopConsumersInner.from_dict(_item) for _item in obj["topVrfs"]] if obj.get("topVrfs") is not None else None
+            "topVrfs": [V1ExtranetB2bMonitoringPeeringServiceConsumersUsageTopPost200ResponseTopConsumersInner.from_dict(_item) for _item in obj["topVrfs"]] if obj.get("topVrfs") is not None else None
         })
         return _obj
 

@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from graphiant_sdk.models.v2_assurance_applicationdetailsbyname_post200_response_app_id_record import V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecord
+from graphiant_sdk.models.v2_assurance_applicationdetailsbyname_post200_response_app_id_record_exchange_service_inner import V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordExchangeServiceInner
 from graphiant_sdk.models.v2_assurance_applicationdetailsbyname_post200_response_app_id_record_flex_algo_inner import V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordFlexAlgoInner
 from typing import Optional, Set
 from typing_extensions import Self
@@ -38,12 +39,13 @@ class V2AssuranceApplicationdetailsbynamePost200ResponseAppNameRecord(BaseModel)
     app_type: Optional[StrictStr] = Field(default=None, alias="appType")
     category: Optional[StrictStr] = None
     da_classified: Optional[StrictBool] = Field(default=None, alias="daClassified")
+    exchange_service: Optional[List[V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordExchangeServiceInner]] = Field(default=None, alias="exchangeService")
     flex_algo: Optional[List[V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordFlexAlgoInner]] = Field(default=None, alias="flexAlgo")
     flows_analyzed: Optional[StrictInt] = Field(default=None, alias="flowsAnalyzed")
     recommendation: Optional[StrictStr] = None
     risk_status: Optional[StrictStr] = Field(default=None, alias="riskStatus")
     threat_score: Optional[StrictInt] = Field(default=None, alias="threatScore")
-    __properties: ClassVar[List[str]] = ["affectedHosts", "affectedRegions", "affectedSites", "affectedVrfs", "appId", "appIdRecords", "appName", "appType", "category", "daClassified", "flexAlgo", "flowsAnalyzed", "recommendation", "riskStatus", "threatScore"]
+    __properties: ClassVar[List[str]] = ["affectedHosts", "affectedRegions", "affectedSites", "affectedVrfs", "appId", "appIdRecords", "appName", "appType", "category", "daClassified", "exchangeService", "flexAlgo", "flowsAnalyzed", "recommendation", "riskStatus", "threatScore"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +93,13 @@ class V2AssuranceApplicationdetailsbynamePost200ResponseAppNameRecord(BaseModel)
                 if _item_app_id_records:
                     _items.append(_item_app_id_records.to_dict())
             _dict['appIdRecords'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in exchange_service (list)
+        _items = []
+        if self.exchange_service:
+            for _item_exchange_service in self.exchange_service:
+                if _item_exchange_service:
+                    _items.append(_item_exchange_service.to_dict())
+            _dict['exchangeService'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in flex_algo (list)
         _items = []
         if self.flex_algo:
@@ -120,6 +129,7 @@ class V2AssuranceApplicationdetailsbynamePost200ResponseAppNameRecord(BaseModel)
             "appType": obj.get("appType"),
             "category": obj.get("category"),
             "daClassified": obj.get("daClassified"),
+            "exchangeService": [V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordExchangeServiceInner.from_dict(_item) for _item in obj["exchangeService"]] if obj.get("exchangeService") is not None else None,
             "flexAlgo": [V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordFlexAlgoInner.from_dict(_item) for _item in obj["flexAlgo"]] if obj.get("flexAlgo") is not None else None,
             "flowsAnalyzed": obj.get("flowsAnalyzed"),
             "recommendation": obj.get("recommendation"),

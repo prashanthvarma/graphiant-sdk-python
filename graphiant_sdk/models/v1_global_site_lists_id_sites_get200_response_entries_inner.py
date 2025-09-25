@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from graphiant_sdk.models.v1_alarm_history_get200_response_history_inner_time import V1AlarmHistoryGet200ResponseHistoryInnerTime
-from graphiant_sdk.models.v1_global_site_lists_id_sites_get200_response_entries_inner_tag_inner import V1GlobalSiteListsIdSitesGet200ResponseEntriesInnerTagInner
+from graphiant_sdk.models.v1_global_site_lists_post_request_entries_inner_tag import V1GlobalSiteListsPostRequestEntriesInnerTag
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +31,7 @@ class V1GlobalSiteListsIdSitesGet200ResponseEntriesInner(BaseModel):
     created_at: Optional[V1AlarmHistoryGet200ResponseHistoryInnerTime] = Field(default=None, alias="createdAt")
     edge_references: Optional[StrictInt] = Field(default=None, alias="edgeReferences")
     site_name: Optional[StrictStr] = Field(default=None, alias="siteName")
-    tag: Optional[List[V1GlobalSiteListsIdSitesGet200ResponseEntriesInnerTagInner]] = None
+    tag: Optional[List[V1GlobalSiteListsPostRequestEntriesInnerTag]] = None
     __properties: ClassVar[List[str]] = ["createdAt", "edgeReferences", "siteName", "tag"]
 
     model_config = ConfigDict(
@@ -98,7 +98,7 @@ class V1GlobalSiteListsIdSitesGet200ResponseEntriesInner(BaseModel):
             "createdAt": V1AlarmHistoryGet200ResponseHistoryInnerTime.from_dict(obj["createdAt"]) if obj.get("createdAt") is not None else None,
             "edgeReferences": obj.get("edgeReferences"),
             "siteName": obj.get("siteName"),
-            "tag": [V1GlobalSiteListsIdSitesGet200ResponseEntriesInnerTagInner.from_dict(_item) for _item in obj["tag"]] if obj.get("tag") is not None else None
+            "tag": [V1GlobalSiteListsPostRequestEntriesInnerTag.from_dict(_item) for _item in obj["tag"]] if obj.get("tag") is not None else None
         })
         return _obj
 

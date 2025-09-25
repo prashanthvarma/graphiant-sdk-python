@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allocated_monthly_credits** | **float** |  | [optional] 
 **consumed_monthly_credits** | **float** |  | [optional] 
+**prior_allocated_monthly_credits** | **float** |  | [optional] 
+**prior_consumed_monthly_credits** | **float** |  | [optional] 
 **recommended_monthly_credits** | **float** |  | [optional] 
 
 ## Example

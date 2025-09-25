@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from graphiant_sdk.models.v1_software_auto_upgrade_default_get200_response_details import V1SoftwareAutoUpgradeDefaultGet200ResponseDetails
+from graphiant_sdk.models.v1_software_auto_upgrade_default_get200_response_profile import V1SoftwareAutoUpgradeDefaultGet200ResponseProfile
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,9 +27,9 @@ class V1SoftwareAutoUpgradeDefaultGet200Response(BaseModel):
     """
     V1SoftwareAutoUpgradeDefaultGet200Response
     """ # noqa: E501
-    details: Optional[V1SoftwareAutoUpgradeDefaultGet200ResponseDetails] = None
+    profile: Optional[V1SoftwareAutoUpgradeDefaultGet200ResponseProfile] = None
     release: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["details", "release"]
+    __properties: ClassVar[List[str]] = ["profile", "release"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -70,9 +70,9 @@ class V1SoftwareAutoUpgradeDefaultGet200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of details
-        if self.details:
-            _dict['details'] = self.details.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of profile
+        if self.profile:
+            _dict['profile'] = self.profile.to_dict()
         return _dict
 
     @classmethod
@@ -85,7 +85,7 @@ class V1SoftwareAutoUpgradeDefaultGet200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "details": V1SoftwareAutoUpgradeDefaultGet200ResponseDetails.from_dict(obj["details"]) if obj.get("details") is not None else None,
+            "profile": V1SoftwareAutoUpgradeDefaultGet200ResponseProfile.from_dict(obj["profile"]) if obj.get("profile") is not None else None,
             "release": obj.get("release")
         })
         return _obj

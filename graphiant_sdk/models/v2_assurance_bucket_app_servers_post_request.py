@@ -29,9 +29,10 @@ class V2AssuranceBucketAppServersPostRequest(BaseModel):
     """ # noqa: E501
     app_name: Optional[StrictStr] = Field(default=None, alias="appName")
     bucket_id: Optional[StrictStr] = Field(default=None, alias="bucketId")
+    exchange_service_id: Optional[StrictInt] = Field(default=None, alias="exchangeServiceId")
     flex_algo_id: Optional[StrictInt] = Field(default=None, alias="flexAlgoId")
     time_window: Optional[V2NotificationlistPostRequestTimeWindow] = Field(default=None, alias="timeWindow")
-    __properties: ClassVar[List[str]] = ["appName", "bucketId", "flexAlgoId", "timeWindow"]
+    __properties: ClassVar[List[str]] = ["appName", "bucketId", "exchangeServiceId", "flexAlgoId", "timeWindow"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +90,7 @@ class V2AssuranceBucketAppServersPostRequest(BaseModel):
         _obj = cls.model_validate({
             "appName": obj.get("appName"),
             "bucketId": obj.get("bucketId"),
+            "exchangeServiceId": obj.get("exchangeServiceId"),
             "flexAlgoId": obj.get("flexAlgoId"),
             "timeWindow": V2NotificationlistPostRequestTimeWindow.from_dict(obj["timeWindow"]) if obj.get("timeWindow") is not None else None
         })

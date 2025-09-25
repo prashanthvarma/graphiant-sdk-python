@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from graphiant_sdk.models.v2_assurance_applicationdetailsbyname_post200_response_app_id_record_exchange_service_inner import V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordExchangeServiceInner
 from graphiant_sdk.models.v2_assurance_applicationdetailsbyname_post200_response_app_id_record_flex_algo_inner import V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordFlexAlgoInner
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,9 +31,10 @@ class V2AssuranceBucketAppsPost200ResponseAppsInner(BaseModel):
     app_name: Optional[StrictStr] = Field(default=None, alias="appName")
     builtin_app_id: Optional[StrictInt] = Field(default=None, alias="builtinAppId")
     custom_app_id: Optional[StrictInt] = Field(default=None, alias="customAppId")
+    exchange_service: Optional[V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordExchangeServiceInner] = Field(default=None, alias="exchangeService")
     flex_algo: Optional[V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordFlexAlgoInner] = Field(default=None, alias="flexAlgo")
     is_domain: Optional[StrictBool] = Field(default=None, alias="isDomain")
-    __properties: ClassVar[List[str]] = ["appName", "builtinAppId", "customAppId", "flexAlgo", "isDomain"]
+    __properties: ClassVar[List[str]] = ["appName", "builtinAppId", "customAppId", "exchangeService", "flexAlgo", "isDomain"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -73,6 +75,9 @@ class V2AssuranceBucketAppsPost200ResponseAppsInner(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of exchange_service
+        if self.exchange_service:
+            _dict['exchangeService'] = self.exchange_service.to_dict()
         # override the default output from pydantic by calling `to_dict()` of flex_algo
         if self.flex_algo:
             _dict['flexAlgo'] = self.flex_algo.to_dict()
@@ -91,6 +96,7 @@ class V2AssuranceBucketAppsPost200ResponseAppsInner(BaseModel):
             "appName": obj.get("appName"),
             "builtinAppId": obj.get("builtinAppId"),
             "customAppId": obj.get("customAppId"),
+            "exchangeService": V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordExchangeServiceInner.from_dict(obj["exchangeService"]) if obj.get("exchangeService") is not None else None,
             "flexAlgo": V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordFlexAlgoInner.from_dict(obj["flexAlgo"]) if obj.get("flexAlgo") is not None else None,
             "isDomain": obj.get("isDomain")
         })

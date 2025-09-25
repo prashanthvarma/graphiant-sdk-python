@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bucket_id** | **str** |  | [optional] 
+**exchange_service_id** | **int** |  | [optional] 
 **flex_algo_id** | **int** |  | [optional] 
 **time_window** | [**V2NotificationlistPostRequestTimeWindow**](V2NotificationlistPostRequestTimeWindow.md) |  | [optional] 
 **unclassified_only** | **bool** |  | [optional] 

@@ -1,6 +1,6 @@
 [project]
 name = "graphiant_sdk"
-version = "25.9.1"
+version = "25.9.2"
 description = "Graphiant APIs"
 authors = [
   {name = "OpenAPI Generator Community",email = "team@openapitools.org"},

@@ -28,8 +28,10 @@ class V1EnterpriseAllocationGet200ResponseConsumptionSummaryGlobalSummary(BaseMo
     """ # noqa: E501
     allocated_monthly_credits: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="allocatedMonthlyCredits")
     consumed_monthly_credits: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="consumedMonthlyCredits")
+    prior_allocated_monthly_credits: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="priorAllocatedMonthlyCredits")
+    prior_consumed_monthly_credits: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="priorConsumedMonthlyCredits")
     recommended_monthly_credits: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="recommendedMonthlyCredits")
-    __properties: ClassVar[List[str]] = ["allocatedMonthlyCredits", "consumedMonthlyCredits", "recommendedMonthlyCredits"]
+    __properties: ClassVar[List[str]] = ["allocatedMonthlyCredits", "consumedMonthlyCredits", "priorAllocatedMonthlyCredits", "priorConsumedMonthlyCredits", "recommendedMonthlyCredits"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,6 +86,8 @@ class V1EnterpriseAllocationGet200ResponseConsumptionSummaryGlobalSummary(BaseMo
         _obj = cls.model_validate({
             "allocatedMonthlyCredits": obj.get("allocatedMonthlyCredits"),
             "consumedMonthlyCredits": obj.get("consumedMonthlyCredits"),
+            "priorAllocatedMonthlyCredits": obj.get("priorAllocatedMonthlyCredits"),
+            "priorConsumedMonthlyCredits": obj.get("priorConsumedMonthlyCredits"),
             "recommendedMonthlyCredits": obj.get("recommendedMonthlyCredits")
         })
         return _obj

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **app_type** | **str** |  | [optional] 
 **category** | **str** |  | [optional] 
 **da_classified** | **bool** |  | [optional] 
+**exchange_service** | [**List[V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordExchangeServiceInner]**](V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordExchangeServiceInner.md) |  | [optional] 
 **flex_algo** | [**List[V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordFlexAlgoInner]**](V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordFlexAlgoInner.md) |  | [optional] 
 **flows_analyzed** | **int** |  | [optional] 
 **recommendation** | **str** |  | [optional] 

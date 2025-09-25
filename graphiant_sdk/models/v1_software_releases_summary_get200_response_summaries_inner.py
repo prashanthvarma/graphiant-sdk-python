@@ -28,11 +28,12 @@ class V1SoftwareReleasesSummaryGet200ResponseSummariesInner(BaseModel):
     """
     V1SoftwareReleasesSummaryGet200ResponseSummariesInner
     """ # noqa: E501
+    eos_ts: Optional[V1AlarmHistoryGet200ResponseHistoryInnerTime] = Field(default=None, alias="eosTs")
     key: Optional[V1SoftwareReleasesSummaryGet200ResponseSummariesInnerKey] = None
     name: Optional[StrictStr] = None
     release: Optional[StrictStr] = None
     release_ts: Optional[V1AlarmHistoryGet200ResponseHistoryInnerTime] = Field(default=None, alias="releaseTs")
-    __properties: ClassVar[List[str]] = ["key", "name", "release", "releaseTs"]
+    __properties: ClassVar[List[str]] = ["eosTs", "key", "name", "release", "releaseTs"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -73,6 +74,9 @@ class V1SoftwareReleasesSummaryGet200ResponseSummariesInner(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of eos_ts
+        if self.eos_ts:
+            _dict['eosTs'] = self.eos_ts.to_dict()
         # override the default output from pydantic by calling `to_dict()` of key
         if self.key:
             _dict['key'] = self.key.to_dict()
@@ -91,6 +95,7 @@ class V1SoftwareReleasesSummaryGet200ResponseSummariesInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "eosTs": V1AlarmHistoryGet200ResponseHistoryInnerTime.from_dict(obj["eosTs"]) if obj.get("eosTs") is not None else None,
             "key": V1SoftwareReleasesSummaryGet200ResponseSummariesInnerKey.from_dict(obj["key"]) if obj.get("key") is not None else None,
             "name": obj.get("name"),
             "release": obj.get("release"),

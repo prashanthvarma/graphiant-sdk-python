@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **app_name** | **str** |  | [optional] 
 **builtin_app_id** | **int** |  | [optional] 
 **custom_app_id** | **int** |  | [optional] 
+**exchange_service** | [**V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordExchangeServiceInner**](V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordExchangeServiceInner.md) |  | [optional] 
 **flex_algo** | [**V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordFlexAlgoInner**](V2AssuranceApplicationdetailsbynamePost200ResponseAppIdRecordFlexAlgoInner.md) |  | [optional] 
 **is_domain** | **bool** |  | [optional] 
 

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**top_vrfs** | [**List[V2ExtranetConsumersUsageTopPost200ResponseTopConsumersInner]**](V2ExtranetConsumersUsageTopPost200ResponseTopConsumersInner.md) |  | [optional] 
+**top_vrfs** | [**List[V1ExtranetB2bMonitoringPeeringServiceConsumersUsageTopPost200ResponseTopConsumersInner]**](V1ExtranetB2bMonitoringPeeringServiceConsumersUsageTopPost200ResponseTopConsumersInner.md) |  | [optional] 
 
 ## Example
 

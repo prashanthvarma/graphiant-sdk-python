@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **response_text** | **str** |  | [optional] 
 **response_timestamp** | **int** |  | [optional] 
 **response_type** | **str** |  | [optional] 
+**visualization_summary** | **str** |  | [optional] 
 
 ## Example
 

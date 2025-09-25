@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lan_segments** | [**List[V2ExtranetSitesConsumptionOverviewPost200ResponseLanSegmentsInner]**](V2ExtranetSitesConsumptionOverviewPost200ResponseLanSegmentsInner.md) |  | [optional] 
-**regions** | [**List[V2ExtranetSitesConsumptionOverviewPost200ResponseLanSegmentsInner]**](V2ExtranetSitesConsumptionOverviewPost200ResponseLanSegmentsInner.md) |  | [optional] 
-**sites** | [**List[V2ExtranetSitesConsumptionOverviewPost200ResponseLanSegmentsInner]**](V2ExtranetSitesConsumptionOverviewPost200ResponseLanSegmentsInner.md) |  | [optional] 
+**lan_segments** | [**List[V1ExtranetB2bMonitoringPeeringServiceConsumptionOverviewPost200ResponseFirstLevelInner]**](V1ExtranetB2bMonitoringPeeringServiceConsumptionOverviewPost200ResponseFirstLevelInner.md) |  | [optional] 
+**regions** | [**List[V1ExtranetB2bMonitoringPeeringServiceConsumptionOverviewPost200ResponseFirstLevelInner]**](V1ExtranetB2bMonitoringPeeringServiceConsumptionOverviewPost200ResponseFirstLevelInner.md) |  | [optional] 
+**sites** | [**List[V1ExtranetB2bMonitoringPeeringServiceConsumptionOverviewPost200ResponseFirstLevelInner]**](V1ExtranetB2bMonitoringPeeringServiceConsumptionOverviewPost200ResponseFirstLevelInner.md) |  | [optional] 
 **total_usage** | **float** |  | [optional] 
 
 ## Example

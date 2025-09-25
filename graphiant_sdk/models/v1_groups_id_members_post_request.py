@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,8 @@ class V1GroupsIdMembersPostRequest(BaseModel):
     V1GroupsIdMembersPostRequest
     """ # noqa: E501
     member_ids: Optional[List[StrictStr]] = Field(default=None, alias="memberIds")
-    __properties: ClassVar[List[str]] = ["memberIds"]
+    replace_existing: Optional[StrictBool] = Field(default=None, alias="replaceExisting")
+    __properties: ClassVar[List[str]] = ["memberIds", "replaceExisting"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -80,7 +81,8 @@ class V1GroupsIdMembersPostRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "memberIds": obj.get("memberIds")
+            "memberIds": obj.get("memberIds"),
+            "replaceExisting": obj.get("replaceExisting")
         })
         return _obj
 
