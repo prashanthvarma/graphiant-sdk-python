@@ -7,11 +7,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | [**V1AlarmHistoryGet200ResponseHistoryInnerTime**](V1AlarmHistoryGet200ResponseHistoryInnerTime.md) |  | [optional] 
 **id** | **int** |  | [optional] 
+**is_publisher** | **bool** |  | [optional] 
+**lan_segment** | **int** |  | [optional] 
+**matched_customers** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
 **server_ip_address** | **List[str]** |  | [optional] 
 **status** | **str** |  | [optional] 
 **total_customers** | **int** |  | [optional] 
 **total_sites** | **int** |  | [optional] 
+**type** | **str** |  | [optional] 
+**updated_at** | [**V1AlarmHistoryGet200ResponseHistoryInnerTime**](V1AlarmHistoryGet200ResponseHistoryInnerTime.md) |  | [optional] 
 
 ## Example
 

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **remote_address_v4** | **str** |  | [optional] 
 **remote_address_v6** | **str** |  | [optional] 
 **remote_ike_peer_identity** | **str** |  | [optional] 
-**routing** | [**V1GatewaysPutRequestDetailsIpsecGatewayRouting**](V1GatewaysPutRequestDetailsIpsecGatewayRouting.md) |  | [optional] 
+**routing** | [**V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRouting**](V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRouting.md) |  | [optional] 
 **tcp_mss** | **int** |  | [optional] 
 **vpn_profile** | **str** |  | [optional] 
 

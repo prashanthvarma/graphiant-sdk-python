@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from graphiant_sdk.models.v1_alarm_history_get200_response_history_inner_time import V1AlarmHistoryGet200ResponseHistoryInnerTime
@@ -30,12 +30,17 @@ class V1ExtranetsB2bProducersSummaryGet200ResponseInfoInner(BaseModel):
     """ # noqa: E501
     created_at: Optional[V1AlarmHistoryGet200ResponseHistoryInnerTime] = Field(default=None, alias="createdAt")
     id: Optional[StrictInt] = None
+    is_publisher: Optional[StrictBool] = Field(default=None, alias="isPublisher")
+    lan_segment: Optional[StrictInt] = Field(default=None, alias="lanSegment")
+    matched_customers: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="matchedCustomers")
     name: Optional[StrictStr] = None
     server_ip_address: Optional[List[StrictStr]] = Field(default=None, alias="serverIpAddress")
     status: Optional[StrictStr] = None
     total_customers: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="totalCustomers")
     total_sites: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="totalSites")
-    __properties: ClassVar[List[str]] = ["createdAt", "id", "name", "serverIpAddress", "status", "totalCustomers", "totalSites"]
+    type: Optional[StrictStr] = None
+    updated_at: Optional[V1AlarmHistoryGet200ResponseHistoryInnerTime] = Field(default=None, alias="updatedAt")
+    __properties: ClassVar[List[str]] = ["createdAt", "id", "isPublisher", "lanSegment", "matchedCustomers", "name", "serverIpAddress", "status", "totalCustomers", "totalSites", "type", "updatedAt"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,6 +84,9 @@ class V1ExtranetsB2bProducersSummaryGet200ResponseInfoInner(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of created_at
         if self.created_at:
             _dict['createdAt'] = self.created_at.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of updated_at
+        if self.updated_at:
+            _dict['updatedAt'] = self.updated_at.to_dict()
         return _dict
 
     @classmethod
@@ -93,11 +101,16 @@ class V1ExtranetsB2bProducersSummaryGet200ResponseInfoInner(BaseModel):
         _obj = cls.model_validate({
             "createdAt": V1AlarmHistoryGet200ResponseHistoryInnerTime.from_dict(obj["createdAt"]) if obj.get("createdAt") is not None else None,
             "id": obj.get("id"),
+            "isPublisher": obj.get("isPublisher"),
+            "lanSegment": obj.get("lanSegment"),
+            "matchedCustomers": obj.get("matchedCustomers"),
             "name": obj.get("name"),
             "serverIpAddress": obj.get("serverIpAddress"),
             "status": obj.get("status"),
             "totalCustomers": obj.get("totalCustomers"),
-            "totalSites": obj.get("totalSites")
+            "totalSites": obj.get("totalSites"),
+            "type": obj.get("type"),
+            "updatedAt": V1AlarmHistoryGet200ResponseHistoryInnerTime.from_dict(obj["updatedAt"]) if obj.get("updatedAt") is not None else None
         })
         return _obj
 

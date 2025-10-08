@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **impersonation_enabled** | **bool** |  | [optional] 
 **logo** | **str** |  | [optional] 
 **portal_banner** | **str** |  | [optional] 
+**proxy_tenant_id** | **int** |  | [optional] 
 **small_logo** | **str** |  | [optional] 
 **token_expiry** | [**V1EnterprisesPatchRequestTokenExpiry**](V1EnterprisesPatchRequestTokenExpiry.md) |  | [optional] 
 

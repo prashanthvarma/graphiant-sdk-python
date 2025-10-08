@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **parent_company_name** | **str** |  | [optional] 
 **parent_enterprise_id** | **int** |  | [optional] 
 **portal_banner** | **str** |  | [optional] 
+**proxy_tenant_id** | **int** |  | [optional] 
 **small_logo** | **str** |  | [optional] 
 **token_expiry** | **str** |  | [optional] 
 

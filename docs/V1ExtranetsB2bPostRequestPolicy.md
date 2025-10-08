@@ -5,13 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**description** | **str** |  | [optional] 
 **nat_pools** | **List[str]** |  | [optional] 
+**prefix_tags** | [**List[V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestServiceServicePrefixesInner]**](V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestServiceServicePrefixesInner.md) |  | [optional] 
 **profiles** | [**List[V1ExtranetsB2bPostRequestPolicyProfilesInner]**](V1ExtranetsB2bPostRequestPolicyProfilesInner.md) |  | [optional] 
 **service_lan_segment** | **int** |  | [optional] 
 **service_prefixes** | **List[str]** |  | [optional] 
 **sites** | [**List[V1ExtranetsB2bConsumerPostRequestSiteInformationInner]**](V1ExtranetsB2bConsumerPostRequestSiteInformationInner.md) |  | [optional] 
 **sla** | [**V1ExtranetsB2bPostRequestPolicySla**](V1ExtranetsB2bPostRequestPolicySla.md) |  | [optional] 
+**status** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
+**unmatched_customers** | **int** |  | [optional] 
 
 ## Example
 

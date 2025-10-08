@@ -44,9 +44,10 @@ class V1EnterprisesGet200ResponseEnterprisesInner(BaseModel):
     parent_company_name: Optional[StrictStr] = Field(default=None, alias="parentCompanyName")
     parent_enterprise_id: Optional[StrictInt] = Field(default=None, alias="parentEnterpriseId")
     portal_banner: Optional[StrictStr] = Field(default=None, alias="portalBanner")
+    proxy_tenant_id: Optional[StrictInt] = Field(default=None, alias="proxyTenantId")
     small_logo: Optional[StrictStr] = Field(default=None, alias="smallLogo")
     token_expiry: Optional[StrictStr] = Field(default=None, alias="tokenExpiry")
-    __properties: ClassVar[List[str]] = ["acceptEula", "accountType", "adminEmail", "cloudProvider", "companyName", "counts", "creditLimit", "customers", "enterpriseId", "eulaAgreementDate", "impersonationEnabled", "logo", "parentCompanyName", "parentEnterpriseId", "portalBanner", "smallLogo", "tokenExpiry"]
+    __properties: ClassVar[List[str]] = ["acceptEula", "accountType", "adminEmail", "cloudProvider", "companyName", "counts", "creditLimit", "customers", "enterpriseId", "eulaAgreementDate", "impersonationEnabled", "logo", "parentCompanyName", "parentEnterpriseId", "portalBanner", "proxyTenantId", "smallLogo", "tokenExpiry"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -132,6 +133,7 @@ class V1EnterprisesGet200ResponseEnterprisesInner(BaseModel):
             "parentCompanyName": obj.get("parentCompanyName"),
             "parentEnterpriseId": obj.get("parentEnterpriseId"),
             "portalBanner": obj.get("portalBanner"),
+            "proxyTenantId": obj.get("proxyTenantId"),
             "smallLogo": obj.get("smallLogo"),
             "tokenExpiry": obj.get("tokenExpiry")
         })

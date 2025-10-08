@@ -28,6 +28,7 @@ class V1GroupsGet200ResponseGroupsInnerPermissions(BaseModel):
     """ # noqa: E501
     asset_manager: Optional[StrictStr] = Field(default=None, alias="assetManager")
     b2b: Optional[StrictStr] = None
+    b2b_security_profile_external: Optional[StrictStr] = Field(default=None, alias="b2bSecurityProfileExternal")
     billing_and_invoicing: Optional[StrictStr] = Field(default=None, alias="billingAndInvoicing")
     compliance: Optional[StrictStr] = None
     developer_tools: Optional[StrictStr] = Field(default=None, alias="developerTools")
@@ -44,7 +45,7 @@ class V1GroupsGet200ResponseGroupsInnerPermissions(BaseModel):
     service_policies: Optional[StrictStr] = Field(default=None, alias="servicePolicies")
     support: Optional[StrictStr] = None
     user_and_tenant_management: Optional[StrictStr] = Field(default=None, alias="userAndTenantManagement")
-    __properties: ClassVar[List[str]] = ["assetManager", "b2b", "billingAndInvoicing", "compliance", "developerTools", "gateway", "globalServices", "insights", "licensing", "logs", "monitoringAndTroubleshooting", "networkConfiguration", "orderStatus", "reports", "safetyAndSecurity", "servicePolicies", "support", "userAndTenantManagement"]
+    __properties: ClassVar[List[str]] = ["assetManager", "b2b", "b2bSecurityProfileExternal", "billingAndInvoicing", "compliance", "developerTools", "gateway", "globalServices", "insights", "licensing", "logs", "monitoringAndTroubleshooting", "networkConfiguration", "orderStatus", "reports", "safetyAndSecurity", "servicePolicies", "support", "userAndTenantManagement"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,6 +100,7 @@ class V1GroupsGet200ResponseGroupsInnerPermissions(BaseModel):
         _obj = cls.model_validate({
             "assetManager": obj.get("assetManager"),
             "b2b": obj.get("b2b"),
+            "b2bSecurityProfileExternal": obj.get("b2bSecurityProfileExternal"),
             "billingAndInvoicing": obj.get("billingAndInvoicing"),
             "compliance": obj.get("compliance"),
             "developerTools": obj.get("developerTools"),

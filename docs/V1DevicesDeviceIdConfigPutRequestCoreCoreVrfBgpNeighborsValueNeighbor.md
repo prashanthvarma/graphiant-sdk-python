@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address_families** | [**Dict[str, V1GatewaysPutRequestDetailsIpsecGatewayRoutingBgpAddressFamiliesValue]**](V1GatewaysPutRequestDetailsIpsecGatewayRoutingBgpAddressFamiliesValue.md) |  | [optional] 
+**address_families** | [**Dict[str, V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingBgpAddressFamiliesValue]**](V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingBgpAddressFamiliesValue.md) |  | [optional] 
 **allow_as_in** | [**V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighborAllowAsIn**](V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighborAllowAsIn.md) |  | [optional] 
 **as_override** | **bool** |  | [optional] 
 **bfd** | [**V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighborBfd**](V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighborBfd.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **local_address** | **str** |  | [optional] 
 **local_interface** | [**V1GlobalConfigPatchRequestRoutingPoliciesValuePolicyStatementsValueStatementMatchesValueMatchSourceInterface**](V1GlobalConfigPatchRequestRoutingPoliciesValuePolicyStatementsValueStatementMatchesValueMatchSourceInterface.md) |  | [optional] 
 **max_prefix_value** | [**V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighborMaxPrefixValue**](V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighborMaxPrefixValue.md) |  | [optional] 
-**md5_password** | [**V1GatewaysPutRequestDetailsIpsecGatewayRoutingBgpMd5Password**](V1GatewaysPutRequestDetailsIpsecGatewayRoutingBgpMd5Password.md) |  | [optional] 
+**md5_password** | [**V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingBgpMd5Password**](V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingBgpMd5Password.md) |  | [optional] 
 **peer_asn** | **int** |  | [optional] 
 **remote_address** | **str** |  | [optional] 
 **remove_private_as** | **bool** |  | [optional] 

@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **remote_address_v4** | **str** |  | [optional] 
 **remote_address_v6** | **str** |  | [optional] 
 **remote_ike_peer_identity** | **str** |  | [optional] 
-**static** | [**V1ExtranetsGet200ResponsePoliciesInnerBranchesExcludedDevicesInnerIpsecTunnelsInnerStatic**](V1ExtranetsGet200ResponsePoliciesInnerBranchesExcludedDevicesInnerIpsecTunnelsInnerStatic.md) |  | [optional] 
+**static** | [**V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingStatic**](V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingStatic.md) |  | [optional] 
 **tcp_mss** | **int** |  | [optional] 
 **vpn_profile** | **str** |  | [optional] 
 
