@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from graphiant_sdk.models.v1_gateways_put_request_details_ipsec_gateway_routing import V1GatewaysPutRequestDetailsIpsecGatewayRouting
+from graphiant_sdk.models.v1_extranets_b2b_peering_consumer_id_post_request_site_to_site_vpn_ipsec_gateway_details_routing import V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRouting
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -42,7 +42,7 @@ class V1DevicesDeviceIdConfigPutRequestEdgeSiteToSiteVpnValueSiteToSiteVpn(BaseM
     remote_address_v4: Optional[StrictStr] = Field(default=None, alias="remoteAddressV4")
     remote_address_v6: Optional[StrictStr] = Field(default=None, alias="remoteAddressV6")
     remote_ike_peer_identity: Optional[StrictStr] = Field(default=None, alias="remoteIkePeerIdentity")
-    routing: Optional[V1GatewaysPutRequestDetailsIpsecGatewayRouting] = None
+    routing: Optional[V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRouting] = None
     tcp_mss: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="tcpMss")
     vpn_profile: Optional[StrictStr] = Field(default=None, alias="vpnProfile")
     __properties: ClassVar[List[str]] = ["destinationAddress", "ikeInitiator", "ipsecLabel", "lan", "localAddressV4", "localAddressV6", "localCircuit", "localIkePeerIdentity", "mtu", "name", "presharedKey", "remoteAddressV4", "remoteAddressV6", "remoteIkePeerIdentity", "routing", "tcpMss", "vpnProfile"]
@@ -115,7 +115,7 @@ class V1DevicesDeviceIdConfigPutRequestEdgeSiteToSiteVpnValueSiteToSiteVpn(BaseM
             "remoteAddressV4": obj.get("remoteAddressV4"),
             "remoteAddressV6": obj.get("remoteAddressV6"),
             "remoteIkePeerIdentity": obj.get("remoteIkePeerIdentity"),
-            "routing": V1GatewaysPutRequestDetailsIpsecGatewayRouting.from_dict(obj["routing"]) if obj.get("routing") is not None else None,
+            "routing": V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRouting.from_dict(obj["routing"]) if obj.get("routing") is not None else None,
             "tcpMss": obj.get("tcpMss"),
             "vpnProfile": obj.get("vpnProfile")
         })

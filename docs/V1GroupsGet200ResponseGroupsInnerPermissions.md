@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asset_manager** | **str** |  | [optional] 
 **b2b** | **str** |  | [optional] 
+**b2b_security_profile_external** | **str** |  | [optional] 
 **billing_and_invoicing** | **str** |  | [optional] 
 **compliance** | **str** |  | [optional] 
 **developer_tools** | **str** |  | [optional] 

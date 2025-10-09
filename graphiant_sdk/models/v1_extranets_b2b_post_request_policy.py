@@ -19,7 +19,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from graphiant_sdk.models.v1_extranets_b2b_consumer_post_request_site_information_inner import V1ExtranetsB2bConsumerPostRequestSiteInformationInner
+from graphiant_sdk.models.v1_extranets_b2b_peering_match_service_to_customer_put_request_service_service_prefixes_inner import V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestServiceServicePrefixesInner
 from graphiant_sdk.models.v1_extranets_b2b_post_request_policy_profiles_inner import V1ExtranetsB2bPostRequestPolicyProfilesInner
 from graphiant_sdk.models.v1_extranets_b2b_post_request_policy_sla import V1ExtranetsB2bPostRequestPolicySla
 from typing import Optional, Set
@@ -29,14 +31,18 @@ class V1ExtranetsB2bPostRequestPolicy(BaseModel):
     """
     V1ExtranetsB2bPostRequestPolicy
     """ # noqa: E501
+    description: Optional[StrictStr] = None
     nat_pools: Optional[List[StrictStr]] = Field(default=None, alias="natPools")
+    prefix_tags: Optional[List[V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestServiceServicePrefixesInner]] = Field(default=None, alias="prefixTags")
     profiles: Optional[List[V1ExtranetsB2bPostRequestPolicyProfilesInner]] = None
     service_lan_segment: Optional[StrictInt] = Field(default=None, alias="serviceLanSegment")
     service_prefixes: Optional[List[StrictStr]] = Field(default=None, alias="servicePrefixes")
     sites: Optional[List[V1ExtranetsB2bConsumerPostRequestSiteInformationInner]] = None
     sla: Optional[V1ExtranetsB2bPostRequestPolicySla] = None
+    status: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["natPools", "profiles", "serviceLanSegment", "servicePrefixes", "sites", "sla", "type"]
+    unmatched_customers: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="unmatchedCustomers")
+    __properties: ClassVar[List[str]] = ["description", "natPools", "prefixTags", "profiles", "serviceLanSegment", "servicePrefixes", "sites", "sla", "status", "type", "unmatchedCustomers"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -77,6 +83,13 @@ class V1ExtranetsB2bPostRequestPolicy(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in prefix_tags (list)
+        _items = []
+        if self.prefix_tags:
+            for _item_prefix_tags in self.prefix_tags:
+                if _item_prefix_tags:
+                    _items.append(_item_prefix_tags.to_dict())
+            _dict['prefixTags'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in profiles (list)
         _items = []
         if self.profiles:
@@ -106,13 +119,17 @@ class V1ExtranetsB2bPostRequestPolicy(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "description": obj.get("description"),
             "natPools": obj.get("natPools"),
+            "prefixTags": [V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestServiceServicePrefixesInner.from_dict(_item) for _item in obj["prefixTags"]] if obj.get("prefixTags") is not None else None,
             "profiles": [V1ExtranetsB2bPostRequestPolicyProfilesInner.from_dict(_item) for _item in obj["profiles"]] if obj.get("profiles") is not None else None,
             "serviceLanSegment": obj.get("serviceLanSegment"),
             "servicePrefixes": obj.get("servicePrefixes"),
             "sites": [V1ExtranetsB2bConsumerPostRequestSiteInformationInner.from_dict(_item) for _item in obj["sites"]] if obj.get("sites") is not None else None,
             "sla": V1ExtranetsB2bPostRequestPolicySla.from_dict(obj["sla"]) if obj.get("sla") is not None else None,
-            "type": obj.get("type")
+            "status": obj.get("status"),
+            "type": obj.get("type"),
+            "unmatchedCustomers": obj.get("unmatchedCustomers")
         })
         return _obj
 

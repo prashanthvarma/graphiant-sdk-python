@@ -25,8 +25,8 @@ from graphiant_sdk.models.v1_devices_device_id_config_put_request_core_core_vrf_
 from graphiant_sdk.models.v1_devices_device_id_config_put_request_core_core_vrf_bgp_neighbors_value_neighbor_ebgp_multihop_ttl import V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighborEbgpMultihopTtl
 from graphiant_sdk.models.v1_devices_device_id_config_put_request_core_core_vrf_bgp_neighbors_value_neighbor_hold_timer_value import V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighborHoldTimerValue
 from graphiant_sdk.models.v1_devices_device_id_config_put_request_core_core_vrf_bgp_neighbors_value_neighbor_max_prefix_value import V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighborMaxPrefixValue
-from graphiant_sdk.models.v1_gateways_put_request_details_ipsec_gateway_routing_bgp_address_families_value import V1GatewaysPutRequestDetailsIpsecGatewayRoutingBgpAddressFamiliesValue
-from graphiant_sdk.models.v1_gateways_put_request_details_ipsec_gateway_routing_bgp_md5_password import V1GatewaysPutRequestDetailsIpsecGatewayRoutingBgpMd5Password
+from graphiant_sdk.models.v1_extranets_b2b_peering_consumer_id_post_request_site_to_site_vpn_ipsec_gateway_details_routing_bgp_address_families_value import V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingBgpAddressFamiliesValue
+from graphiant_sdk.models.v1_extranets_b2b_peering_consumer_id_post_request_site_to_site_vpn_ipsec_gateway_details_routing_bgp_md5_password import V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingBgpMd5Password
 from graphiant_sdk.models.v1_global_config_patch_request_routing_policies_value_policy_statements_value_statement_matches_value_match_source_interface import V1GlobalConfigPatchRequestRoutingPoliciesValuePolicyStatementsValueStatementMatchesValueMatchSourceInterface
 from typing import Optional, Set
 from typing_extensions import Self
@@ -35,7 +35,7 @@ class V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighbor(Base
     """
     V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighbor
     """ # noqa: E501
-    address_families: Optional[Dict[str, V1GatewaysPutRequestDetailsIpsecGatewayRoutingBgpAddressFamiliesValue]] = Field(default=None, alias="addressFamilies")
+    address_families: Optional[Dict[str, V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingBgpAddressFamiliesValue]] = Field(default=None, alias="addressFamilies")
     allow_as_in: Optional[V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighborAllowAsIn] = Field(default=None, alias="allowAsIn")
     as_override: Optional[StrictBool] = Field(default=None, alias="asOverride")
     bfd: Optional[V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighborBfd] = None
@@ -49,7 +49,7 @@ class V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighbor(Base
     local_address: Optional[StrictStr] = Field(default=None, alias="localAddress")
     local_interface: Optional[V1GlobalConfigPatchRequestRoutingPoliciesValuePolicyStatementsValueStatementMatchesValueMatchSourceInterface] = Field(default=None, alias="localInterface")
     max_prefix_value: Optional[V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighborMaxPrefixValue] = Field(default=None, alias="maxPrefixValue")
-    md5_password: Optional[V1GatewaysPutRequestDetailsIpsecGatewayRoutingBgpMd5Password] = Field(default=None, alias="md5Password")
+    md5_password: Optional[V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingBgpMd5Password] = Field(default=None, alias="md5Password")
     peer_asn: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="peerAsn")
     remote_address: Optional[StrictStr] = Field(default=None, alias="remoteAddress")
     remove_private_as: Optional[StrictBool] = Field(default=None, alias="removePrivateAs")
@@ -139,7 +139,7 @@ class V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighbor(Base
 
         _obj = cls.model_validate({
             "addressFamilies": dict(
-                (_k, V1GatewaysPutRequestDetailsIpsecGatewayRoutingBgpAddressFamiliesValue.from_dict(_v))
+                (_k, V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingBgpAddressFamiliesValue.from_dict(_v))
                 for _k, _v in obj["addressFamilies"].items()
             )
             if obj.get("addressFamilies") is not None
@@ -157,7 +157,7 @@ class V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighbor(Base
             "localAddress": obj.get("localAddress"),
             "localInterface": V1GlobalConfigPatchRequestRoutingPoliciesValuePolicyStatementsValueStatementMatchesValueMatchSourceInterface.from_dict(obj["localInterface"]) if obj.get("localInterface") is not None else None,
             "maxPrefixValue": V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpNeighborsValueNeighborMaxPrefixValue.from_dict(obj["maxPrefixValue"]) if obj.get("maxPrefixValue") is not None else None,
-            "md5Password": V1GatewaysPutRequestDetailsIpsecGatewayRoutingBgpMd5Password.from_dict(obj["md5Password"]) if obj.get("md5Password") is not None else None,
+            "md5Password": V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingBgpMd5Password.from_dict(obj["md5Password"]) if obj.get("md5Password") is not None else None,
             "peerAsn": obj.get("peerAsn"),
             "remoteAddress": obj.get("remoteAddress"),
             "removePrivateAs": obj.get("removePrivateAs"),

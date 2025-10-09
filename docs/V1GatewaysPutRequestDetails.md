@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **azure** | [**V1GatewaysPutRequestDetailsAzure**](V1GatewaysPutRequestDetailsAzure.md) |  | [optional] 
 **description** | **str** |  | [optional] 
 **gcp** | [**V1GatewaysPutRequestDetailsGcp**](V1GatewaysPutRequestDetailsGcp.md) |  | [optional] 
-**ipsec_gateway** | [**V1GatewaysPutRequestDetailsIpsecGateway**](V1GatewaysPutRequestDetailsIpsecGateway.md) |  | [optional] 
+**ipsec_gateway** | [**V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetails**](V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetails.md) |  | [optional] 
 **oci** | [**V1GatewaysPutRequestDetailsOci**](V1GatewaysPutRequestDetailsOci.md) |  | [optional] 
 **region_id** | **int** |  | [optional] 
 **speed** | **str** |  | [optional] 

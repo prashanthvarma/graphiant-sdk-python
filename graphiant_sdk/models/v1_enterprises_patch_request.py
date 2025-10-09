@@ -35,9 +35,10 @@ class V1EnterprisesPatchRequest(BaseModel):
     impersonation_enabled: Optional[StrictBool] = Field(default=None, alias="impersonationEnabled")
     logo: Optional[StrictStr] = None
     portal_banner: Optional[StrictStr] = Field(default=None, alias="portalBanner")
+    proxy_tenant_id: Optional[StrictInt] = Field(default=None, alias="proxyTenantId")
     small_logo: Optional[StrictStr] = Field(default=None, alias="smallLogo")
     token_expiry: Optional[V1EnterprisesPatchRequestTokenExpiry] = Field(default=None, alias="tokenExpiry")
-    __properties: ClassVar[List[str]] = ["adminEmail", "cloudProvider", "companyName", "creditLimit", "enterpriseId", "impersonationEnabled", "logo", "portalBanner", "smallLogo", "tokenExpiry"]
+    __properties: ClassVar[List[str]] = ["adminEmail", "cloudProvider", "companyName", "creditLimit", "enterpriseId", "impersonationEnabled", "logo", "portalBanner", "proxyTenantId", "smallLogo", "tokenExpiry"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -101,6 +102,7 @@ class V1EnterprisesPatchRequest(BaseModel):
             "impersonationEnabled": obj.get("impersonationEnabled"),
             "logo": obj.get("logo"),
             "portalBanner": obj.get("portalBanner"),
+            "proxyTenantId": obj.get("proxyTenantId"),
             "smallLogo": obj.get("smallLogo"),
             "tokenExpiry": V1EnterprisesPatchRequestTokenExpiry.from_dict(obj["tokenExpiry"]) if obj.get("tokenExpiry") is not None else None
         })
