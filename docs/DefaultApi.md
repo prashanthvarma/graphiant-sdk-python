@@ -215,27 +215,21 @@ Method | HTTP request | Description
 [**v1_extranets_b2b_customer_info_id_get**](DefaultApi.md#v1_extranets_b2b_customer_info_id_get) | **GET** /v1/extranets-b2b/customer-info/{id} | 
 [**v1_extranets_b2b_general_customers_summary_get**](DefaultApi.md#v1_extranets_b2b_general_customers_summary_get) | **GET** /v1/extranets-b2b-general/customers-summary | 
 [**v1_extranets_b2b_general_services_summary_get**](DefaultApi.md#v1_extranets_b2b_general_services_summary_get) | **GET** /v1/extranets-b2b-general/services-summary | 
-[**v1_extranets_b2b_id_customer_invite_retry_post**](DefaultApi.md#v1_extranets_b2b_id_customer_invite_retry_post) | **POST** /v1/extranets-b2b/{id}/customer-invite/retry/ | 
 [**v1_extranets_b2b_id_customer_post**](DefaultApi.md#v1_extranets_b2b_id_customer_post) | **POST** /v1/extranets-b2b/{id}/customer/ | 
 [**v1_extranets_b2b_id_customer_summary_get**](DefaultApi.md#v1_extranets_b2b_id_customer_summary_get) | **GET** /v1/extranets-b2b/{id}/customer-summary | 
 [**v1_extranets_b2b_id_delete**](DefaultApi.md#v1_extranets_b2b_id_delete) | **DELETE** /v1/extranets-b2b/{id} | 
 [**v1_extranets_b2b_id_producer_get**](DefaultApi.md#v1_extranets_b2b_id_producer_get) | **GET** /v1/extranets-b2b/{id}/producer | 
 [**v1_extranets_b2b_id_put**](DefaultApi.md#v1_extranets_b2b_id_put) | **PUT** /v1/extranets-b2b/{id} | 
-[**v1_extranets_b2b_peering_consumer_customer_id_match_details_get**](DefaultApi.md#v1_extranets_b2b_peering_consumer_customer_id_match_details_get) | **GET** /v1/extranets-b2b-peering/consumer/{customerId}/match-details | 
-[**v1_extranets_b2b_peering_consumer_id_post**](DefaultApi.md#v1_extranets_b2b_peering_consumer_id_post) | **POST** /v1/extranets-b2b-peering/consumer/{id} | 
+[**v1_extranets_b2b_peering_consumer_customer_id_consumer_details_get**](DefaultApi.md#v1_extranets_b2b_peering_consumer_customer_id_consumer_details_get) | **GET** /v1/extranets-b2b-peering/consumer/{customerId}/consumer-details | 
+[**v1_extranets_b2b_peering_consumer_match_id_match_details_get**](DefaultApi.md#v1_extranets_b2b_peering_consumer_match_id_match_details_get) | **GET** /v1/extranets-b2b-peering/consumer/{matchId}/match-details | 
+[**v1_extranets_b2b_peering_consumer_match_id_post**](DefaultApi.md#v1_extranets_b2b_peering_consumer_match_id_post) | **POST** /v1/extranets-b2b-peering/consumer/{matchId} | 
 [**v1_extranets_b2b_peering_customer_id_delete**](DefaultApi.md#v1_extranets_b2b_peering_customer_id_delete) | **DELETE** /v1/extranets-b2b-peering/customer/{id} | 
 [**v1_extranets_b2b_peering_customer_id_get**](DefaultApi.md#v1_extranets_b2b_peering_customer_id_get) | **GET** /v1/extranets-b2b-peering/customer/{id} | 
-[**v1_extranets_b2b_peering_customer_id_put**](DefaultApi.md#v1_extranets_b2b_peering_customer_id_put) | **PUT** /v1/extranets-b2b-peering/customer/{id} | 
-[**v1_extranets_b2b_peering_customer_id_retry_post**](DefaultApi.md#v1_extranets_b2b_peering_customer_id_retry_post) | **POST** /v1/extranets-b2b-peering/customer/{id}/retry | 
 [**v1_extranets_b2b_peering_customer_post**](DefaultApi.md#v1_extranets_b2b_peering_customer_post) | **POST** /v1/extranets-b2b-peering/customer | 
-[**v1_extranets_b2b_peering_match_customers_post**](DefaultApi.md#v1_extranets_b2b_peering_match_customers_post) | **POST** /v1/extranets-b2b-peering/match/customers | 
-[**v1_extranets_b2b_peering_match_service_to_customer_pause_put**](DefaultApi.md#v1_extranets_b2b_peering_match_service_to_customer_pause_put) | **PUT** /v1/extranets-b2b-peering/match/service-to-customer/pause | 
 [**v1_extranets_b2b_peering_match_service_to_customer_post**](DefaultApi.md#v1_extranets_b2b_peering_match_service_to_customer_post) | **POST** /v1/extranets-b2b-peering/match/service-to-customer | 
-[**v1_extranets_b2b_peering_match_service_to_customer_put**](DefaultApi.md#v1_extranets_b2b_peering_match_service_to_customer_put) | **PUT** /v1/extranets-b2b-peering/match/service-to-customer | 
 [**v1_extranets_b2b_peering_match_services_summary_get**](DefaultApi.md#v1_extranets_b2b_peering_match_services_summary_get) | **GET** /v1/extranets-b2b-peering/match/services/summary | 
 [**v1_extranets_b2b_peering_producer_id_get**](DefaultApi.md#v1_extranets_b2b_peering_producer_id_get) | **GET** /v1/extranets-b2b-peering/producer/{id} | 
 [**v1_extranets_b2b_peering_producer_id_matching_customers_summary_get**](DefaultApi.md#v1_extranets_b2b_peering_producer_id_matching_customers_summary_get) | **GET** /v1/extranets-b2b-peering/producer/{id}/matching-customers-summary | 
-[**v1_extranets_b2b_peering_producer_id_put**](DefaultApi.md#v1_extranets_b2b_peering_producer_id_put) | **PUT** /v1/extranets-b2b-peering/producer/{id} | 
 [**v1_extranets_b2b_peering_producer_post**](DefaultApi.md#v1_extranets_b2b_peering_producer_post) | **POST** /v1/extranets-b2b-peering/producer | 
 [**v1_extranets_b2b_post**](DefaultApi.md#v1_extranets_b2b_post) | **POST** /v1/extranets-b2b | 
 [**v1_extranets_b2b_producer_device_status_id_get**](DefaultApi.md#v1_extranets_b2b_producer_device_status_id_get) | **GET** /v1/extranets-b2b/producer-device-status/{id} | 
@@ -255,7 +249,7 @@ Method | HTTP request | Description
 [**v1_flows_flow_table_post**](DefaultApi.md#v1_flows_flow_table_post) | **POST** /v1/flows/flow-table | 
 [**v1_flows_topology_post**](DefaultApi.md#v1_flows_topology_post) | **POST** /v1/flows/topology | 
 [**v1_gateways_delete**](DefaultApi.md#v1_gateways_delete) | **DELETE** /v1/gateways | 
-[**v1_gateways_guest_consumer_get**](DefaultApi.md#v1_gateways_guest_consumer_get) | **GET** /v1/gateways/guest-consumer | 
+[**v1_gateways_guest_consumer_match_id_get**](DefaultApi.md#v1_gateways_guest_consumer_match_id_get) | **GET** /v1/gateways/guest-consumer/{matchId} | 
 [**v1_gateways_id_details_get**](DefaultApi.md#v1_gateways_id_details_get) | **GET** /v1/gateways/{id}/details | 
 [**v1_gateways_ipsec_regions_region_id_vrfs_vrf_id_inside_subnet_get**](DefaultApi.md#v1_gateways_ipsec_regions_region_id_vrfs_vrf_id_inside_subnet_get) | **GET** /v1/gateways/ipsec/regions/{regionId}/vrfs/{vrfId}/inside-subnet | 
 [**v1_gateways_post**](DefaultApi.md#v1_gateways_post) | **POST** /v1/gateways | 
@@ -416,6 +410,8 @@ Method | HTTP request | Description
 [**v2_assistant_add_to_conversation_post**](DefaultApi.md#v2_assistant_add_to_conversation_post) | **POST** /v2/assistant/add-to-conversation | 
 [**v2_assistant_conversation_context_history_post**](DefaultApi.md#v2_assistant_conversation_context_history_post) | **POST** /v2/assistant/conversation-context-history/ | 
 [**v2_assistant_conversation_id_delete**](DefaultApi.md#v2_assistant_conversation_id_delete) | **DELETE** /v2/assistant/{conversationId} | 
+[**v2_assistant_conversation_interface_enable_disable_post**](DefaultApi.md#v2_assistant_conversation_interface_enable_disable_post) | **POST** /v2/assistant/conversation-interface-enable-disable/ | 
+[**v2_assistant_conversation_interface_state_get**](DefaultApi.md#v2_assistant_conversation_interface_state_get) | **GET** /v2/assistant/conversation-interface-state/ | 
 [**v2_assistant_delete_conversation_chat_conversation_id_delete**](DefaultApi.md#v2_assistant_delete_conversation_chat_conversation_id_delete) | **DELETE** /v2/assistant/delete-conversation-chat/{conversationId} | 
 [**v2_assistant_delete_conversation_conversation_id_delete**](DefaultApi.md#v2_assistant_delete_conversation_conversation_id_delete) | **DELETE** /v2/assistant/delete-conversation/{conversationId} | 
 [**v2_assistant_get_conversation_details_post**](DefaultApi.md#v2_assistant_get_conversation_details_post) | **POST** /v2/assistant/get-conversation-details | 
@@ -16740,83 +16736,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_extranets_b2b_id_customer_invite_retry_post**
-> object v1_extranets_b2b_id_customer_invite_retry_post(authorization, id, body)
-
-### Example
-
-* Api Key Authentication (jwtAuth):
-
-```python
-import graphiant_sdk
-from graphiant_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.graphiant.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = graphiant_sdk.Configuration(
-    host = "https://api.graphiant.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtAuth
-configuration.api_key['jwtAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with graphiant_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = graphiant_sdk.DefaultApi(api_client)
-    authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    id = 1234567891011 # int | 
-    body = None # object | 
-
-    try:
-        api_response = api_instance.v1_extranets_b2b_id_customer_invite_retry_post(authorization, id, body)
-        print("The response of DefaultApi->v1_extranets_b2b_id_customer_invite_retry_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DefaultApi->v1_extranets_b2b_id_customer_invite_retry_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **id** | **int**|  | 
- **body** | **object**|  | 
-
-### Return type
-
-**object**
-
-### Authorization
-
-[jwtAuth](../README.md#jwtAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **v1_extranets_b2b_id_customer_post**
 > V1ExtranetsB2bIdCustomerPost200Response v1_extranets_b2b_id_customer_post(authorization, id, v1_extranets_b2b_id_customer_post_request)
 
@@ -17048,7 +16967,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_extranets_b2b_id_producer_get**
-> V1ExtranetsB2bPost200Response v1_extranets_b2b_id_producer_get(authorization, id)
+> V1ExtranetsB2bPost200Response v1_extranets_b2b_id_producer_get(authorization, id, type=type)
 
 ### Example
 
@@ -17083,9 +17002,10 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
     id = 1234567891011 # int | 
+    type = 'ENUM_VALUE' # str |  (optional)
 
     try:
-        api_response = api_instance.v1_extranets_b2b_id_producer_get(authorization, id)
+        api_response = api_instance.v1_extranets_b2b_id_producer_get(authorization, id, type=type)
         print("The response of DefaultApi->v1_extranets_b2b_id_producer_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -17101,6 +17021,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
  **id** | **int**|  | 
+ **type** | **str**|  | [optional] 
 
 ### Return type
 
@@ -17202,8 +17123,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_extranets_b2b_peering_consumer_customer_id_match_details_get**
-> V1ExtranetsB2bPeeringConsumerCustomerIdMatchDetailsGet200Response v1_extranets_b2b_peering_consumer_customer_id_match_details_get(authorization, customer_id)
+# **v1_extranets_b2b_peering_consumer_customer_id_consumer_details_get**
+> V1ExtranetsB2bPeeringConsumerCustomerIdConsumerDetailsGet200Response v1_extranets_b2b_peering_consumer_customer_id_consumer_details_get(authorization, customer_id)
 
 ### Example
 
@@ -17211,7 +17132,7 @@ Name | Type | Description  | Notes
 
 ```python
 import graphiant_sdk
-from graphiant_sdk.models.v1_extranets_b2b_peering_consumer_customer_id_match_details_get200_response import V1ExtranetsB2bPeeringConsumerCustomerIdMatchDetailsGet200Response
+from graphiant_sdk.models.v1_extranets_b2b_peering_consumer_customer_id_consumer_details_get200_response import V1ExtranetsB2bPeeringConsumerCustomerIdConsumerDetailsGet200Response
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -17240,11 +17161,11 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     customer_id = 1234567891011 # int | 
 
     try:
-        api_response = api_instance.v1_extranets_b2b_peering_consumer_customer_id_match_details_get(authorization, customer_id)
-        print("The response of DefaultApi->v1_extranets_b2b_peering_consumer_customer_id_match_details_get:\n")
+        api_response = api_instance.v1_extranets_b2b_peering_consumer_customer_id_consumer_details_get(authorization, customer_id)
+        print("The response of DefaultApi->v1_extranets_b2b_peering_consumer_customer_id_consumer_details_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DefaultApi->v1_extranets_b2b_peering_consumer_customer_id_match_details_get: %s\n" % e)
+        print("Exception when calling DefaultApi->v1_extranets_b2b_peering_consumer_customer_id_consumer_details_get: %s\n" % e)
 ```
 
 
@@ -17259,7 +17180,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1ExtranetsB2bPeeringConsumerCustomerIdMatchDetailsGet200Response**](V1ExtranetsB2bPeeringConsumerCustomerIdMatchDetailsGet200Response.md)
+[**V1ExtranetsB2bPeeringConsumerCustomerIdConsumerDetailsGet200Response**](V1ExtranetsB2bPeeringConsumerCustomerIdConsumerDetailsGet200Response.md)
 
 ### Authorization
 
@@ -17278,8 +17199,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_extranets_b2b_peering_consumer_id_post**
-> V1ExtranetsB2bPeeringConsumerIdPost200Response v1_extranets_b2b_peering_consumer_id_post(authorization, id, v1_extranets_b2b_peering_consumer_id_post_request)
+# **v1_extranets_b2b_peering_consumer_match_id_match_details_get**
+> V1ExtranetsB2bPeeringConsumerMatchIdMatchDetailsGet200Response v1_extranets_b2b_peering_consumer_match_id_match_details_get(authorization, match_id)
 
 ### Example
 
@@ -17287,8 +17208,7 @@ Name | Type | Description  | Notes
 
 ```python
 import graphiant_sdk
-from graphiant_sdk.models.v1_extranets_b2b_peering_consumer_id_post200_response import V1ExtranetsB2bPeeringConsumerIdPost200Response
-from graphiant_sdk.models.v1_extranets_b2b_peering_consumer_id_post_request import V1ExtranetsB2bPeeringConsumerIdPostRequest
+from graphiant_sdk.models.v1_extranets_b2b_peering_consumer_match_id_match_details_get200_response import V1ExtranetsB2bPeeringConsumerMatchIdMatchDetailsGet200Response
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -17314,15 +17234,14 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    id = 1234567891011 # int | ID of the service.
-    v1_extranets_b2b_peering_consumer_id_post_request = graphiant_sdk.V1ExtranetsB2bPeeringConsumerIdPostRequest() # V1ExtranetsB2bPeeringConsumerIdPostRequest | 
+    match_id = 1234567891011 # int | 
 
     try:
-        api_response = api_instance.v1_extranets_b2b_peering_consumer_id_post(authorization, id, v1_extranets_b2b_peering_consumer_id_post_request)
-        print("The response of DefaultApi->v1_extranets_b2b_peering_consumer_id_post:\n")
+        api_response = api_instance.v1_extranets_b2b_peering_consumer_match_id_match_details_get(authorization, match_id)
+        print("The response of DefaultApi->v1_extranets_b2b_peering_consumer_match_id_match_details_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DefaultApi->v1_extranets_b2b_peering_consumer_id_post: %s\n" % e)
+        print("Exception when calling DefaultApi->v1_extranets_b2b_peering_consumer_match_id_match_details_get: %s\n" % e)
 ```
 
 
@@ -17333,12 +17252,90 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **id** | **int**| ID of the service. | 
- **v1_extranets_b2b_peering_consumer_id_post_request** | [**V1ExtranetsB2bPeeringConsumerIdPostRequest**](V1ExtranetsB2bPeeringConsumerIdPostRequest.md)|  | 
+ **match_id** | **int**|  | 
 
 ### Return type
 
-[**V1ExtranetsB2bPeeringConsumerIdPost200Response**](V1ExtranetsB2bPeeringConsumerIdPost200Response.md)
+[**V1ExtranetsB2bPeeringConsumerMatchIdMatchDetailsGet200Response**](V1ExtranetsB2bPeeringConsumerMatchIdMatchDetailsGet200Response.md)
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1_extranets_b2b_peering_consumer_match_id_post**
+> V1ExtranetsB2bPeeringConsumerMatchIdPost200Response v1_extranets_b2b_peering_consumer_match_id_post(authorization, match_id, v1_extranets_b2b_peering_consumer_match_id_post_request)
+
+### Example
+
+* Api Key Authentication (jwtAuth):
+
+```python
+import graphiant_sdk
+from graphiant_sdk.models.v1_extranets_b2b_peering_consumer_match_id_post200_response import V1ExtranetsB2bPeeringConsumerMatchIdPost200Response
+from graphiant_sdk.models.v1_extranets_b2b_peering_consumer_match_id_post_request import V1ExtranetsB2bPeeringConsumerMatchIdPostRequest
+from graphiant_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.graphiant.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = graphiant_sdk.Configuration(
+    host = "https://api.graphiant.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtAuth
+configuration.api_key['jwtAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with graphiant_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = graphiant_sdk.DefaultApi(api_client)
+    authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
+    match_id = 1234567891011 # int | 
+    v1_extranets_b2b_peering_consumer_match_id_post_request = graphiant_sdk.V1ExtranetsB2bPeeringConsumerMatchIdPostRequest() # V1ExtranetsB2bPeeringConsumerMatchIdPostRequest | 
+
+    try:
+        api_response = api_instance.v1_extranets_b2b_peering_consumer_match_id_post(authorization, match_id, v1_extranets_b2b_peering_consumer_match_id_post_request)
+        print("The response of DefaultApi->v1_extranets_b2b_peering_consumer_match_id_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DefaultApi->v1_extranets_b2b_peering_consumer_match_id_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
+ **match_id** | **int**|  | 
+ **v1_extranets_b2b_peering_consumer_match_id_post_request** | [**V1ExtranetsB2bPeeringConsumerMatchIdPostRequest**](V1ExtranetsB2bPeeringConsumerMatchIdPostRequest.md)|  | 
+
+### Return type
+
+[**V1ExtranetsB2bPeeringConsumerMatchIdPost200Response**](V1ExtranetsB2bPeeringConsumerMatchIdPost200Response.md)
 
 ### Authorization
 
@@ -17508,161 +17505,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_extranets_b2b_peering_customer_id_put**
-> V1ExtranetsB2bPeeringCustomerIdPutRequest v1_extranets_b2b_peering_customer_id_put(authorization, id, v1_extranets_b2b_peering_customer_id_put_request)
-
-### Example
-
-* Api Key Authentication (jwtAuth):
-
-```python
-import graphiant_sdk
-from graphiant_sdk.models.v1_extranets_b2b_peering_customer_id_put_request import V1ExtranetsB2bPeeringCustomerIdPutRequest
-from graphiant_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.graphiant.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = graphiant_sdk.Configuration(
-    host = "https://api.graphiant.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtAuth
-configuration.api_key['jwtAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with graphiant_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = graphiant_sdk.DefaultApi(api_client)
-    authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    id = 1234567891011 # int | 
-    v1_extranets_b2b_peering_customer_id_put_request = graphiant_sdk.V1ExtranetsB2bPeeringCustomerIdPutRequest() # V1ExtranetsB2bPeeringCustomerIdPutRequest | 
-
-    try:
-        api_response = api_instance.v1_extranets_b2b_peering_customer_id_put(authorization, id, v1_extranets_b2b_peering_customer_id_put_request)
-        print("The response of DefaultApi->v1_extranets_b2b_peering_customer_id_put:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DefaultApi->v1_extranets_b2b_peering_customer_id_put: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **id** | **int**|  | 
- **v1_extranets_b2b_peering_customer_id_put_request** | [**V1ExtranetsB2bPeeringCustomerIdPutRequest**](V1ExtranetsB2bPeeringCustomerIdPutRequest.md)|  | 
-
-### Return type
-
-[**V1ExtranetsB2bPeeringCustomerIdPutRequest**](V1ExtranetsB2bPeeringCustomerIdPutRequest.md)
-
-### Authorization
-
-[jwtAuth](../README.md#jwtAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_extranets_b2b_peering_customer_id_retry_post**
-> object v1_extranets_b2b_peering_customer_id_retry_post(authorization, id, body)
-
-### Example
-
-* Api Key Authentication (jwtAuth):
-
-```python
-import graphiant_sdk
-from graphiant_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.graphiant.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = graphiant_sdk.Configuration(
-    host = "https://api.graphiant.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtAuth
-configuration.api_key['jwtAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with graphiant_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = graphiant_sdk.DefaultApi(api_client)
-    authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    id = 1234567891011 # int | 
-    body = None # object | 
-
-    try:
-        api_response = api_instance.v1_extranets_b2b_peering_customer_id_retry_post(authorization, id, body)
-        print("The response of DefaultApi->v1_extranets_b2b_peering_customer_id_retry_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DefaultApi->v1_extranets_b2b_peering_customer_id_retry_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **id** | **int**|  | 
- **body** | **object**|  | 
-
-### Return type
-
-**object**
-
-### Authorization
-
-[jwtAuth](../README.md#jwtAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **v1_extranets_b2b_peering_customer_post**
 > V1ExtranetsB2bPeeringCustomerPost200Response v1_extranets_b2b_peering_customer_post(authorization, v1_extranets_b2b_peering_customer_post_request)
 
@@ -17740,162 +17582,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_extranets_b2b_peering_match_customers_post**
-> V1ExtranetsB2bPeeringMatchCustomersPost200Response v1_extranets_b2b_peering_match_customers_post(authorization, v1_extranets_b2b_peering_match_customers_post_request)
-
-### Example
-
-* Api Key Authentication (jwtAuth):
-
-```python
-import graphiant_sdk
-from graphiant_sdk.models.v1_extranets_b2b_peering_match_customers_post200_response import V1ExtranetsB2bPeeringMatchCustomersPost200Response
-from graphiant_sdk.models.v1_extranets_b2b_peering_match_customers_post_request import V1ExtranetsB2bPeeringMatchCustomersPostRequest
-from graphiant_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.graphiant.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = graphiant_sdk.Configuration(
-    host = "https://api.graphiant.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtAuth
-configuration.api_key['jwtAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with graphiant_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = graphiant_sdk.DefaultApi(api_client)
-    authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    v1_extranets_b2b_peering_match_customers_post_request = graphiant_sdk.V1ExtranetsB2bPeeringMatchCustomersPostRequest() # V1ExtranetsB2bPeeringMatchCustomersPostRequest | 
-
-    try:
-        api_response = api_instance.v1_extranets_b2b_peering_match_customers_post(authorization, v1_extranets_b2b_peering_match_customers_post_request)
-        print("The response of DefaultApi->v1_extranets_b2b_peering_match_customers_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DefaultApi->v1_extranets_b2b_peering_match_customers_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **v1_extranets_b2b_peering_match_customers_post_request** | [**V1ExtranetsB2bPeeringMatchCustomersPostRequest**](V1ExtranetsB2bPeeringMatchCustomersPostRequest.md)|  | 
-
-### Return type
-
-[**V1ExtranetsB2bPeeringMatchCustomersPost200Response**](V1ExtranetsB2bPeeringMatchCustomersPost200Response.md)
-
-### Authorization
-
-[jwtAuth](../README.md#jwtAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_extranets_b2b_peering_match_service_to_customer_pause_put**
-> V1ExtranetsB2bPeeringCustomerIdPutRequest v1_extranets_b2b_peering_match_service_to_customer_pause_put(authorization, v1_gateways_post200_response)
-
-### Example
-
-* Api Key Authentication (jwtAuth):
-
-```python
-import graphiant_sdk
-from graphiant_sdk.models.v1_extranets_b2b_peering_customer_id_put_request import V1ExtranetsB2bPeeringCustomerIdPutRequest
-from graphiant_sdk.models.v1_gateways_post200_response import V1GatewaysPost200Response
-from graphiant_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.graphiant.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = graphiant_sdk.Configuration(
-    host = "https://api.graphiant.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtAuth
-configuration.api_key['jwtAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with graphiant_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = graphiant_sdk.DefaultApi(api_client)
-    authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    v1_gateways_post200_response = graphiant_sdk.V1GatewaysPost200Response() # V1GatewaysPost200Response | 
-
-    try:
-        api_response = api_instance.v1_extranets_b2b_peering_match_service_to_customer_pause_put(authorization, v1_gateways_post200_response)
-        print("The response of DefaultApi->v1_extranets_b2b_peering_match_service_to_customer_pause_put:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DefaultApi->v1_extranets_b2b_peering_match_service_to_customer_pause_put: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **v1_gateways_post200_response** | [**V1GatewaysPost200Response**](V1GatewaysPost200Response.md)|  | 
-
-### Return type
-
-[**V1ExtranetsB2bPeeringCustomerIdPutRequest**](V1ExtranetsB2bPeeringCustomerIdPutRequest.md)
-
-### Authorization
-
-[jwtAuth](../README.md#jwtAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **v1_extranets_b2b_peering_match_service_to_customer_post**
-> V1ExtranetsB2bPeeringMatchServiceToCustomerPost200Response v1_extranets_b2b_peering_match_service_to_customer_post(authorization, v1_extranets_b2b_peering_match_service_to_customer_put_request)
+> V1ExtranetsB2bPeeringMatchServiceToCustomerPost200Response v1_extranets_b2b_peering_match_service_to_customer_post(authorization, v1_extranets_b2b_peering_match_service_to_customer_post_request)
 
 ### Example
 
@@ -17904,7 +17592,7 @@ Name | Type | Description  | Notes
 ```python
 import graphiant_sdk
 from graphiant_sdk.models.v1_extranets_b2b_peering_match_service_to_customer_post200_response import V1ExtranetsB2bPeeringMatchServiceToCustomerPost200Response
-from graphiant_sdk.models.v1_extranets_b2b_peering_match_service_to_customer_put_request import V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequest
+from graphiant_sdk.models.v1_extranets_b2b_peering_match_service_to_customer_post_request import V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequest
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -17930,10 +17618,10 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    v1_extranets_b2b_peering_match_service_to_customer_put_request = graphiant_sdk.V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequest() # V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequest | 
+    v1_extranets_b2b_peering_match_service_to_customer_post_request = graphiant_sdk.V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequest() # V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequest | 
 
     try:
-        api_response = api_instance.v1_extranets_b2b_peering_match_service_to_customer_post(authorization, v1_extranets_b2b_peering_match_service_to_customer_put_request)
+        api_response = api_instance.v1_extranets_b2b_peering_match_service_to_customer_post(authorization, v1_extranets_b2b_peering_match_service_to_customer_post_request)
         print("The response of DefaultApi->v1_extranets_b2b_peering_match_service_to_customer_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -17948,88 +17636,11 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **v1_extranets_b2b_peering_match_service_to_customer_put_request** | [**V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequest**](V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequest.md)|  | 
+ **v1_extranets_b2b_peering_match_service_to_customer_post_request** | [**V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequest**](V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequest.md)|  | 
 
 ### Return type
 
 [**V1ExtranetsB2bPeeringMatchServiceToCustomerPost200Response**](V1ExtranetsB2bPeeringMatchServiceToCustomerPost200Response.md)
-
-### Authorization
-
-[jwtAuth](../README.md#jwtAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_extranets_b2b_peering_match_service_to_customer_put**
-> V1ExtranetsB2bPeeringMatchServiceToCustomerPut200Response v1_extranets_b2b_peering_match_service_to_customer_put(authorization, v1_extranets_b2b_peering_match_service_to_customer_put_request)
-
-### Example
-
-* Api Key Authentication (jwtAuth):
-
-```python
-import graphiant_sdk
-from graphiant_sdk.models.v1_extranets_b2b_peering_match_service_to_customer_put200_response import V1ExtranetsB2bPeeringMatchServiceToCustomerPut200Response
-from graphiant_sdk.models.v1_extranets_b2b_peering_match_service_to_customer_put_request import V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequest
-from graphiant_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.graphiant.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = graphiant_sdk.Configuration(
-    host = "https://api.graphiant.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtAuth
-configuration.api_key['jwtAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with graphiant_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = graphiant_sdk.DefaultApi(api_client)
-    authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    v1_extranets_b2b_peering_match_service_to_customer_put_request = graphiant_sdk.V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequest() # V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequest | 
-
-    try:
-        api_response = api_instance.v1_extranets_b2b_peering_match_service_to_customer_put(authorization, v1_extranets_b2b_peering_match_service_to_customer_put_request)
-        print("The response of DefaultApi->v1_extranets_b2b_peering_match_service_to_customer_put:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DefaultApi->v1_extranets_b2b_peering_match_service_to_customer_put: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **v1_extranets_b2b_peering_match_service_to_customer_put_request** | [**V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequest**](V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequest.md)|  | 
-
-### Return type
-
-[**V1ExtranetsB2bPeeringMatchServiceToCustomerPut200Response**](V1ExtranetsB2bPeeringMatchServiceToCustomerPut200Response.md)
 
 ### Authorization
 
@@ -18199,7 +17810,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_extranets_b2b_peering_producer_id_matching_customers_summary_get**
-> V1ExtranetsB2bPeeringMatchCustomersPost200Response v1_extranets_b2b_peering_producer_id_matching_customers_summary_get(authorization, id)
+> V1ExtranetsB2bPeeringProducerIdMatchingCustomersSummaryGet200Response v1_extranets_b2b_peering_producer_id_matching_customers_summary_get(authorization, id)
 
 ### Example
 
@@ -18207,7 +17818,7 @@ Name | Type | Description  | Notes
 
 ```python
 import graphiant_sdk
-from graphiant_sdk.models.v1_extranets_b2b_peering_match_customers_post200_response import V1ExtranetsB2bPeeringMatchCustomersPost200Response
+from graphiant_sdk.models.v1_extranets_b2b_peering_producer_id_matching_customers_summary_get200_response import V1ExtranetsB2bPeeringProducerIdMatchingCustomersSummaryGet200Response
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -18255,7 +17866,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1ExtranetsB2bPeeringMatchCustomersPost200Response**](V1ExtranetsB2bPeeringMatchCustomersPost200Response.md)
+[**V1ExtranetsB2bPeeringProducerIdMatchingCustomersSummaryGet200Response**](V1ExtranetsB2bPeeringProducerIdMatchingCustomersSummaryGet200Response.md)
 
 ### Authorization
 
@@ -18264,85 +17875,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_extranets_b2b_peering_producer_id_put**
-> V1ExtranetsB2bPeeringProducerPost200Response v1_extranets_b2b_peering_producer_id_put(authorization, id, v1_extranets_b2b_peering_producer_id_put_request)
-
-### Example
-
-* Api Key Authentication (jwtAuth):
-
-```python
-import graphiant_sdk
-from graphiant_sdk.models.v1_extranets_b2b_peering_producer_id_put_request import V1ExtranetsB2bPeeringProducerIdPutRequest
-from graphiant_sdk.models.v1_extranets_b2b_peering_producer_post200_response import V1ExtranetsB2bPeeringProducerPost200Response
-from graphiant_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.graphiant.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = graphiant_sdk.Configuration(
-    host = "https://api.graphiant.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtAuth
-configuration.api_key['jwtAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with graphiant_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = graphiant_sdk.DefaultApi(api_client)
-    authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    id = 1234567891011 # int | 
-    v1_extranets_b2b_peering_producer_id_put_request = graphiant_sdk.V1ExtranetsB2bPeeringProducerIdPutRequest() # V1ExtranetsB2bPeeringProducerIdPutRequest | 
-
-    try:
-        api_response = api_instance.v1_extranets_b2b_peering_producer_id_put(authorization, id, v1_extranets_b2b_peering_producer_id_put_request)
-        print("The response of DefaultApi->v1_extranets_b2b_peering_producer_id_put:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DefaultApi->v1_extranets_b2b_peering_producer_id_put: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **id** | **int**|  | 
- **v1_extranets_b2b_peering_producer_id_put_request** | [**V1ExtranetsB2bPeeringProducerIdPutRequest**](V1ExtranetsB2bPeeringProducerIdPutRequest.md)|  | 
-
-### Return type
-
-[**V1ExtranetsB2bPeeringProducerPost200Response**](V1ExtranetsB2bPeeringProducerPost200Response.md)
-
-### Authorization
-
-[jwtAuth](../README.md#jwtAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -19802,8 +19334,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_gateways_guest_consumer_get**
-> V1GatewaysGuestConsumerGet200Response v1_gateways_guest_consumer_get(authorization, email=email)
+# **v1_gateways_guest_consumer_match_id_get**
+> V1GatewaysGuestConsumerMatchIdGet200Response v1_gateways_guest_consumer_match_id_get(authorization, match_id, email=email)
 
 ### Example
 
@@ -19811,7 +19343,7 @@ Name | Type | Description  | Notes
 
 ```python
 import graphiant_sdk
-from graphiant_sdk.models.v1_gateways_guest_consumer_get200_response import V1GatewaysGuestConsumerGet200Response
+from graphiant_sdk.models.v1_gateways_guest_consumer_match_id_get200_response import V1GatewaysGuestConsumerMatchIdGet200Response
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -19837,14 +19369,15 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
+    match_id = 1234567891011 # int | 
     email = 'example string' # str |  (optional)
 
     try:
-        api_response = api_instance.v1_gateways_guest_consumer_get(authorization, email=email)
-        print("The response of DefaultApi->v1_gateways_guest_consumer_get:\n")
+        api_response = api_instance.v1_gateways_guest_consumer_match_id_get(authorization, match_id, email=email)
+        print("The response of DefaultApi->v1_gateways_guest_consumer_match_id_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DefaultApi->v1_gateways_guest_consumer_get: %s\n" % e)
+        print("Exception when calling DefaultApi->v1_gateways_guest_consumer_match_id_get: %s\n" % e)
 ```
 
 
@@ -19855,11 +19388,12 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
+ **match_id** | **int**|  | 
  **email** | **str**|  | [optional] 
 
 ### Return type
 
-[**V1GatewaysGuestConsumerGet200Response**](V1GatewaysGuestConsumerGet200Response.md)
+[**V1GatewaysGuestConsumerMatchIdGet200Response**](V1GatewaysGuestConsumerMatchIdGet200Response.md)
 
 ### Authorization
 
@@ -31980,6 +31514,156 @@ Name | Type | Description  | Notes
 ### Return type
 
 **object**
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v2_assistant_conversation_interface_enable_disable_post**
+> object v2_assistant_conversation_interface_enable_disable_post(authorization, v2_aggregated_notification_enable_disable_post_request)
+
+### Example
+
+* Api Key Authentication (jwtAuth):
+
+```python
+import graphiant_sdk
+from graphiant_sdk.models.v2_aggregated_notification_enable_disable_post_request import V2AggregatedNotificationEnableDisablePostRequest
+from graphiant_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.graphiant.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = graphiant_sdk.Configuration(
+    host = "https://api.graphiant.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtAuth
+configuration.api_key['jwtAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with graphiant_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = graphiant_sdk.DefaultApi(api_client)
+    authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
+    v2_aggregated_notification_enable_disable_post_request = graphiant_sdk.V2AggregatedNotificationEnableDisablePostRequest() # V2AggregatedNotificationEnableDisablePostRequest | 
+
+    try:
+        api_response = api_instance.v2_assistant_conversation_interface_enable_disable_post(authorization, v2_aggregated_notification_enable_disable_post_request)
+        print("The response of DefaultApi->v2_assistant_conversation_interface_enable_disable_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DefaultApi->v2_assistant_conversation_interface_enable_disable_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
+ **v2_aggregated_notification_enable_disable_post_request** | [**V2AggregatedNotificationEnableDisablePostRequest**](V2AggregatedNotificationEnableDisablePostRequest.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v2_assistant_conversation_interface_state_get**
+> V2AssistantConversationInterfaceStateGet200Response v2_assistant_conversation_interface_state_get(authorization)
+
+### Example
+
+* Api Key Authentication (jwtAuth):
+
+```python
+import graphiant_sdk
+from graphiant_sdk.models.v2_assistant_conversation_interface_state_get200_response import V2AssistantConversationInterfaceStateGet200Response
+from graphiant_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.graphiant.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = graphiant_sdk.Configuration(
+    host = "https://api.graphiant.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtAuth
+configuration.api_key['jwtAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with graphiant_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = graphiant_sdk.DefaultApi(api_client)
+    authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
+
+    try:
+        api_response = api_instance.v2_assistant_conversation_interface_state_get(authorization)
+        print("The response of DefaultApi->v2_assistant_conversation_interface_state_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DefaultApi->v2_assistant_conversation_interface_state_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
+
+### Return type
+
+[**V2AssistantConversationInterfaceStateGet200Response**](V2AssistantConversationInterfaceStateGet200Response.md)
 
 ### Authorization
 

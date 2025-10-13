@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,8 @@ class V1ExtranetsGet200ResponsePoliciesInnerBranchesExcludedDevicesInnerRegion(B
     """ # noqa: E501
     id: Optional[StrictInt] = None
     name: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "name"]
+    unavailable: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["id", "name", "unavailable"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,7 +83,8 @@ class V1ExtranetsGet200ResponsePoliciesInnerBranchesExcludedDevicesInnerRegion(B
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "name": obj.get("name")
+            "name": obj.get("name"),
+            "unavailable": obj.get("unavailable")
         })
         return _obj
 

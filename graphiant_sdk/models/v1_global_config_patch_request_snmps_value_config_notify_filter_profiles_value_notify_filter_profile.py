@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from graphiant_sdk.models.v1_global_config_patch_request_snmps_value_config_notify_filter_profiles_value_notify_filter_profile_include_exclude_list_value import V1GlobalConfigPatchRequestSnmpsValueConfigNotifyFilterProfilesValueNotifyFilterProfileIncludeExcludeListValue
+from graphiant_sdk.models.v2_assistant_conversation_interface_state_get200_response import V2AssistantConversationInterfaceStateGet200Response
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class V1GlobalConfigPatchRequestSnmpsValueConfigNotifyFilterProfilesValueNotifyF
     """
     V1GlobalConfigPatchRequestSnmpsValueConfigNotifyFilterProfilesValueNotifyFilterProfile
     """ # noqa: E501
-    include_exclude_list: Optional[Dict[str, V1GlobalConfigPatchRequestSnmpsValueConfigNotifyFilterProfilesValueNotifyFilterProfileIncludeExcludeListValue]] = Field(default=None, alias="includeExcludeList")
+    include_exclude_list: Optional[Dict[str, V2AssistantConversationInterfaceStateGet200Response]] = Field(default=None, alias="includeExcludeList")
     name: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["includeExcludeList", "name"]
 
@@ -90,7 +90,7 @@ class V1GlobalConfigPatchRequestSnmpsValueConfigNotifyFilterProfilesValueNotifyF
 
         _obj = cls.model_validate({
             "includeExcludeList": dict(
-                (_k, V1GlobalConfigPatchRequestSnmpsValueConfigNotifyFilterProfilesValueNotifyFilterProfileIncludeExcludeListValue.from_dict(_v))
+                (_k, V2AssistantConversationInterfaceStateGet200Response.from_dict(_v))
                 for _k, _v in obj["includeExcludeList"].items()
             )
             if obj.get("includeExcludeList") is not None

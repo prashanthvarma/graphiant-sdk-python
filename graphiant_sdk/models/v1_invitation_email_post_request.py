@@ -26,12 +26,13 @@ class V1InvitationEmailPostRequest(BaseModel):
     """
     V1InvitationEmailPostRequest
     """ # noqa: E501
+    admin_email: Optional[StrictStr] = Field(default=None, alias="adminEmail")
     customer_id: Optional[StrictInt] = Field(default=None, alias="customerId")
     customer_name: Optional[StrictStr] = Field(default=None, alias="customerName")
     is_graphiant: Optional[StrictBool] = Field(default=None, alias="isGraphiant")
     service_id: Optional[StrictInt] = Field(default=None, alias="serviceId")
     service_name: Optional[StrictStr] = Field(default=None, alias="serviceName")
-    __properties: ClassVar[List[str]] = ["customerId", "customerName", "isGraphiant", "serviceId", "serviceName"]
+    __properties: ClassVar[List[str]] = ["adminEmail", "customerId", "customerName", "isGraphiant", "serviceId", "serviceName"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,6 +85,7 @@ class V1InvitationEmailPostRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "adminEmail": obj.get("adminEmail"),
             "customerId": obj.get("customerId"),
             "customerName": obj.get("customerName"),
             "isGraphiant": obj.get("isGraphiant"),

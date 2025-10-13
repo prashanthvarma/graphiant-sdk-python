@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +28,9 @@ class V1TempPasswordPutRequest(BaseModel):
     """ # noqa: E501
     customer_name: Optional[StrictStr] = Field(default=None, alias="customerName")
     emails: Optional[List[StrictStr]] = None
+    match_id: Optional[StrictInt] = Field(default=None, alias="matchId")
     service_name: Optional[StrictStr] = Field(default=None, alias="serviceName")
-    __properties: ClassVar[List[str]] = ["customerName", "emails", "serviceName"]
+    __properties: ClassVar[List[str]] = ["customerName", "emails", "matchId", "serviceName"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,6 +85,7 @@ class V1TempPasswordPutRequest(BaseModel):
         _obj = cls.model_validate({
             "customerName": obj.get("customerName"),
             "emails": obj.get("emails"),
+            "matchId": obj.get("matchId"),
             "serviceName": obj.get("serviceName")
         })
         return _obj

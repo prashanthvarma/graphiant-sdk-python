@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**admin_email** | **str** |  | [optional] 
 **customer_id** | **int** |  | [optional] 
 **customer_name** | **str** |  | [optional] 
 **is_graphiant** | **bool** |  | [optional] 

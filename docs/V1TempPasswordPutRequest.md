@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **customer_name** | **str** |  | [optional] 
 **emails** | **List[str]** |  | [optional] 
+**match_id** | **int** |  | [optional] 
 **service_name** | **str** |  | [optional] 
 
 ## Example
