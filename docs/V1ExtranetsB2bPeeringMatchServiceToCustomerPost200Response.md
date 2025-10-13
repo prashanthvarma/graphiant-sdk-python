@@ -5,7 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**service** | [**List[V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestService]**](V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestService.md) |  | [optional] 
+**match_id** | **int** |  | [optional] 
+**service** | [**List[V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequestService]**](V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequestService.md) |  | [optional] 
 
 ## Example
 

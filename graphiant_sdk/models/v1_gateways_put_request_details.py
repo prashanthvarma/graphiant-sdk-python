@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from graphiant_sdk.models.v1_extranets_b2b_peering_consumer_id_post_request_site_to_site_vpn_ipsec_gateway_details import V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetails
+from graphiant_sdk.models.v1_extranets_b2b_peering_consumer_match_id_post_request_site_to_site_vpn_ipsec_gateway_details import V1ExtranetsB2bPeeringConsumerMatchIdPostRequestSiteToSiteVpnIpsecGatewayDetails
 from graphiant_sdk.models.v1_gateways_put_request_details_aws import V1GatewaysPutRequestDetailsAws
 from graphiant_sdk.models.v1_gateways_put_request_details_azure import V1GatewaysPutRequestDetailsAzure
 from graphiant_sdk.models.v1_gateways_put_request_details_gcp import V1GatewaysPutRequestDetailsGcp
@@ -35,7 +35,7 @@ class V1GatewaysPutRequestDetails(BaseModel):
     azure: Optional[V1GatewaysPutRequestDetailsAzure] = None
     description: Optional[StrictStr] = None
     gcp: Optional[V1GatewaysPutRequestDetailsGcp] = None
-    ipsec_gateway: Optional[V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetails] = Field(default=None, alias="ipsecGateway")
+    ipsec_gateway: Optional[V1ExtranetsB2bPeeringConsumerMatchIdPostRequestSiteToSiteVpnIpsecGatewayDetails] = Field(default=None, alias="ipsecGateway")
     oci: Optional[V1GatewaysPutRequestDetailsOci] = None
     region_id: Optional[StrictInt] = Field(default=None, alias="regionId")
     speed: Optional[StrictStr] = None
@@ -112,7 +112,7 @@ class V1GatewaysPutRequestDetails(BaseModel):
             "azure": V1GatewaysPutRequestDetailsAzure.from_dict(obj["azure"]) if obj.get("azure") is not None else None,
             "description": obj.get("description"),
             "gcp": V1GatewaysPutRequestDetailsGcp.from_dict(obj["gcp"]) if obj.get("gcp") is not None else None,
-            "ipsecGateway": V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetails.from_dict(obj["ipsecGateway"]) if obj.get("ipsecGateway") is not None else None,
+            "ipsecGateway": V1ExtranetsB2bPeeringConsumerMatchIdPostRequestSiteToSiteVpnIpsecGatewayDetails.from_dict(obj["ipsecGateway"]) if obj.get("ipsecGateway") is not None else None,
             "oci": V1GatewaysPutRequestDetailsOci.from_dict(obj["oci"]) if obj.get("oci") is not None else None,
             "regionId": obj.get("regionId"),
             "speed": obj.get("speed"),

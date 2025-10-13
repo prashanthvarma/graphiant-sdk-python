@@ -6,7 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
-**prefix_tags** | [**List[V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestServiceServicePrefixesInner]**](V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestServiceServicePrefixesInner.md) |  | [optional] 
+**global_object_ops** | [**Dict[str, V1ExtranetsB2bPeeringConsumerMatchIdPostRequestGlobalObjectOpsValue]**](V1ExtranetsB2bPeeringConsumerMatchIdPostRequestGlobalObjectOpsValue.md) |  | [optional] 
+**prefix_tags** | [**List[V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequestServiceServicePrefixesInner]**](V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequestServiceServicePrefixesInner.md) |  | [optional] 
 **service_lan_segment** | **int** |  | [optional] 
 **site** | [**List[V1ExtranetsB2bConsumerPostRequestSiteInformationInner]**](V1ExtranetsB2bConsumerPostRequestSiteInformationInner.md) |  | [optional] 
 **type** | **str** |  | [optional] 

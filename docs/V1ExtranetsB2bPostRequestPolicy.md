@@ -6,8 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
+**global_object_device_summaries** | [**Dict[str, V1ExtranetsB2bPostRequestPolicyGlobalObjectDeviceSummariesValue]**](V1ExtranetsB2bPostRequestPolicyGlobalObjectDeviceSummariesValue.md) |  | [optional] 
+**global_object_summaries** | [**Dict[str, V1ExtranetsB2bPostRequestPolicyGlobalObjectDeviceSummariesValue]**](V1ExtranetsB2bPostRequestPolicyGlobalObjectDeviceSummariesValue.md) |  | [optional] 
 **nat_pools** | **List[str]** |  | [optional] 
-**prefix_tags** | [**List[V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestServiceServicePrefixesInner]**](V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestServiceServicePrefixesInner.md) |  | [optional] 
+**prefix_tags** | [**List[V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequestServiceServicePrefixesInner]**](V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequestServiceServicePrefixesInner.md) |  | [optional] 
 **profiles** | [**List[V1ExtranetsB2bPostRequestPolicyProfilesInner]**](V1ExtranetsB2bPostRequestPolicyProfilesInner.md) |  | [optional] 
 **service_lan_segment** | **int** |  | [optional] 
 **service_prefixes** | **List[str]** |  | [optional] 

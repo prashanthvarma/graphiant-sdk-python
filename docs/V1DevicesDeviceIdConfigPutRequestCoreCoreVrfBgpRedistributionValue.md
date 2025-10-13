@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**protocol** | [**V1GlobalConfigPatchRequestSnmpsValueConfigNotifyFilterProfilesValueNotifyFilterProfileIncludeExcludeListValue**](V1GlobalConfigPatchRequestSnmpsValueConfigNotifyFilterProfilesValueNotifyFilterProfileIncludeExcludeListValue.md) |  | [optional] 
+**protocol** | [**V2AssistantConversationInterfaceStateGet200Response**](V2AssistantConversationInterfaceStateGet200Response.md) |  | [optional] 
 
 ## Example
 

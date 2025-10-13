@@ -21,7 +21,8 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from graphiant_sdk.models.v1_extranets_b2b_consumer_post_request_site_information_inner import V1ExtranetsB2bConsumerPostRequestSiteInformationInner
-from graphiant_sdk.models.v1_extranets_b2b_peering_match_service_to_customer_put_request_service_service_prefixes_inner import V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestServiceServicePrefixesInner
+from graphiant_sdk.models.v1_extranets_b2b_peering_match_service_to_customer_post_request_service_service_prefixes_inner import V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequestServiceServicePrefixesInner
+from graphiant_sdk.models.v1_extranets_b2b_post_request_policy_global_object_device_summaries_value import V1ExtranetsB2bPostRequestPolicyGlobalObjectDeviceSummariesValue
 from graphiant_sdk.models.v1_extranets_b2b_post_request_policy_profiles_inner import V1ExtranetsB2bPostRequestPolicyProfilesInner
 from graphiant_sdk.models.v1_extranets_b2b_post_request_policy_sla import V1ExtranetsB2bPostRequestPolicySla
 from typing import Optional, Set
@@ -32,8 +33,10 @@ class V1ExtranetsB2bPostRequestPolicy(BaseModel):
     V1ExtranetsB2bPostRequestPolicy
     """ # noqa: E501
     description: Optional[StrictStr] = None
+    global_object_device_summaries: Optional[Dict[str, V1ExtranetsB2bPostRequestPolicyGlobalObjectDeviceSummariesValue]] = Field(default=None, alias="globalObjectDeviceSummaries")
+    global_object_summaries: Optional[Dict[str, V1ExtranetsB2bPostRequestPolicyGlobalObjectDeviceSummariesValue]] = Field(default=None, alias="globalObjectSummaries")
     nat_pools: Optional[List[StrictStr]] = Field(default=None, alias="natPools")
-    prefix_tags: Optional[List[V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestServiceServicePrefixesInner]] = Field(default=None, alias="prefixTags")
+    prefix_tags: Optional[List[V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequestServiceServicePrefixesInner]] = Field(default=None, alias="prefixTags")
     profiles: Optional[List[V1ExtranetsB2bPostRequestPolicyProfilesInner]] = None
     service_lan_segment: Optional[StrictInt] = Field(default=None, alias="serviceLanSegment")
     service_prefixes: Optional[List[StrictStr]] = Field(default=None, alias="servicePrefixes")
@@ -42,7 +45,7 @@ class V1ExtranetsB2bPostRequestPolicy(BaseModel):
     status: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
     unmatched_customers: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="unmatchedCustomers")
-    __properties: ClassVar[List[str]] = ["description", "natPools", "prefixTags", "profiles", "serviceLanSegment", "servicePrefixes", "sites", "sla", "status", "type", "unmatchedCustomers"]
+    __properties: ClassVar[List[str]] = ["description", "globalObjectDeviceSummaries", "globalObjectSummaries", "natPools", "prefixTags", "profiles", "serviceLanSegment", "servicePrefixes", "sites", "sla", "status", "type", "unmatchedCustomers"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,6 +86,20 @@ class V1ExtranetsB2bPostRequestPolicy(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each value in global_object_device_summaries (dict)
+        _field_dict = {}
+        if self.global_object_device_summaries:
+            for _key_global_object_device_summaries in self.global_object_device_summaries:
+                if self.global_object_device_summaries[_key_global_object_device_summaries]:
+                    _field_dict[_key_global_object_device_summaries] = self.global_object_device_summaries[_key_global_object_device_summaries].to_dict()
+            _dict['globalObjectDeviceSummaries'] = _field_dict
+        # override the default output from pydantic by calling `to_dict()` of each value in global_object_summaries (dict)
+        _field_dict = {}
+        if self.global_object_summaries:
+            for _key_global_object_summaries in self.global_object_summaries:
+                if self.global_object_summaries[_key_global_object_summaries]:
+                    _field_dict[_key_global_object_summaries] = self.global_object_summaries[_key_global_object_summaries].to_dict()
+            _dict['globalObjectSummaries'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each item in prefix_tags (list)
         _items = []
         if self.prefix_tags:
@@ -120,8 +137,20 @@ class V1ExtranetsB2bPostRequestPolicy(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description"),
+            "globalObjectDeviceSummaries": dict(
+                (_k, V1ExtranetsB2bPostRequestPolicyGlobalObjectDeviceSummariesValue.from_dict(_v))
+                for _k, _v in obj["globalObjectDeviceSummaries"].items()
+            )
+            if obj.get("globalObjectDeviceSummaries") is not None
+            else None,
+            "globalObjectSummaries": dict(
+                (_k, V1ExtranetsB2bPostRequestPolicyGlobalObjectDeviceSummariesValue.from_dict(_v))
+                for _k, _v in obj["globalObjectSummaries"].items()
+            )
+            if obj.get("globalObjectSummaries") is not None
+            else None,
             "natPools": obj.get("natPools"),
-            "prefixTags": [V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestServiceServicePrefixesInner.from_dict(_item) for _item in obj["prefixTags"]] if obj.get("prefixTags") is not None else None,
+            "prefixTags": [V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequestServiceServicePrefixesInner.from_dict(_item) for _item in obj["prefixTags"]] if obj.get("prefixTags") is not None else None,
             "profiles": [V1ExtranetsB2bPostRequestPolicyProfilesInner.from_dict(_item) for _item in obj["profiles"]] if obj.get("profiles") is not None else None,
             "serviceLanSegment": obj.get("serviceLanSegment"),
             "servicePrefixes": obj.get("servicePrefixes"),

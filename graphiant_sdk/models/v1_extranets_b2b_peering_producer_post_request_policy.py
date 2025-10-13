@@ -20,7 +20,8 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from graphiant_sdk.models.v1_extranets_b2b_consumer_post_request_site_information_inner import V1ExtranetsB2bConsumerPostRequestSiteInformationInner
-from graphiant_sdk.models.v1_extranets_b2b_peering_match_service_to_customer_put_request_service_service_prefixes_inner import V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestServiceServicePrefixesInner
+from graphiant_sdk.models.v1_extranets_b2b_peering_consumer_match_id_post_request_global_object_ops_value import V1ExtranetsB2bPeeringConsumerMatchIdPostRequestGlobalObjectOpsValue
+from graphiant_sdk.models.v1_extranets_b2b_peering_match_service_to_customer_post_request_service_service_prefixes_inner import V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequestServiceServicePrefixesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,11 +30,12 @@ class V1ExtranetsB2bPeeringProducerPostRequestPolicy(BaseModel):
     V1ExtranetsB2bPeeringProducerPostRequestPolicy
     """ # noqa: E501
     description: Optional[StrictStr] = None
-    prefix_tags: Optional[List[V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestServiceServicePrefixesInner]] = Field(default=None, alias="prefixTags")
+    global_object_ops: Optional[Dict[str, V1ExtranetsB2bPeeringConsumerMatchIdPostRequestGlobalObjectOpsValue]] = Field(default=None, alias="globalObjectOps")
+    prefix_tags: Optional[List[V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequestServiceServicePrefixesInner]] = Field(default=None, alias="prefixTags")
     service_lan_segment: Optional[StrictInt] = Field(default=None, alias="serviceLanSegment")
     site: Optional[List[V1ExtranetsB2bConsumerPostRequestSiteInformationInner]] = None
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["description", "prefixTags", "serviceLanSegment", "site", "type"]
+    __properties: ClassVar[List[str]] = ["description", "globalObjectOps", "prefixTags", "serviceLanSegment", "site", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -74,6 +76,13 @@ class V1ExtranetsB2bPeeringProducerPostRequestPolicy(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each value in global_object_ops (dict)
+        _field_dict = {}
+        if self.global_object_ops:
+            for _key_global_object_ops in self.global_object_ops:
+                if self.global_object_ops[_key_global_object_ops]:
+                    _field_dict[_key_global_object_ops] = self.global_object_ops[_key_global_object_ops].to_dict()
+            _dict['globalObjectOps'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each item in prefix_tags (list)
         _items = []
         if self.prefix_tags:
@@ -101,7 +110,13 @@ class V1ExtranetsB2bPeeringProducerPostRequestPolicy(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description"),
-            "prefixTags": [V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestServiceServicePrefixesInner.from_dict(_item) for _item in obj["prefixTags"]] if obj.get("prefixTags") is not None else None,
+            "globalObjectOps": dict(
+                (_k, V1ExtranetsB2bPeeringConsumerMatchIdPostRequestGlobalObjectOpsValue.from_dict(_v))
+                for _k, _v in obj["globalObjectOps"].items()
+            )
+            if obj.get("globalObjectOps") is not None
+            else None,
+            "prefixTags": [V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequestServiceServicePrefixesInner.from_dict(_item) for _item in obj["prefixTags"]] if obj.get("prefixTags") is not None else None,
             "serviceLanSegment": obj.get("serviceLanSegment"),
             "site": [V1ExtranetsB2bConsumerPostRequestSiteInformationInner.from_dict(_item) for _item in obj["site"]] if obj.get("site") is not None else None,
             "type": obj.get("type")

@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from graphiant_sdk.models.v1_extranets_b2b_peering_consumer_id_post_request_site_to_site_vpn_ipsec_gateway_details_routing_static import V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingStatic
+from graphiant_sdk.models.v1_extranets_b2b_peering_consumer_match_id_post_request_site_to_site_vpn_ipsec_gateway_details_routing_static import V1ExtranetsB2bPeeringConsumerMatchIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingStatic
 from graphiant_sdk.models.v1_extranets_get200_response_policies_inner_branches_excluded_devices_inner_ipsec_tunnels_inner_bgp import V1ExtranetsGet200ResponsePoliciesInnerBranchesExcludedDevicesInnerIpsecTunnelsInnerBgp
 from typing import Optional, Set
 from typing_extensions import Self
@@ -44,7 +44,7 @@ class V1ExtranetsGet200ResponsePoliciesInnerBranchesExcludedDevicesInnerIpsecTun
     remote_address_v4: Optional[StrictStr] = Field(default=None, alias="remoteAddressV4")
     remote_address_v6: Optional[StrictStr] = Field(default=None, alias="remoteAddressV6")
     remote_ike_peer_identity: Optional[StrictStr] = Field(default=None, alias="remoteIkePeerIdentity")
-    static: Optional[V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingStatic] = None
+    static: Optional[V1ExtranetsB2bPeeringConsumerMatchIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingStatic] = None
     tcp_mss: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="tcpMss")
     vpn_profile: Optional[StrictStr] = Field(default=None, alias="vpnProfile")
     __properties: ClassVar[List[str]] = ["bgp", "destinationAddress", "ikeInitiator", "ipsecLabel", "lan", "localAddressV4", "localAddressV6", "localCircuit", "localIkePeerIdentity", "mtu", "name", "presharedKey", "remoteAddressV4", "remoteAddressV6", "remoteIkePeerIdentity", "static", "tcpMss", "vpnProfile"]
@@ -121,7 +121,7 @@ class V1ExtranetsGet200ResponsePoliciesInnerBranchesExcludedDevicesInnerIpsecTun
             "remoteAddressV4": obj.get("remoteAddressV4"),
             "remoteAddressV6": obj.get("remoteAddressV6"),
             "remoteIkePeerIdentity": obj.get("remoteIkePeerIdentity"),
-            "static": V1ExtranetsB2bPeeringConsumerIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingStatic.from_dict(obj["static"]) if obj.get("static") is not None else None,
+            "static": V1ExtranetsB2bPeeringConsumerMatchIdPostRequestSiteToSiteVpnIpsecGatewayDetailsRoutingStatic.from_dict(obj["static"]) if obj.get("static") is not None else None,
             "tcpMss": obj.get("tcpMss"),
             "vpnProfile": obj.get("vpnProfile")
         })

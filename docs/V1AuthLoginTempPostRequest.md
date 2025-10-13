@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **str** |  | [optional] 
 **temp_password** | **str** |  | [optional] 
+**match_id** | **float** |  | [optional] 
 
 ## Example
 

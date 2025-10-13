@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,8 @@ class V1AuthLoginTempPostRequest(BaseModel):
     """ # noqa: E501
     email: Optional[StrictStr] = None
     temp_password: Optional[StrictStr] = Field(default=None, alias="tempPassword")
-    __properties: ClassVar[List[str]] = ["email", "tempPassword"]
+    match_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="matchId")
+    __properties: ClassVar[List[str]] = ["email", "tempPassword", "matchId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,7 +83,8 @@ class V1AuthLoginTempPostRequest(BaseModel):
 
         _obj = cls.model_validate({
             "email": obj.get("email"),
-            "tempPassword": obj.get("tempPassword")
+            "tempPassword": obj.get("tempPassword"),
+            "matchId": obj.get("matchId")
         })
         return _obj
 

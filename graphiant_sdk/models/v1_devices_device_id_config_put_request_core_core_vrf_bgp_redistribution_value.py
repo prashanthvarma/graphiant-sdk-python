@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from graphiant_sdk.models.v1_global_config_patch_request_snmps_value_config_notify_filter_profiles_value_notify_filter_profile_include_exclude_list_value import V1GlobalConfigPatchRequestSnmpsValueConfigNotifyFilterProfilesValueNotifyFilterProfileIncludeExcludeListValue
+from graphiant_sdk.models.v2_assistant_conversation_interface_state_get200_response import V2AssistantConversationInterfaceStateGet200Response
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpRedistributionValue(BaseMod
     """
     V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpRedistributionValue
     """ # noqa: E501
-    protocol: Optional[V1GlobalConfigPatchRequestSnmpsValueConfigNotifyFilterProfilesValueNotifyFilterProfileIncludeExcludeListValue] = None
+    protocol: Optional[V2AssistantConversationInterfaceStateGet200Response] = None
     __properties: ClassVar[List[str]] = ["protocol"]
 
     model_config = ConfigDict(
@@ -84,7 +84,7 @@ class V1DevicesDeviceIdConfigPutRequestCoreCoreVrfBgpRedistributionValue(BaseMod
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "protocol": V1GlobalConfigPatchRequestSnmpsValueConfigNotifyFilterProfilesValueNotifyFilterProfileIncludeExcludeListValue.from_dict(obj["protocol"]) if obj.get("protocol") is not None else None
+            "protocol": V2AssistantConversationInterfaceStateGet200Response.from_dict(obj["protocol"]) if obj.get("protocol") is not None else None
         })
         return _obj
 

@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from graphiant_sdk.models.v1_extranets_b2b_peering_match_service_to_customer_put_request_service import V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestService
+from graphiant_sdk.models.v1_extranets_b2b_peering_match_service_to_customer_post_request_service import V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequestService
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +27,9 @@ class V1ExtranetsB2bPeeringMatchServiceToCustomerPost200Response(BaseModel):
     """
     V1ExtranetsB2bPeeringMatchServiceToCustomerPost200Response
     """ # noqa: E501
-    service: Optional[List[V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestService]] = None
-    __properties: ClassVar[List[str]] = ["service"]
+    match_id: Optional[StrictInt] = Field(default=None, alias="matchId")
+    service: Optional[List[V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequestService]] = None
+    __properties: ClassVar[List[str]] = ["matchId", "service"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,7 +89,8 @@ class V1ExtranetsB2bPeeringMatchServiceToCustomerPost200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "service": [V1ExtranetsB2bPeeringMatchServiceToCustomerPutRequestService.from_dict(_item) for _item in obj["service"]] if obj.get("service") is not None else None
+            "matchId": obj.get("matchId"),
+            "service": [V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequestService.from_dict(_item) for _item in obj["service"]] if obj.get("service") is not None else None
         })
         return _obj
 

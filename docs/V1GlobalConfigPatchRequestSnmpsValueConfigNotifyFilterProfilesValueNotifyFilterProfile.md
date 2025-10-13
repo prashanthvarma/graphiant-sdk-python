@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**include_exclude_list** | [**Dict[str, V1GlobalConfigPatchRequestSnmpsValueConfigNotifyFilterProfilesValueNotifyFilterProfileIncludeExcludeListValue]**](V1GlobalConfigPatchRequestSnmpsValueConfigNotifyFilterProfilesValueNotifyFilterProfileIncludeExcludeListValue.md) |  | [optional] 
+**include_exclude_list** | [**Dict[str, V2AssistantConversationInterfaceStateGet200Response]**](V2AssistantConversationInterfaceStateGet200Response.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 
 ## Example
