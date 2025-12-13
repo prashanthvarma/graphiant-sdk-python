@@ -437,11 +437,15 @@ export GRAPHIANT_USERNAME="your_username"
 export GRAPHIANT_PASSWORD="your_password"
 ```
 
-```bash
-username = os.Getenv("GRAPHIANT_USERNAME")
-password = os.Getenv("GRAPHIANT_PASSWORD")
-host = os.Getenv("GRAPHIANT_HOST")
+```python
+import os
+
+username = os.getenv("GRAPHIANT_USERNAME")
+password = os.getenv("GRAPHIANT_PASSWORD")
+host = os.getenv("GRAPHIANT_HOST", "https://api.graphiant.com")
 ```
+
+**Note**: For detailed security policies, vulnerability reporting, and security best practices, see [SECURITY.md](SECURITY.md).
 
 ## 🤝 Contributing
 
@@ -463,6 +467,8 @@ We welcome contributions! Please follow these steps:
 6. Open a Pull Request
 
 **Note**: All pull requests automatically run CI/CD checks (linting, testing across multiple Python versions). Ensure all checks pass before requesting review.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed contribution guidelines.
 
 ## 📄 License
 
