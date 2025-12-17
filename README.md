@@ -82,13 +82,13 @@ except Exception as e:
     print(f"Failed to get device summary: {e}")
 ```
 
-## 🔄 Migration Guide: Upgrading from 25.10.2 to 25.11.1
+## 🔄 Migration Guide: Upgrading from 25.10.2 to 25.11.1+
 
-The 25.11.1 API is optimized to reuse redundant schemas, which results in changes to inner class types. You may need to update your existing scripts to use the newer class names.
+The 25.11.1+ API is optimized to reuse redundant schemas, which results in changes to inner class types. You may need to update your existing scripts to use the newer class names.
 
 ### Benefits of Upgrading
 
-The new API specification (25.11.1) brings significant improvements:
+The new API specification (25.11.1+) brings significant improvements:
 
 - **Reduced Specification Size**: The API specification file size has been reduced from **9.8M to 1.5M** (~85% reduction) through schema optimization and reuse
 - **Enhanced Documentation**: The new spec includes more comprehensive documentation for better developer experience
@@ -101,7 +101,7 @@ The new API specification (25.11.1) brings significant improvements:
 
 Response class names no longer include HTTP status codes. Update your imports and type references:
 
-**Before (25.10.2):**
+**Before (25.11.1):**
 ```python
 from graphiant_sdk.models.v1_edges_summary_get200_response import V1EdgesSummaryGet200Response
 from graphiant_sdk.models.v1_global_summary_post200_response import V1GlobalSummaryPost200Response
@@ -142,7 +142,7 @@ To find the new class name:
 
 **Example Migration:**
 
-**Before (25.10.2):**
+**Before (25.11.1):**
 ```python
 from graphiant_sdk.models.v1_global_summary_post200_response import V1GlobalSummaryPost200Response
 from graphiant_sdk.models.v1_global_summary_post200_response_summaries_inner import V1GlobalSummaryPost200ResponseSummariesInner
@@ -374,12 +374,12 @@ brew install openapi-generator  # macOS
 
 # Generate SDK
 openapi-generator generate \
-    -i graphiant_api_docs_v25.11.1.json \
+    -i graphiant_api_docs_v25.12.1.json \
     -g python \
     --git-user-id Graphiant-Inc \
     --git-repo-id graphiant-sdk-python \
     --package-name graphiant_sdk \
-    --additional-properties=packageVersion=25.11.1
+    --additional-properties=packageVersion=25.12.1
 ```
 
 > **Note**: Latest API documentation can be downloaded from the Graphiant portal under "Support Hub" > "Developer Tools".
