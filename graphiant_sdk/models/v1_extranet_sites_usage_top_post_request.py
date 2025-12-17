@@ -27,11 +27,11 @@ class V1ExtranetSitesUsageTopPostRequest(BaseModel):
     """
     V1ExtranetSitesUsageTopPostRequest
     """ # noqa: E501
-    id: Optional[StrictInt] = None
-    is_b2_b: Optional[StrictBool] = Field(default=None, alias="isB2B")
-    is_provider: Optional[StrictBool] = Field(default=None, alias="isProvider")
+    id: StrictInt = Field(description="the id associated with an entity - consumer_id for consumer, and service_id for the producer/service (required)")
+    is_b2_b: StrictBool = Field(description="whether the entity is a b2b entity (true for b2b entity, false for local extranet entity) (required)", alias="isB2B")
+    is_provider: StrictBool = Field(description="whether the entity is a provider or consumer (required)", alias="isProvider")
     service_id: Optional[StrictInt] = Field(default=None, alias="serviceId")
-    time_window: Optional[StatsmonTimeWindow] = Field(default=None, alias="timeWindow")
+    time_window: StatsmonTimeWindow = Field(alias="timeWindow")
     __properties: ClassVar[List[str]] = ["id", "isB2B", "isProvider", "serviceId", "timeWindow"]
 
     model_config = ConfigDict(

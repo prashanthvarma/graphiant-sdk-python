@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | id of consumer or lan segment  | [optional] 
-**name** | **str** |  | [optional] 
+**id** | **int** | id of the entity | [optional] 
+**name** | **str** | name of the entity | [optional] 
 **usage** | **float** | usage in kbps | [optional] 
 
 ## Example

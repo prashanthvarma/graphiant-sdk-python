@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **str** |  | [optional] 
-**status** | **str** |  | [optional] 
+**address** | **str** | the IP address of the server | [optional] 
+**status** | **str** | the health status of the server (Healthy, Impaired, Down) | [optional] 
 
 ## Example
 

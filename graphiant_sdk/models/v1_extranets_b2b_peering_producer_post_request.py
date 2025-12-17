@@ -27,9 +27,9 @@ class V1ExtranetsB2bPeeringProducerPostRequest(BaseModel):
     """
     V1ExtranetsB2bPeeringProducerPostRequest
     """ # noqa: E501
-    policy: Optional[ManaV2B2bExtranetPeeringServiceProducerPolicy] = None
+    policy: ManaV2B2bExtranetPeeringServiceProducerPolicy
     service_name: Optional[StrictStr] = Field(default=None, alias="serviceName")
-    type: Optional[StrictStr] = None
+    type: StrictStr = Field(description="Type of the service whether it is application or peering (required)")
     __properties: ClassVar[List[str]] = ["policy", "serviceName", "type"]
 
     model_config = ConfigDict(

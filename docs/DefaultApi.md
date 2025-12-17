@@ -190,6 +190,7 @@ Method | HTTP request | Description
 [**v1_edges_hardware_assigned_get**](DefaultApi.md#v1_edges_hardware_assigned_get) | **GET** /v1/edges-hardware/assigned | 
 [**v1_edges_hardware_unassigned_get**](DefaultApi.md#v1_edges_hardware_unassigned_get) | **GET** /v1/edges-hardware/unassigned | 
 [**v1_edges_summary_get**](DefaultApi.md#v1_edges_summary_get) | **GET** /v1/edges-summary | 
+[**v1_edges_summary_post**](DefaultApi.md#v1_edges_summary_post) | **POST** /v1/edges-summary | 
 [**v1_enterprise_allocation_get**](DefaultApi.md#v1_enterprise_allocation_get) | **GET** /v1/enterprise/allocation | 
 [**v1_enterprise_configuration_get**](DefaultApi.md#v1_enterprise_configuration_get) | **GET** /v1/enterprise/configuration | 
 [**v1_enterprise_configuration_put**](DefaultApi.md#v1_enterprise_configuration_put) | **PUT** /v1/enterprise/configuration | 
@@ -300,6 +301,9 @@ Method | HTTP request | Description
 [**v1_global_lan_segments_id_delete**](DefaultApi.md#v1_global_lan_segments_id_delete) | **DELETE** /v1/global/lan-segments/{id} | 
 [**v1_global_lan_segments_post**](DefaultApi.md#v1_global_lan_segments_post) | **POST** /v1/global/lan-segments | 
 [**v1_global_lan_segments_vrf_id_devices_get**](DefaultApi.md#v1_global_lan_segments_vrf_id_devices_get) | **GET** /v1/global/lan-segments/{vrfId}/devices | 
+[**v1_global_ntps_device_get**](DefaultApi.md#v1_global_ntps_device_get) | **GET** /v1/global/ntps/device | 
+[**v1_global_ntps_post**](DefaultApi.md#v1_global_ntps_post) | **POST** /v1/global/ntps | 
+[**v1_global_ntps_site_get**](DefaultApi.md#v1_global_ntps_site_get) | **GET** /v1/global/ntps/site | 
 [**v1_global_prefix_sets_device_get**](DefaultApi.md#v1_global_prefix_sets_device_get) | **GET** /v1/global/prefix-sets/device | 
 [**v1_global_prefix_sets_post**](DefaultApi.md#v1_global_prefix_sets_post) | **POST** /v1/global/prefix-sets | 
 [**v1_global_prefix_sets_site_get**](DefaultApi.md#v1_global_prefix_sets_site_get) | **GET** /v1/global/prefix-sets/site | 
@@ -524,7 +528,7 @@ Method | HTTP request | Description
 
 
 # **v1_account_email_patch**
-> object v1_account_email_patch(authorization, v1_account_email_patch_request)
+> v1_account_email_patch(authorization, v1_account_email_patch_request)
 
 Update user's email address with verification.
 
@@ -563,9 +567,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_account_email_patch_request = graphiant_sdk.V1AccountEmailPatchRequest() # V1AccountEmailPatchRequest | 
 
     try:
-        api_response = api_instance.v1_account_email_patch(authorization, v1_account_email_patch_request)
-        print("The response of DefaultApi->v1_account_email_patch:\n")
-        pprint(api_response)
+        api_instance.v1_account_email_patch(authorization, v1_account_email_patch_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_account_email_patch: %s\n" % e)
 ```
@@ -582,7 +584,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -591,7 +593,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -602,7 +604,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_account_info_patch**
-> object v1_account_info_patch(authorization, v1_account_info_patch_request)
+> v1_account_info_patch(authorization, v1_account_info_patch_request)
 
 Update current user's profile information.
 
@@ -641,9 +643,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_account_info_patch_request = graphiant_sdk.V1AccountInfoPatchRequest() # V1AccountInfoPatchRequest | 
 
     try:
-        api_response = api_instance.v1_account_info_patch(authorization, v1_account_info_patch_request)
-        print("The response of DefaultApi->v1_account_info_patch:\n")
-        pprint(api_response)
+        api_instance.v1_account_info_patch(authorization, v1_account_info_patch_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_account_info_patch: %s\n" % e)
 ```
@@ -660,7 +660,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -669,7 +669,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -759,7 +759,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_account_mfa_delete**
-> object v1_account_mfa_delete(authorization)
+> v1_account_mfa_delete(authorization)
 
 Remove user's MFA enrollment.
 
@@ -796,9 +796,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
 
     try:
-        api_response = api_instance.v1_account_mfa_delete(authorization)
-        print("The response of DefaultApi->v1_account_mfa_delete:\n")
-        pprint(api_response)
+        api_instance.v1_account_mfa_delete(authorization)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_account_mfa_delete: %s\n" % e)
 ```
@@ -814,7 +812,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -823,7 +821,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -989,7 +987,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_account_password_patch**
-> object v1_account_password_patch(authorization, v1_account_password_patch_request)
+> v1_account_password_patch(authorization, v1_account_password_patch_request)
 
 Change user password with current password verification (Graphiant cloud only).
 
@@ -1028,9 +1026,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_account_password_patch_request = graphiant_sdk.V1AccountPasswordPatchRequest() # V1AccountPasswordPatchRequest | 
 
     try:
-        api_response = api_instance.v1_account_password_patch(authorization, v1_account_password_patch_request)
-        print("The response of DefaultApi->v1_account_password_patch:\n")
-        pprint(api_response)
+        api_instance.v1_account_password_patch(authorization, v1_account_password_patch_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_account_password_patch: %s\n" % e)
 ```
@@ -1047,7 +1043,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -1056,7 +1052,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -1218,7 +1214,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_alarm_mute_alarm_id_put**
-> object v1_alarm_mute_alarm_id_put(authorization, alarm_id, v1_alarm_mute_alarm_id_put_request)
+> v1_alarm_mute_alarm_id_put(authorization, alarm_id, v1_alarm_mute_alarm_id_put_request)
 
 ### Example
 
@@ -1256,9 +1252,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_alarm_mute_alarm_id_put_request = graphiant_sdk.V1AlarmMuteAlarmIdPutRequest() # V1AlarmMuteAlarmIdPutRequest | 
 
     try:
-        api_response = api_instance.v1_alarm_mute_alarm_id_put(authorization, alarm_id, v1_alarm_mute_alarm_id_put_request)
-        print("The response of DefaultApi->v1_alarm_mute_alarm_id_put:\n")
-        pprint(api_response)
+        api_instance.v1_alarm_mute_alarm_id_put(authorization, alarm_id, v1_alarm_mute_alarm_id_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_alarm_mute_alarm_id_put: %s\n" % e)
 ```
@@ -1276,7 +1270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -1285,7 +1279,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -1918,7 +1912,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_auth_delete**
-> V1AuthDeleteResponse v1_auth_delete(authorization)
+> v1_auth_delete(authorization)
 
 Remove Identity Provider configuration and revert to default authentication.
 
@@ -1928,7 +1922,6 @@ Remove Identity Provider configuration and revert to default authentication.
 
 ```python
 import graphiant_sdk
-from graphiant_sdk.models.v1_auth_delete_response import V1AuthDeleteResponse
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -1956,9 +1949,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
 
     try:
-        api_response = api_instance.v1_auth_delete(authorization)
-        print("The response of DefaultApi->v1_auth_delete:\n")
-        pprint(api_response)
+        api_instance.v1_auth_delete(authorization)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_auth_delete: %s\n" % e)
 ```
@@ -1974,7 +1965,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1AuthDeleteResponse**](V1AuthDeleteResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -1983,7 +1974,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -2527,7 +2518,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_auth_mfa_delete**
-> object v1_auth_mfa_delete(authorization)
+> v1_auth_mfa_delete(authorization)
 
 Remove Multi-Factor Authentication enrollment for the tenant.
 
@@ -2564,9 +2555,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
 
     try:
-        api_response = api_instance.v1_auth_mfa_delete(authorization)
-        print("The response of DefaultApi->v1_auth_mfa_delete:\n")
-        pprint(api_response)
+        api_instance.v1_auth_mfa_delete(authorization)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_auth_mfa_delete: %s\n" % e)
 ```
@@ -2582,7 +2571,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -2591,7 +2580,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -2602,7 +2591,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_auth_mfa_patch**
-> object v1_auth_mfa_patch(authorization, v1_auth_mfa_patch_request)
+> v1_auth_mfa_patch(authorization, v1_auth_mfa_patch_request)
 
 Enroll tenant in Multi-Factor Authentication (SMS, GoogleAuth).
 
@@ -2641,9 +2630,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_auth_mfa_patch_request = graphiant_sdk.V1AuthMfaPatchRequest() # V1AuthMfaPatchRequest | 
 
     try:
-        api_response = api_instance.v1_auth_mfa_patch(authorization, v1_auth_mfa_patch_request)
-        print("The response of DefaultApi->v1_auth_mfa_patch:\n")
-        pprint(api_response)
+        api_instance.v1_auth_mfa_patch(authorization, v1_auth_mfa_patch_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_auth_mfa_patch: %s\n" % e)
 ```
@@ -2660,7 +2647,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -2669,7 +2656,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -2833,7 +2820,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_auth_mfa_types_put**
-> object v1_auth_mfa_types_put(authorization, v1_auth_mfa_types_put_request)
+> v1_auth_mfa_types_put(authorization, v1_auth_mfa_types_put_request)
 
 Update enterprise MFA policy to allow/disallow specific MFA types.
 
@@ -2872,9 +2859,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_auth_mfa_types_put_request = graphiant_sdk.V1AuthMfaTypesPutRequest() # V1AuthMfaTypesPutRequest | 
 
     try:
-        api_response = api_instance.v1_auth_mfa_types_put(authorization, v1_auth_mfa_types_put_request)
-        print("The response of DefaultApi->v1_auth_mfa_types_put:\n")
-        pprint(api_response)
+        api_instance.v1_auth_mfa_types_put(authorization, v1_auth_mfa_types_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_auth_mfa_types_put: %s\n" % e)
 ```
@@ -2891,7 +2876,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -2900,7 +2885,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -2911,7 +2896,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_auth_patch**
-> V1AuthPatchResponse v1_auth_patch(authorization, v1_auth_patch_request)
+> v1_auth_patch(authorization, v1_auth_patch_request)
 
 Update Identity Provider configuration (certificates, endpoints, etc.).
 
@@ -2922,7 +2907,6 @@ Update Identity Provider configuration (certificates, endpoints, etc.).
 ```python
 import graphiant_sdk
 from graphiant_sdk.models.v1_auth_patch_request import V1AuthPatchRequest
-from graphiant_sdk.models.v1_auth_patch_response import V1AuthPatchResponse
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -2951,9 +2935,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_auth_patch_request = graphiant_sdk.V1AuthPatchRequest() # V1AuthPatchRequest | 
 
     try:
-        api_response = api_instance.v1_auth_patch(authorization, v1_auth_patch_request)
-        print("The response of DefaultApi->v1_auth_patch:\n")
-        pprint(api_response)
+        api_instance.v1_auth_patch(authorization, v1_auth_patch_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_auth_patch: %s\n" % e)
 ```
@@ -2970,7 +2952,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1AuthPatchResponse**](V1AuthPatchResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -2979,7 +2961,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -2990,7 +2972,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_auth_put**
-> V1AuthPutResponse v1_auth_put(authorization, v1_auth_put_request)
+> v1_auth_put(authorization, v1_auth_put_request)
 
 Configure Identity Provider (SAML) for enterprise. Creates IDP configuration affecting all users in the enterprise.
 
@@ -3001,7 +2983,6 @@ Configure Identity Provider (SAML) for enterprise. Creates IDP configuration aff
 ```python
 import graphiant_sdk
 from graphiant_sdk.models.v1_auth_put_request import V1AuthPutRequest
-from graphiant_sdk.models.v1_auth_put_response import V1AuthPutResponse
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -3030,9 +3011,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_auth_put_request = graphiant_sdk.V1AuthPutRequest() # V1AuthPutRequest | 
 
     try:
-        api_response = api_instance.v1_auth_put(authorization, v1_auth_put_request)
-        print("The response of DefaultApi->v1_auth_put:\n")
-        pprint(api_response)
+        api_instance.v1_auth_put(authorization, v1_auth_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_auth_put: %s\n" % e)
 ```
@@ -3049,7 +3028,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1AuthPutResponse**](V1AuthPutResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -3058,7 +3037,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -8769,7 +8748,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_device_snapshot_snapshot_id_delete**
-> object v1_device_snapshot_snapshot_id_delete(authorization, snapshot_id)
+> v1_device_snapshot_snapshot_id_delete(authorization, snapshot_id)
 
 Delete specified device snapshot
 
@@ -8807,9 +8786,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     snapshot_id = 1234567891011 # int | 
 
     try:
-        api_response = api_instance.v1_device_snapshot_snapshot_id_delete(authorization, snapshot_id)
-        print("The response of DefaultApi->v1_device_snapshot_snapshot_id_delete:\n")
-        pprint(api_response)
+        api_instance.v1_device_snapshot_snapshot_id_delete(authorization, snapshot_id)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_device_snapshot_snapshot_id_delete: %s\n" % e)
 ```
@@ -8826,7 +8803,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -8835,7 +8812,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -9077,7 +9054,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_devices_bringup_put**
-> object v1_devices_bringup_put(authorization, v1_devices_bringup_put_request)
+> v1_devices_bringup_put(authorization, v1_devices_bringup_put_request)
 
 ### Example
 
@@ -9114,9 +9091,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_devices_bringup_put_request = graphiant_sdk.V1DevicesBringupPutRequest() # V1DevicesBringupPutRequest | 
 
     try:
-        api_response = api_instance.v1_devices_bringup_put(authorization, v1_devices_bringup_put_request)
-        print("The response of DefaultApi->v1_devices_bringup_put:\n")
-        pprint(api_response)
+        api_instance.v1_devices_bringup_put(authorization, v1_devices_bringup_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_devices_bringup_put: %s\n" % e)
 ```
@@ -9133,7 +9108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -9142,7 +9117,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -9858,7 +9833,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_devices_device_id_draft_delete**
-> object v1_devices_device_id_draft_delete(authorization, device_id)
+> v1_devices_device_id_draft_delete(authorization, device_id)
 
 Delete draft configuration
 
@@ -9896,9 +9871,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     device_id = 1234567891011 # int | 
 
     try:
-        api_response = api_instance.v1_devices_device_id_draft_delete(authorization, device_id)
-        print("The response of DefaultApi->v1_devices_device_id_draft_delete:\n")
-        pprint(api_response)
+        api_instance.v1_devices_device_id_draft_delete(authorization, device_id)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_devices_device_id_draft_delete: %s\n" % e)
 ```
@@ -9915,7 +9888,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -9924,7 +9897,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -11795,7 +11768,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_devices_inventory_enterprise_put**
-> object v1_devices_inventory_enterprise_put(authorization, v1_devices_inventory_enterprise_put_request)
+> v1_devices_inventory_enterprise_put(authorization, v1_devices_inventory_enterprise_put_request)
 
 ### Example
 
@@ -11832,9 +11805,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_devices_inventory_enterprise_put_request = graphiant_sdk.V1DevicesInventoryEnterprisePutRequest() # V1DevicesInventoryEnterprisePutRequest | 
 
     try:
-        api_response = api_instance.v1_devices_inventory_enterprise_put(authorization, v1_devices_inventory_enterprise_put_request)
-        print("The response of DefaultApi->v1_devices_inventory_enterprise_put:\n")
-        pprint(api_response)
+        api_instance.v1_devices_inventory_enterprise_put(authorization, v1_devices_inventory_enterprise_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_devices_inventory_enterprise_put: %s\n" % e)
 ```
@@ -11851,7 +11822,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -11860,7 +11831,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -12098,7 +12069,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_devices_inventory_serial_num_delete**
-> object v1_devices_inventory_serial_num_delete(authorization, device_serials=device_serials)
+> v1_devices_inventory_serial_num_delete(authorization, device_serials=device_serials)
 
 ### Example
 
@@ -12134,9 +12105,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     device_serials = ['device_serials_example'] # List[str] |  (optional)
 
     try:
-        api_response = api_instance.v1_devices_inventory_serial_num_delete(authorization, device_serials=device_serials)
-        print("The response of DefaultApi->v1_devices_inventory_serial_num_delete:\n")
-        pprint(api_response)
+        api_instance.v1_devices_inventory_serial_num_delete(authorization, device_serials=device_serials)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_devices_inventory_serial_num_delete: %s\n" % e)
 ```
@@ -12153,7 +12122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -12162,7 +12131,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -12957,7 +12926,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_devices_upgrade_cancel_put**
-> object v1_devices_upgrade_cancel_put(authorization, v1_devices_upgrade_cancel_put_request)
+> v1_devices_upgrade_cancel_put(authorization, v1_devices_upgrade_cancel_put_request)
 
 ### Example
 
@@ -12994,9 +12963,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_devices_upgrade_cancel_put_request = graphiant_sdk.V1DevicesUpgradeCancelPutRequest() # V1DevicesUpgradeCancelPutRequest | 
 
     try:
-        api_response = api_instance.v1_devices_upgrade_cancel_put(authorization, v1_devices_upgrade_cancel_put_request)
-        print("The response of DefaultApi->v1_devices_upgrade_cancel_put:\n")
-        pprint(api_response)
+        api_instance.v1_devices_upgrade_cancel_put(authorization, v1_devices_upgrade_cancel_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_devices_upgrade_cancel_put: %s\n" % e)
 ```
@@ -13013,7 +12980,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -13022,7 +12989,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -13033,7 +13000,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_devices_upgrade_schedule_put**
-> object v1_devices_upgrade_schedule_put(authorization, v1_devices_upgrade_schedule_put_request)
+> v1_devices_upgrade_schedule_put(authorization, v1_devices_upgrade_schedule_put_request)
 
 ### Example
 
@@ -13070,9 +13037,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_devices_upgrade_schedule_put_request = graphiant_sdk.V1DevicesUpgradeSchedulePutRequest() # V1DevicesUpgradeSchedulePutRequest | 
 
     try:
-        api_response = api_instance.v1_devices_upgrade_schedule_put(authorization, v1_devices_upgrade_schedule_put_request)
-        print("The response of DefaultApi->v1_devices_upgrade_schedule_put:\n")
-        pprint(api_response)
+        api_instance.v1_devices_upgrade_schedule_put(authorization, v1_devices_upgrade_schedule_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_devices_upgrade_schedule_put: %s\n" % e)
 ```
@@ -13089,7 +13054,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -13098,7 +13063,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -13190,7 +13155,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_diagnostic_archive_delete_archive_id_delete**
-> object v1_diagnostic_archive_delete_archive_id_delete(authorization, archive_id)
+> v1_diagnostic_archive_delete_archive_id_delete(authorization, archive_id)
 
 Delete a device debug archive
 
@@ -13228,9 +13193,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     archive_id = 1000000 # int | Unique identifier for a specific archive
 
     try:
-        api_response = api_instance.v1_diagnostic_archive_delete_archive_id_delete(authorization, archive_id)
-        print("The response of DefaultApi->v1_diagnostic_archive_delete_archive_id_delete:\n")
-        pprint(api_response)
+        api_instance.v1_diagnostic_archive_delete_archive_id_delete(authorization, archive_id)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_diagnostic_archive_delete_archive_id_delete: %s\n" % e)
 ```
@@ -13247,7 +13210,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -13256,7 +13219,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -13267,7 +13230,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_diagnostic_archive_edit_archive_id_put**
-> object v1_diagnostic_archive_edit_archive_id_put(authorization, archive_id, v1_diagnostic_archive_edit_archive_id_put_request)
+> v1_diagnostic_archive_edit_archive_id_put(authorization, archive_id, v1_diagnostic_archive_edit_archive_id_put_request)
 
 Edit metadata for a previously generated device debug archive
 
@@ -13307,9 +13270,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_diagnostic_archive_edit_archive_id_put_request = graphiant_sdk.V1DiagnosticArchiveEditArchiveIdPutRequest() # V1DiagnosticArchiveEditArchiveIdPutRequest | 
 
     try:
-        api_response = api_instance.v1_diagnostic_archive_edit_archive_id_put(authorization, archive_id, v1_diagnostic_archive_edit_archive_id_put_request)
-        print("The response of DefaultApi->v1_diagnostic_archive_edit_archive_id_put:\n")
-        pprint(api_response)
+        api_instance.v1_diagnostic_archive_edit_archive_id_put(authorization, archive_id, v1_diagnostic_archive_edit_archive_id_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_diagnostic_archive_edit_archive_id_put: %s\n" % e)
 ```
@@ -13327,7 +13288,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -13336,7 +13297,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -13425,7 +13386,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_diagnostic_bgp_reset_device_id_put**
-> object v1_diagnostic_bgp_reset_device_id_put(authorization, device_id, v1_diagnostic_bgp_reset_device_id_put_request)
+> v1_diagnostic_bgp_reset_device_id_put(authorization, device_id, v1_diagnostic_bgp_reset_device_id_put_request)
 
 Reset a BGP neighbor
 
@@ -13465,9 +13426,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_diagnostic_bgp_reset_device_id_put_request = graphiant_sdk.V1DiagnosticBgpResetDeviceIdPutRequest() # V1DiagnosticBgpResetDeviceIdPutRequest | 
 
     try:
-        api_response = api_instance.v1_diagnostic_bgp_reset_device_id_put(authorization, device_id, v1_diagnostic_bgp_reset_device_id_put_request)
-        print("The response of DefaultApi->v1_diagnostic_bgp_reset_device_id_put:\n")
-        pprint(api_response)
+        api_instance.v1_diagnostic_bgp_reset_device_id_put(authorization, device_id, v1_diagnostic_bgp_reset_device_id_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_diagnostic_bgp_reset_device_id_put: %s\n" % e)
 ```
@@ -13485,7 +13444,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -13494,7 +13453,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -13505,7 +13464,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_diagnostic_clear_arp_device_id_put**
-> object v1_diagnostic_clear_arp_device_id_put(authorization, device_id, v1_diagnostic_clear_arp_device_id_put_request)
+> v1_diagnostic_clear_arp_device_id_put(authorization, device_id, v1_diagnostic_clear_arp_device_id_put_request)
 
 Clear arp entries
 
@@ -13545,9 +13504,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_diagnostic_clear_arp_device_id_put_request = graphiant_sdk.V1DiagnosticClearArpDeviceIdPutRequest() # V1DiagnosticClearArpDeviceIdPutRequest | 
 
     try:
-        api_response = api_instance.v1_diagnostic_clear_arp_device_id_put(authorization, device_id, v1_diagnostic_clear_arp_device_id_put_request)
-        print("The response of DefaultApi->v1_diagnostic_clear_arp_device_id_put:\n")
-        pprint(api_response)
+        api_instance.v1_diagnostic_clear_arp_device_id_put(authorization, device_id, v1_diagnostic_clear_arp_device_id_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_diagnostic_clear_arp_device_id_put: %s\n" % e)
 ```
@@ -13565,7 +13522,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -13574,7 +13531,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -13661,7 +13618,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_diagnostic_interface_reset_device_id_put**
-> object v1_diagnostic_interface_reset_device_id_put(authorization, device_id, v1_diagnostic_interface_reset_device_id_put_request)
+> v1_diagnostic_interface_reset_device_id_put(authorization, device_id, v1_diagnostic_interface_reset_device_id_put_request)
 
 Reset an interface
 
@@ -13701,9 +13658,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_diagnostic_interface_reset_device_id_put_request = graphiant_sdk.V1DiagnosticInterfaceResetDeviceIdPutRequest() # V1DiagnosticInterfaceResetDeviceIdPutRequest | 
 
     try:
-        api_response = api_instance.v1_diagnostic_interface_reset_device_id_put(authorization, device_id, v1_diagnostic_interface_reset_device_id_put_request)
-        print("The response of DefaultApi->v1_diagnostic_interface_reset_device_id_put:\n")
-        pprint(api_response)
+        api_instance.v1_diagnostic_interface_reset_device_id_put(authorization, device_id, v1_diagnostic_interface_reset_device_id_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_diagnostic_interface_reset_device_id_put: %s\n" % e)
 ```
@@ -13721,7 +13676,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -13730,7 +13685,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -13976,7 +13931,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_diagnostic_packetcapture_stop_post**
-> object v1_diagnostic_packetcapture_stop_post(authorization, v1_diagnostic_packetcapture_stop_post_request)
+> v1_diagnostic_packetcapture_stop_post(authorization, v1_diagnostic_packetcapture_stop_post_request)
 
 Stop packet capture
 
@@ -14015,9 +13970,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_diagnostic_packetcapture_stop_post_request = graphiant_sdk.V1DiagnosticPacketcaptureStopPostRequest() # V1DiagnosticPacketcaptureStopPostRequest | 
 
     try:
-        api_response = api_instance.v1_diagnostic_packetcapture_stop_post(authorization, v1_diagnostic_packetcapture_stop_post_request)
-        print("The response of DefaultApi->v1_diagnostic_packetcapture_stop_post:\n")
-        pprint(api_response)
+        api_instance.v1_diagnostic_packetcapture_stop_post(authorization, v1_diagnostic_packetcapture_stop_post_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_diagnostic_packetcapture_stop_post: %s\n" % e)
 ```
@@ -14034,7 +13987,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -14043,7 +13996,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -14054,7 +14007,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_diagnostic_ping_pause_resume_post**
-> V1DiagnosticPingPauseResumePostResponse v1_diagnostic_ping_pause_resume_post(authorization, v1_diagnostic_ping_pause_resume_post_request)
+> v1_diagnostic_ping_pause_resume_post(authorization, v1_diagnostic_ping_pause_resume_post_request)
 
 Pause and/or Resume a ping session
 
@@ -14065,7 +14018,6 @@ Pause and/or Resume a ping session
 ```python
 import graphiant_sdk
 from graphiant_sdk.models.v1_diagnostic_ping_pause_resume_post_request import V1DiagnosticPingPauseResumePostRequest
-from graphiant_sdk.models.v1_diagnostic_ping_pause_resume_post_response import V1DiagnosticPingPauseResumePostResponse
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -14094,9 +14046,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_diagnostic_ping_pause_resume_post_request = graphiant_sdk.V1DiagnosticPingPauseResumePostRequest() # V1DiagnosticPingPauseResumePostRequest | 
 
     try:
-        api_response = api_instance.v1_diagnostic_ping_pause_resume_post(authorization, v1_diagnostic_ping_pause_resume_post_request)
-        print("The response of DefaultApi->v1_diagnostic_ping_pause_resume_post:\n")
-        pprint(api_response)
+        api_instance.v1_diagnostic_ping_pause_resume_post(authorization, v1_diagnostic_ping_pause_resume_post_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_diagnostic_ping_pause_resume_post: %s\n" % e)
 ```
@@ -14113,7 +14063,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1DiagnosticPingPauseResumePostResponse**](V1DiagnosticPingPauseResumePostResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -14122,7 +14072,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -14212,7 +14162,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_diagnostic_ping_stop_token_post**
-> object v1_diagnostic_ping_stop_token_post(authorization, token, body)
+> v1_diagnostic_ping_stop_token_post(authorization, token, body)
 
 Stop ping session
 
@@ -14251,9 +14201,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     body = None # object | 
 
     try:
-        api_response = api_instance.v1_diagnostic_ping_stop_token_post(authorization, token, body)
-        print("The response of DefaultApi->v1_diagnostic_ping_stop_token_post:\n")
-        pprint(api_response)
+        api_instance.v1_diagnostic_ping_stop_token_post(authorization, token, body)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_diagnostic_ping_stop_token_post: %s\n" % e)
 ```
@@ -14271,7 +14219,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -14280,7 +14228,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -14291,7 +14239,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_diagnostic_reboot_device_id_put**
-> object v1_diagnostic_reboot_device_id_put(authorization, device_id, v1_diagnostic_reboot_device_id_put_request)
+> v1_diagnostic_reboot_device_id_put(authorization, device_id, v1_diagnostic_reboot_device_id_put_request)
 
 Trigger a device reboot
 
@@ -14331,9 +14279,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_diagnostic_reboot_device_id_put_request = graphiant_sdk.V1DiagnosticRebootDeviceIdPutRequest() # V1DiagnosticRebootDeviceIdPutRequest | 
 
     try:
-        api_response = api_instance.v1_diagnostic_reboot_device_id_put(authorization, device_id, v1_diagnostic_reboot_device_id_put_request)
-        print("The response of DefaultApi->v1_diagnostic_reboot_device_id_put:\n")
-        pprint(api_response)
+        api_instance.v1_diagnostic_reboot_device_id_put(authorization, device_id, v1_diagnostic_reboot_device_id_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_diagnostic_reboot_device_id_put: %s\n" % e)
 ```
@@ -14351,7 +14297,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -14360,7 +14306,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -14371,7 +14317,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_diagnostic_reset_ipsec_session_device_id_put**
-> object v1_diagnostic_reset_ipsec_session_device_id_put(authorization, device_id, v1_diagnostic_reset_ipsec_session_device_id_put_request)
+> v1_diagnostic_reset_ipsec_session_device_id_put(authorization, device_id, v1_diagnostic_reset_ipsec_session_device_id_put_request)
 
 Reset IPSec sessions
 
@@ -14411,9 +14357,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_diagnostic_reset_ipsec_session_device_id_put_request = graphiant_sdk.V1DiagnosticResetIpsecSessionDeviceIdPutRequest() # V1DiagnosticResetIpsecSessionDeviceIdPutRequest | 
 
     try:
-        api_response = api_instance.v1_diagnostic_reset_ipsec_session_device_id_put(authorization, device_id, v1_diagnostic_reset_ipsec_session_device_id_put_request)
-        print("The response of DefaultApi->v1_diagnostic_reset_ipsec_session_device_id_put:\n")
-        pprint(api_response)
+        api_instance.v1_diagnostic_reset_ipsec_session_device_id_put(authorization, device_id, v1_diagnostic_reset_ipsec_session_device_id_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_diagnostic_reset_ipsec_session_device_id_put: %s\n" % e)
 ```
@@ -14431,7 +14375,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -14440,7 +14384,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -15061,6 +15005,83 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **v1_edges_summary_post**
+> V1EdgesSummaryPostResponse v1_edges_summary_post(authorization, v1_edges_summary_post_request)
+
+### Example
+
+* Api Key Authentication (jwtAuth):
+
+```python
+import graphiant_sdk
+from graphiant_sdk.models.v1_edges_summary_post_request import V1EdgesSummaryPostRequest
+from graphiant_sdk.models.v1_edges_summary_post_response import V1EdgesSummaryPostResponse
+from graphiant_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.graphiant.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = graphiant_sdk.Configuration(
+    host = "https://api.graphiant.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtAuth
+configuration.api_key['jwtAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with graphiant_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = graphiant_sdk.DefaultApi(api_client)
+    authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
+    v1_edges_summary_post_request = graphiant_sdk.V1EdgesSummaryPostRequest() # V1EdgesSummaryPostRequest | 
+
+    try:
+        api_response = api_instance.v1_edges_summary_post(authorization, v1_edges_summary_post_request)
+        print("The response of DefaultApi->v1_edges_summary_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DefaultApi->v1_edges_summary_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
+ **v1_edges_summary_post_request** | [**V1EdgesSummaryPostRequest**](V1EdgesSummaryPostRequest.md)|  | 
+
+### Return type
+
+[**V1EdgesSummaryPostResponse**](V1EdgesSummaryPostResponse.md)
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **v1_enterprise_allocation_get**
 > V1EnterpriseAllocationGetResponse v1_enterprise_allocation_get(authorization)
 
@@ -15524,7 +15545,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_enterprises_enterprise_id_delete**
-> V1EnterprisesEnterpriseIdDeleteResponse v1_enterprises_enterprise_id_delete(authorization, enterprise_id)
+> v1_enterprises_enterprise_id_delete(authorization, enterprise_id)
 
 Delete a specific enterprise by ID (you must manage this tenant).
 
@@ -15534,7 +15555,6 @@ Delete a specific enterprise by ID (you must manage this tenant).
 
 ```python
 import graphiant_sdk
-from graphiant_sdk.models.v1_enterprises_enterprise_id_delete_response import V1EnterprisesEnterpriseIdDeleteResponse
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -15563,9 +15583,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     enterprise_id = 1234567891011 # int | 
 
     try:
-        api_response = api_instance.v1_enterprises_enterprise_id_delete(authorization, enterprise_id)
-        print("The response of DefaultApi->v1_enterprises_enterprise_id_delete:\n")
-        pprint(api_response)
+        api_instance.v1_enterprises_enterprise_id_delete(authorization, enterprise_id)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_enterprises_enterprise_id_delete: %s\n" % e)
 ```
@@ -15582,7 +15600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1EnterprisesEnterpriseIdDeleteResponse**](V1EnterprisesEnterpriseIdDeleteResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -15591,7 +15609,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -15678,7 +15696,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_enterprises_eula_post**
-> object v1_enterprises_eula_post(authorization, body)
+> v1_enterprises_eula_post(authorization, body)
 
 Accept End User License Agreement for the enterprise.
 
@@ -15716,9 +15734,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     body = None # object | 
 
     try:
-        api_response = api_instance.v1_enterprises_eula_post(authorization, body)
-        print("The response of DefaultApi->v1_enterprises_eula_post:\n")
-        pprint(api_response)
+        api_instance.v1_enterprises_eula_post(authorization, body)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_enterprises_eula_post: %s\n" % e)
 ```
@@ -15735,7 +15751,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -15744,7 +15760,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -15911,7 +15927,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_enterprises_patch**
-> object v1_enterprises_patch(authorization, v1_enterprises_patch_request)
+> v1_enterprises_patch(authorization, v1_enterprises_patch_request)
 
 Updates all relevent enterprise information.
 
@@ -15950,9 +15966,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_enterprises_patch_request = graphiant_sdk.V1EnterprisesPatchRequest() # V1EnterprisesPatchRequest | 
 
     try:
-        api_response = api_instance.v1_enterprises_patch(authorization, v1_enterprises_patch_request)
-        print("The response of DefaultApi->v1_enterprises_patch:\n")
-        pprint(api_response)
+        api_instance.v1_enterprises_patch(authorization, v1_enterprises_patch_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_enterprises_patch: %s\n" % e)
 ```
@@ -15969,7 +15983,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -15978,7 +15992,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -15989,7 +16003,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_enterprises_put**
-> object v1_enterprises_put(authorization, v1_enterprises_put_request)
+> v1_enterprises_put(authorization, v1_enterprises_put_request)
 
 Create a new enterprise with company details, account type, and admin user.
 
@@ -16028,9 +16042,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_enterprises_put_request = graphiant_sdk.V1EnterprisesPutRequest() # V1EnterprisesPutRequest | 
 
     try:
-        api_response = api_instance.v1_enterprises_put(authorization, v1_enterprises_put_request)
-        print("The response of DefaultApi->v1_enterprises_put:\n")
-        pprint(api_response)
+        api_instance.v1_enterprises_put(authorization, v1_enterprises_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_enterprises_put: %s\n" % e)
 ```
@@ -16047,7 +16059,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -16056,7 +16068,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -16067,7 +16079,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_enterprises_self_delete**
-> V1EnterprisesSelfDeleteResponse v1_enterprises_self_delete(authorization)
+> v1_enterprises_self_delete(authorization)
 
 Delete the current user's enterprise (self-deletion).
 
@@ -16077,7 +16089,6 @@ Delete the current user's enterprise (self-deletion).
 
 ```python
 import graphiant_sdk
-from graphiant_sdk.models.v1_enterprises_self_delete_response import V1EnterprisesSelfDeleteResponse
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -16105,9 +16116,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
 
     try:
-        api_response = api_instance.v1_enterprises_self_delete(authorization)
-        print("The response of DefaultApi->v1_enterprises_self_delete:\n")
-        pprint(api_response)
+        api_instance.v1_enterprises_self_delete(authorization)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_enterprises_self_delete: %s\n" % e)
 ```
@@ -16123,7 +16132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1EnterprisesSelfDeleteResponse**](V1EnterprisesSelfDeleteResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -16132,7 +16141,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -16767,6 +16776,8 @@ Name | Type | Description  | Notes
 # **v1_extranet_b2b_monitoring_peering_service_service_health_post**
 > V1ExtranetB2bMonitoringPeeringServiceServiceHealthPostResponse v1_extranet_b2b_monitoring_peering_service_service_health_post(authorization, v1_extranet_b2b_monitoring_peering_service_service_health_post_request)
 
+Returns connectivity status for a b2b peering service. Provides overall service connectivity status and detailed status for producer and customer prefixes for each consumer of the serviceShows whether the service is healthy, impaired, or down, and lists any missing prefixes in Impaired state. 
+
 ### Example
 
 * Api Key Authentication (jwtAuth):
@@ -17081,6 +17092,8 @@ Name | Type | Description  | Notes
 # **v1_extranets_b2b_consumer_device_status_id_get**
 > V1ExtranetsB2bConsumerDeviceStatusIdGetResponse v1_extranets_b2b_consumer_device_status_id_get(authorization, id)
 
+Get B2B extranet consumer status
+
 ### Example
 
 * Api Key Authentication (jwtAuth):
@@ -17157,6 +17170,8 @@ Name | Type | Description  | Notes
 # **v1_extranets_b2b_consumer_id_delete**
 > object v1_extranets_b2b_consumer_id_delete(authorization, id)
 
+Delete a B2B extranet consumer
+
 ### Example
 
 * Api Key Authentication (jwtAuth):
@@ -17231,6 +17246,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_consumer_id_get**
 > V1ExtranetsB2bConsumerIdGetResponse v1_extranets_b2b_consumer_id_get(authorization, id)
+
+Get a B2B extranet consumer
 
 ### Example
 
@@ -17307,6 +17324,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_consumer_post**
 > V1ExtranetsB2bConsumerPostResponse v1_extranets_b2b_consumer_post(authorization, v1_extranets_b2b_consumer_post_request)
+
+Create a new B2B extranet consumer
 
 ### Example
 
@@ -17385,6 +17404,8 @@ Name | Type | Description  | Notes
 # **v1_extranets_b2b_consumer_summary_get**
 > V1ExtranetsB2bConsumerSummaryGetResponse v1_extranets_b2b_consumer_summary_get(authorization)
 
+Get B2B extranet consumers summary
+
 ### Example
 
 * Api Key Authentication (jwtAuth):
@@ -17458,6 +17479,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_customer_id_delete**
 > object v1_extranets_b2b_customer_id_delete(authorization, id)
+
+Delete a B2B extranet customer
 
 ### Example
 
@@ -17533,6 +17556,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_customer_info_id_get**
 > V1ExtranetsB2bCustomerInfoIdGetResponse v1_extranets_b2b_customer_info_id_get(authorization, id)
+
+Get B2B extranet application customer
 
 ### Example
 
@@ -17610,6 +17635,8 @@ Name | Type | Description  | Notes
 # **v1_extranets_b2b_general_customers_summary_get**
 > V1ExtranetsB2bGeneralCustomersSummaryGetResponse v1_extranets_b2b_general_customers_summary_get(authorization)
 
+Get summary for a B2B extranet peering services customers
+
 ### Example
 
 * Api Key Authentication (jwtAuth):
@@ -17683,6 +17710,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_general_services_summary_get**
 > V1ExtranetsB2bGeneralServicesSummaryGetResponse v1_extranets_b2b_general_services_summary_get(authorization)
+
+Get a summary for all the B2B extranet services
 
 ### Example
 
@@ -17758,6 +17787,8 @@ Name | Type | Description  | Notes
 # **v1_extranets_b2b_id_customer_post**
 > V1ExtranetsB2bIdCustomerPostResponse v1_extranets_b2b_id_customer_post(authorization, id, v1_extranets_b2b_id_customer_post_request)
 
+Create B2B extranet application customer invite
+
 ### Example
 
 * Api Key Authentication (jwtAuth):
@@ -17791,7 +17822,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    id = 1234567891011 # int | 
+    id = 1234567891011 # int | Service ID of the application customer is invited to
     v1_extranets_b2b_id_customer_post_request = graphiant_sdk.V1ExtranetsB2bIdCustomerPostRequest() # V1ExtranetsB2bIdCustomerPostRequest | 
 
     try:
@@ -17810,7 +17841,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **id** | **int**|  | 
+ **id** | **int**| Service ID of the application customer is invited to | 
  **v1_extranets_b2b_id_customer_post_request** | [**V1ExtranetsB2bIdCustomerPostRequest**](V1ExtranetsB2bIdCustomerPostRequest.md)|  | 
 
 ### Return type
@@ -17836,6 +17867,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_id_customer_summary_get**
 > V1ExtranetsB2bIdCustomerSummaryGetResponse v1_extranets_b2b_id_customer_summary_get(authorization, id)
+
+Get B2B extranet application customers summary
 
 ### Example
 
@@ -17913,6 +17946,8 @@ Name | Type | Description  | Notes
 # **v1_extranets_b2b_id_delete**
 > object v1_extranets_b2b_id_delete(authorization, id)
 
+Delete a B2B extranet producer
+
 ### Example
 
 * Api Key Authentication (jwtAuth):
@@ -17944,7 +17979,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    id = 1234567891011 # int | 
+    id = 1234567891011 # int | ID of the producer service to be deleted
 
     try:
         api_response = api_instance.v1_extranets_b2b_id_delete(authorization, id)
@@ -17962,7 +17997,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **id** | **int**|  | 
+ **id** | **int**| ID of the producer service to be deleted | 
 
 ### Return type
 
@@ -17987,6 +18022,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_id_producer_get**
 > V1ExtranetsB2bIdProducerGetResponse v1_extranets_b2b_id_producer_get(authorization, id, type=type)
+
+Get a B2B extranet producer
 
 ### Example
 
@@ -18066,6 +18103,8 @@ Name | Type | Description  | Notes
 # **v1_extranets_b2b_id_put**
 > V1ExtranetsB2bIdPutResponse v1_extranets_b2b_id_put(authorization, id, v1_extranets_b2b_id_put_request)
 
+Update a B2B extranet producer
+
 ### Example
 
 * Api Key Authentication (jwtAuth):
@@ -18099,7 +18138,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    id = 1234567891011 # int | 
+    id = 1234567891011 # int | ID of the B2B Application service
     v1_extranets_b2b_id_put_request = graphiant_sdk.V1ExtranetsB2bIdPutRequest() # V1ExtranetsB2bIdPutRequest | 
 
     try:
@@ -18118,7 +18157,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **id** | **int**|  | 
+ **id** | **int**| ID of the B2B Application service | 
  **v1_extranets_b2b_id_put_request** | [**V1ExtranetsB2bIdPutRequest**](V1ExtranetsB2bIdPutRequest.md)|  | 
 
 ### Return type
@@ -18144,6 +18183,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_peering_consumer_customer_id_consumer_details_get**
 > V1ExtranetsB2bPeeringConsumerCustomerIdConsumerDetailsGetResponse v1_extranets_b2b_peering_consumer_customer_id_consumer_details_get(authorization, customer_id)
+
+Get details of a service subscription for a customer
 
 ### Example
 
@@ -18221,6 +18262,8 @@ Name | Type | Description  | Notes
 # **v1_extranets_b2b_peering_consumer_match_id_match_details_get**
 > V1ExtranetsB2bPeeringConsumerMatchIdMatchDetailsGetResponse v1_extranets_b2b_peering_consumer_match_id_match_details_get(authorization, match_id)
 
+Get details of a service match for a customer
+
 ### Example
 
 * Api Key Authentication (jwtAuth):
@@ -18297,6 +18340,8 @@ Name | Type | Description  | Notes
 # **v1_extranets_b2b_peering_consumer_match_id_post**
 > V1ExtranetsB2bPeeringConsumerMatchIdPostResponse v1_extranets_b2b_peering_consumer_match_id_post(authorization, match_id, v1_extranets_b2b_peering_consumer_match_id_post_request)
 
+Create B2B extranet peering service consumer
+
 ### Example
 
 * Api Key Authentication (jwtAuth):
@@ -18330,7 +18375,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    match_id = 1234567891011 # int | 
+    match_id = 1234567891011 # int | ID of the match for the customer subscription of the service
     v1_extranets_b2b_peering_consumer_match_id_post_request = graphiant_sdk.V1ExtranetsB2bPeeringConsumerMatchIdPostRequest() # V1ExtranetsB2bPeeringConsumerMatchIdPostRequest | 
 
     try:
@@ -18349,7 +18394,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **match_id** | **int**|  | 
+ **match_id** | **int**| ID of the match for the customer subscription of the service | 
  **v1_extranets_b2b_peering_consumer_match_id_post_request** | [**V1ExtranetsB2bPeeringConsumerMatchIdPostRequest**](V1ExtranetsB2bPeeringConsumerMatchIdPostRequest.md)|  | 
 
 ### Return type
@@ -18375,6 +18420,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_peering_customer_id_delete**
 > V1ExtranetsB2bPeeringCustomerIdDeleteResponse v1_extranets_b2b_peering_customer_id_delete(authorization, id)
+
+Delete a B2B extranet peering service customer
 
 ### Example
 
@@ -18408,7 +18455,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    id = 1234567891011 # int | 
+    id = 1234567891011 # int | ID of the peering service customer
 
     try:
         api_response = api_instance.v1_extranets_b2b_peering_customer_id_delete(authorization, id)
@@ -18426,7 +18473,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **id** | **int**|  | 
+ **id** | **int**| ID of the peering service customer | 
 
 ### Return type
 
@@ -18451,6 +18498,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_peering_customer_id_get**
 > V1ExtranetsB2bPeeringCustomerIdGetResponse v1_extranets_b2b_peering_customer_id_get(authorization, id)
+
+Get a B2B extranet peering service customer
 
 ### Example
 
@@ -18484,7 +18533,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    id = 1234567891011 # int | 
+    id = 1234567891011 # int | ID of the peering service customer
 
     try:
         api_response = api_instance.v1_extranets_b2b_peering_customer_id_get(authorization, id)
@@ -18502,7 +18551,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **id** | **int**|  | 
+ **id** | **int**| ID of the peering service customer | 
 
 ### Return type
 
@@ -18527,6 +18576,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_peering_customer_post**
 > V1ExtranetsB2bPeeringCustomerPostResponse v1_extranets_b2b_peering_customer_post(authorization, v1_extranets_b2b_peering_customer_post_request)
+
+Create a new B2B extranet peering service customer
 
 ### Example
 
@@ -18603,7 +18654,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_extranets_b2b_peering_match_service_to_customer_id_delete**
-> object v1_extranets_b2b_peering_match_service_to_customer_id_delete(authorization, id)
+> V1ExtranetsB2bPeeringMatchServiceToCustomerIdDeleteResponse v1_extranets_b2b_peering_match_service_to_customer_id_delete(authorization, id)
 
 Unsubscribe a customer from a service
 
@@ -18613,6 +18664,7 @@ Unsubscribe a customer from a service
 
 ```python
 import graphiant_sdk
+from graphiant_sdk.models.v1_extranets_b2b_peering_match_service_to_customer_id_delete_response import V1ExtranetsB2bPeeringMatchServiceToCustomerIdDeleteResponse
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -18638,7 +18690,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    id = 1234567891011 # int | id for service to customer match
+    id = 1234567891011 # int | ID for the service to customer match to be deleted
 
     try:
         api_response = api_instance.v1_extranets_b2b_peering_match_service_to_customer_id_delete(authorization, id)
@@ -18656,11 +18708,11 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **id** | **int**| id for service to customer match | 
+ **id** | **int**| ID for the service to customer match to be deleted | 
 
 ### Return type
 
-**object**
+[**V1ExtranetsB2bPeeringMatchServiceToCustomerIdDeleteResponse**](V1ExtranetsB2bPeeringMatchServiceToCustomerIdDeleteResponse.md)
 
 ### Authorization
 
@@ -18716,7 +18768,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    id = 1234567891011 # int | service id
+    id = 1234567891011 # int | Service id for which match details are requested
 
     try:
         api_response = api_instance.v1_extranets_b2b_peering_match_service_to_customer_id_get(authorization, id)
@@ -18734,7 +18786,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **id** | **int**| service id | 
+ **id** | **int**| Service id for which match details are requested | 
 
 ### Return type
 
@@ -18759,6 +18811,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_peering_match_service_to_customer_post**
 > V1ExtranetsB2bPeeringMatchServiceToCustomerPostResponse v1_extranets_b2b_peering_match_service_to_customer_post(authorization, v1_extranets_b2b_peering_match_service_to_customer_post_request)
+
+Create B2B extranet configuration for matching a service to a customer
 
 ### Example
 
@@ -18837,6 +18891,8 @@ Name | Type | Description  | Notes
 # **v1_extranets_b2b_peering_match_services_summary_id_get**
 > V1ExtranetsB2bPeeringMatchServicesSummaryIdGetResponse v1_extranets_b2b_peering_match_services_summary_id_get(authorization, id)
 
+Get B2B extranet services matching customers summary
+
 ### Example
 
 * Api Key Authentication (jwtAuth):
@@ -18869,7 +18925,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    id = 1234567891011 # int | 
+    id = 1234567891011 # int | ID of the customer
 
     try:
         api_response = api_instance.v1_extranets_b2b_peering_match_services_summary_id_get(authorization, id)
@@ -18887,7 +18943,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **id** | **int**|  | 
+ **id** | **int**| ID of the customer | 
 
 ### Return type
 
@@ -18912,6 +18968,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_peering_producer_id_get**
 > V1ExtranetsB2bPeeringProducerIdGetResponse v1_extranets_b2b_peering_producer_id_get(authorization, id)
+
+Get B2B extranet peering service producer
 
 ### Example
 
@@ -18945,7 +19003,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    id = 1234567891011 # int | 
+    id = 1234567891011 # int | ID of the service
 
     try:
         api_response = api_instance.v1_extranets_b2b_peering_producer_id_get(authorization, id)
@@ -18963,7 +19021,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **id** | **int**|  | 
+ **id** | **int**| ID of the service | 
 
 ### Return type
 
@@ -18988,6 +19046,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_peering_producer_id_matching_customers_summary_get**
 > V1ExtranetsB2bPeeringProducerIdMatchingCustomersSummaryGetResponse v1_extranets_b2b_peering_producer_id_matching_customers_summary_get(authorization, id)
+
+Get B2B extranet customers summary
 
 ### Example
 
@@ -19021,7 +19081,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
-    id = 1234567891011 # int | 
+    id = 1234567891011 # int | ID of the customer
 
     try:
         api_response = api_instance.v1_extranets_b2b_peering_producer_id_matching_customers_summary_get(authorization, id)
@@ -19039,7 +19099,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
- **id** | **int**|  | 
+ **id** | **int**| ID of the customer | 
 
 ### Return type
 
@@ -19064,6 +19124,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_peering_producer_post**
 > V1ExtranetsB2bPeeringProducerPostResponse v1_extranets_b2b_peering_producer_post(authorization, v1_extranets_b2b_peering_producer_post_request)
+
+Create a new B2B extranet peering service producer
 
 ### Example
 
@@ -19142,6 +19204,8 @@ Name | Type | Description  | Notes
 # **v1_extranets_b2b_post**
 > V1ExtranetsB2bPostResponse v1_extranets_b2b_post(authorization, v1_extranets_b2b_post_request)
 
+Create a new B2B extranet producer
+
 ### Example
 
 * Api Key Authentication (jwtAuth):
@@ -19219,6 +19283,8 @@ Name | Type | Description  | Notes
 # **v1_extranets_b2b_producer_device_status_id_get**
 > V1ExtranetsB2bProducerDeviceStatusIdGetResponse v1_extranets_b2b_producer_device_status_id_get(authorization, id)
 
+Get B2B extranet producer status
+
 ### Example
 
 * Api Key Authentication (jwtAuth):
@@ -19294,6 +19360,8 @@ Name | Type | Description  | Notes
 
 # **v1_extranets_b2b_producers_summary_get**
 > V1ExtranetsB2bProducersSummaryGetResponse v1_extranets_b2b_producers_summary_get(authorization)
+
+Get B2B extranet producers summary
 
 ### Example
 
@@ -23302,7 +23370,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_global_lan_segments_id_delete**
-> V1GlobalLanSegmentsIdDeleteResponse v1_global_lan_segments_id_delete(authorization, id)
+> v1_global_lan_segments_id_delete(authorization, id)
 
 Delete a lan-segment
 
@@ -23312,7 +23380,6 @@ Delete a lan-segment
 
 ```python
 import graphiant_sdk
-from graphiant_sdk.models.v1_global_lan_segments_id_delete_response import V1GlobalLanSegmentsIdDeleteResponse
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -23341,9 +23408,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     id = 1234567891011 # int | 
 
     try:
-        api_response = api_instance.v1_global_lan_segments_id_delete(authorization, id)
-        print("The response of DefaultApi->v1_global_lan_segments_id_delete:\n")
-        pprint(api_response)
+        api_instance.v1_global_lan_segments_id_delete(authorization, id)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_global_lan_segments_id_delete: %s\n" % e)
 ```
@@ -23360,7 +23425,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1GlobalLanSegmentsIdDeleteResponse**](V1GlobalLanSegmentsIdDeleteResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -23369,7 +23434,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -23518,6 +23583,237 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**V1GlobalLanSegmentsVrfIdDevicesGetResponse**](V1GlobalLanSegmentsVrfIdDevicesGetResponse.md)
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1_global_ntps_device_get**
+> V1GlobalNtpsDeviceGetResponse v1_global_ntps_device_get(authorization)
+
+Get global ntp objects that failed to attach for a device
+
+### Example
+
+* Api Key Authentication (jwtAuth):
+
+```python
+import graphiant_sdk
+from graphiant_sdk.models.v1_global_ntps_device_get_response import V1GlobalNtpsDeviceGetResponse
+from graphiant_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.graphiant.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = graphiant_sdk.Configuration(
+    host = "https://api.graphiant.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtAuth
+configuration.api_key['jwtAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with graphiant_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = graphiant_sdk.DefaultApi(api_client)
+    authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
+
+    try:
+        api_response = api_instance.v1_global_ntps_device_get(authorization)
+        print("The response of DefaultApi->v1_global_ntps_device_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DefaultApi->v1_global_ntps_device_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
+
+### Return type
+
+[**V1GlobalNtpsDeviceGetResponse**](V1GlobalNtpsDeviceGetResponse.md)
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1_global_ntps_post**
+> V1GlobalNtpsPostResponse v1_global_ntps_post(authorization, v1_global_ntps_post_request)
+
+Get configured global ntps
+
+### Example
+
+* Api Key Authentication (jwtAuth):
+
+```python
+import graphiant_sdk
+from graphiant_sdk.models.v1_global_ntps_post_request import V1GlobalNtpsPostRequest
+from graphiant_sdk.models.v1_global_ntps_post_response import V1GlobalNtpsPostResponse
+from graphiant_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.graphiant.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = graphiant_sdk.Configuration(
+    host = "https://api.graphiant.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtAuth
+configuration.api_key['jwtAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with graphiant_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = graphiant_sdk.DefaultApi(api_client)
+    authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
+    v1_global_ntps_post_request = graphiant_sdk.V1GlobalNtpsPostRequest() # V1GlobalNtpsPostRequest | 
+
+    try:
+        api_response = api_instance.v1_global_ntps_post(authorization, v1_global_ntps_post_request)
+        print("The response of DefaultApi->v1_global_ntps_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DefaultApi->v1_global_ntps_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
+ **v1_global_ntps_post_request** | [**V1GlobalNtpsPostRequest**](V1GlobalNtpsPostRequest.md)|  | 
+
+### Return type
+
+[**V1GlobalNtpsPostResponse**](V1GlobalNtpsPostResponse.md)
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1_global_ntps_site_get**
+> V1GlobalNtpsSiteGetResponse v1_global_ntps_site_get(authorization)
+
+Get configured global ntps
+
+### Example
+
+* Api Key Authentication (jwtAuth):
+
+```python
+import graphiant_sdk
+from graphiant_sdk.models.v1_global_ntps_site_get_response import V1GlobalNtpsSiteGetResponse
+from graphiant_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.graphiant.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = graphiant_sdk.Configuration(
+    host = "https://api.graphiant.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtAuth
+configuration.api_key['jwtAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with graphiant_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = graphiant_sdk.DefaultApi(api_client)
+    authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
+
+    try:
+        api_response = api_instance.v1_global_ntps_site_get(authorization)
+        print("The response of DefaultApi->v1_global_ntps_site_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DefaultApi->v1_global_ntps_site_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
+
+### Return type
+
+[**V1GlobalNtpsSiteGetResponse**](V1GlobalNtpsSiteGetResponse.md)
 
 ### Authorization
 
@@ -24075,7 +24371,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_global_site_lists_id_delete**
-> V1GlobalSiteListsIdDeleteResponse v1_global_site_lists_id_delete(authorization, id)
+> v1_global_site_lists_id_delete(authorization, id)
 
 Delete a site list
 
@@ -24085,7 +24381,6 @@ Delete a site list
 
 ```python
 import graphiant_sdk
-from graphiant_sdk.models.v1_global_site_lists_id_delete_response import V1GlobalSiteListsIdDeleteResponse
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -24114,9 +24409,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     id = 1234567891011 # int | 
 
     try:
-        api_response = api_instance.v1_global_site_lists_id_delete(authorization, id)
-        print("The response of DefaultApi->v1_global_site_lists_id_delete:\n")
-        pprint(api_response)
+        api_instance.v1_global_site_lists_id_delete(authorization, id)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_global_site_lists_id_delete: %s\n" % e)
 ```
@@ -24133,7 +24426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1GlobalSiteListsIdDeleteResponse**](V1GlobalSiteListsIdDeleteResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -24142,7 +24435,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -25547,7 +25840,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_groups_id_delete**
-> V1GroupsIdDeleteResponse v1_groups_id_delete(authorization, id)
+> v1_groups_id_delete(authorization, id)
 
 Delete a group and remove all member associations and enterprise relationships. Replace with a different group if specified.
 
@@ -25557,7 +25850,6 @@ Delete a group and remove all member associations and enterprise relationships. 
 
 ```python
 import graphiant_sdk
-from graphiant_sdk.models.v1_groups_id_delete_response import V1GroupsIdDeleteResponse
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -25586,9 +25878,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     id = 'example string' # str | 
 
     try:
-        api_response = api_instance.v1_groups_id_delete(authorization, id)
-        print("The response of DefaultApi->v1_groups_id_delete:\n")
-        pprint(api_response)
+        api_instance.v1_groups_id_delete(authorization, id)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_groups_id_delete: %s\n" % e)
 ```
@@ -25605,7 +25895,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1GroupsIdDeleteResponse**](V1GroupsIdDeleteResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -25614,7 +25904,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -25625,7 +25915,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_groups_id_enterprises_enterprise_id_delete**
-> V1GroupsIdEnterprisesEnterpriseIdDeleteResponse v1_groups_id_enterprises_enterprise_id_delete(authorization, enterprise_id, id)
+> v1_groups_id_enterprises_enterprise_id_delete(authorization, enterprise_id, id)
 
 Remove group's association with a specific enterprise, revoking cross-enterprise access.
 
@@ -25635,7 +25925,6 @@ Remove group's association with a specific enterprise, revoking cross-enterprise
 
 ```python
 import graphiant_sdk
-from graphiant_sdk.models.v1_groups_id_enterprises_enterprise_id_delete_response import V1GroupsIdEnterprisesEnterpriseIdDeleteResponse
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -25665,9 +25954,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     id = 'example string' # str | 
 
     try:
-        api_response = api_instance.v1_groups_id_enterprises_enterprise_id_delete(authorization, enterprise_id, id)
-        print("The response of DefaultApi->v1_groups_id_enterprises_enterprise_id_delete:\n")
-        pprint(api_response)
+        api_instance.v1_groups_id_enterprises_enterprise_id_delete(authorization, enterprise_id, id)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_groups_id_enterprises_enterprise_id_delete: %s\n" % e)
 ```
@@ -25685,7 +25972,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1GroupsIdEnterprisesEnterpriseIdDeleteResponse**](V1GroupsIdEnterprisesEnterpriseIdDeleteResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -25694,7 +25981,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -25705,7 +25992,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_groups_id_enterprises_post**
-> object v1_groups_id_enterprises_post(authorization, id, v1_groups_id_enterprises_post_request)
+> v1_groups_id_enterprises_post(authorization, id, v1_groups_id_enterprises_post_request)
 
 Associate group with additional enterprises to enable cross-enterprise access and management.
 
@@ -25745,9 +26032,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_groups_id_enterprises_post_request = graphiant_sdk.V1GroupsIdEnterprisesPostRequest() # V1GroupsIdEnterprisesPostRequest | 
 
     try:
-        api_response = api_instance.v1_groups_id_enterprises_post(authorization, id, v1_groups_id_enterprises_post_request)
-        print("The response of DefaultApi->v1_groups_id_enterprises_post:\n")
-        pprint(api_response)
+        api_instance.v1_groups_id_enterprises_post(authorization, id, v1_groups_id_enterprises_post_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_groups_id_enterprises_post: %s\n" % e)
 ```
@@ -25765,7 +26050,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -25774,7 +26059,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -25863,7 +26148,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_groups_id_members_delete_post**
-> V1GroupsIdMembersDeletePostResponse v1_groups_id_members_delete_post(authorization, id, v1_groups_id_members_delete_post_request)
+> v1_groups_id_members_delete_post(authorization, id, v1_groups_id_members_delete_post_request)
 
 Remove multiple users from a group by their member IDs.
 
@@ -25874,7 +26159,6 @@ Remove multiple users from a group by their member IDs.
 ```python
 import graphiant_sdk
 from graphiant_sdk.models.v1_groups_id_members_delete_post_request import V1GroupsIdMembersDeletePostRequest
-from graphiant_sdk.models.v1_groups_id_members_delete_post_response import V1GroupsIdMembersDeletePostResponse
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -25904,9 +26188,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_groups_id_members_delete_post_request = graphiant_sdk.V1GroupsIdMembersDeletePostRequest() # V1GroupsIdMembersDeletePostRequest | 
 
     try:
-        api_response = api_instance.v1_groups_id_members_delete_post(authorization, id, v1_groups_id_members_delete_post_request)
-        print("The response of DefaultApi->v1_groups_id_members_delete_post:\n")
-        pprint(api_response)
+        api_instance.v1_groups_id_members_delete_post(authorization, id, v1_groups_id_members_delete_post_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_groups_id_members_delete_post: %s\n" % e)
 ```
@@ -25924,7 +26206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1GroupsIdMembersDeletePostResponse**](V1GroupsIdMembersDeletePostResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -25933,7 +26215,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -26022,7 +26304,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_groups_id_members_member_id_delete**
-> V1GroupsIdMembersMemberIdDeleteResponse v1_groups_id_members_member_id_delete(authorization, id, member_id)
+> v1_groups_id_members_member_id_delete(authorization, id, member_id)
 
 Remove a specific user from a group by member ID.
 
@@ -26032,7 +26314,6 @@ Remove a specific user from a group by member ID.
 
 ```python
 import graphiant_sdk
-from graphiant_sdk.models.v1_groups_id_members_member_id_delete_response import V1GroupsIdMembersMemberIdDeleteResponse
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -26062,9 +26343,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     member_id = 'example string' # str | 
 
     try:
-        api_response = api_instance.v1_groups_id_members_member_id_delete(authorization, id, member_id)
-        print("The response of DefaultApi->v1_groups_id_members_member_id_delete:\n")
-        pprint(api_response)
+        api_instance.v1_groups_id_members_member_id_delete(authorization, id, member_id)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_groups_id_members_member_id_delete: %s\n" % e)
 ```
@@ -26082,7 +26361,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1GroupsIdMembersMemberIdDeleteResponse**](V1GroupsIdMembersMemberIdDeleteResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -26091,7 +26370,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -26102,7 +26381,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_groups_id_members_post**
-> V1GroupsIdMembersPostResponse v1_groups_id_members_post(authorization, id, v1_groups_id_members_post_request)
+> v1_groups_id_members_post(authorization, id, v1_groups_id_members_post_request)
 
 Add multiple users to a group by their global IDs.
 
@@ -26113,7 +26392,6 @@ Add multiple users to a group by their global IDs.
 ```python
 import graphiant_sdk
 from graphiant_sdk.models.v1_groups_id_members_post_request import V1GroupsIdMembersPostRequest
-from graphiant_sdk.models.v1_groups_id_members_post_response import V1GroupsIdMembersPostResponse
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -26143,9 +26421,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_groups_id_members_post_request = graphiant_sdk.V1GroupsIdMembersPostRequest() # V1GroupsIdMembersPostRequest | 
 
     try:
-        api_response = api_instance.v1_groups_id_members_post(authorization, id, v1_groups_id_members_post_request)
-        print("The response of DefaultApi->v1_groups_id_members_post:\n")
-        pprint(api_response)
+        api_instance.v1_groups_id_members_post(authorization, id, v1_groups_id_members_post_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_groups_id_members_post: %s\n" % e)
 ```
@@ -26163,7 +26439,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1GroupsIdMembersPostResponse**](V1GroupsIdMembersPostResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -26172,7 +26448,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -26183,7 +26459,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_groups_id_patch**
-> V1GroupsIdPatchResponse v1_groups_id_patch(authorization, id, v1_groups_id_patch_request)
+> v1_groups_id_patch(authorization, id, v1_groups_id_patch_request)
 
 Update group information.
 
@@ -26194,7 +26470,6 @@ Update group information.
 ```python
 import graphiant_sdk
 from graphiant_sdk.models.v1_groups_id_patch_request import V1GroupsIdPatchRequest
-from graphiant_sdk.models.v1_groups_id_patch_response import V1GroupsIdPatchResponse
 from graphiant_sdk.rest import ApiException
 from pprint import pprint
 
@@ -26224,9 +26499,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_groups_id_patch_request = graphiant_sdk.V1GroupsIdPatchRequest() # V1GroupsIdPatchRequest | 
 
     try:
-        api_response = api_instance.v1_groups_id_patch(authorization, id, v1_groups_id_patch_request)
-        print("The response of DefaultApi->v1_groups_id_patch:\n")
-        pprint(api_response)
+        api_instance.v1_groups_id_patch(authorization, id, v1_groups_id_patch_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_groups_id_patch: %s\n" % e)
 ```
@@ -26244,7 +26517,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1GroupsIdPatchResponse**](V1GroupsIdPatchResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -26253,7 +26526,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -26264,7 +26537,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_groups_put**
-> object v1_groups_put(authorization, v1_groups_put_request)
+> v1_groups_put(authorization, v1_groups_put_request)
 
 Create a new group with and set permissions. Set group's enterprise management capabilities (msp only).
 
@@ -26303,9 +26576,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_groups_put_request = graphiant_sdk.V1GroupsPutRequest() # V1GroupsPutRequest | 
 
     try:
-        api_response = api_instance.v1_groups_put(authorization, v1_groups_put_request)
-        print("The response of DefaultApi->v1_groups_put:\n")
-        pprint(api_response)
+        api_instance.v1_groups_put(authorization, v1_groups_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_groups_put: %s\n" % e)
 ```
@@ -26322,7 +26593,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -26331,7 +26602,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -26418,7 +26689,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_id_password_recover_patch**
-> object v1_id_password_recover_patch(authorization, id, body)
+> v1_id_password_recover_patch(authorization, id, body)
 
 Initiate password recovery for specific user (Graphiant cloud only).
 
@@ -26457,9 +26728,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     body = None # object | 
 
     try:
-        api_response = api_instance.v1_id_password_recover_patch(authorization, id, body)
-        print("The response of DefaultApi->v1_id_password_recover_patch:\n")
-        pprint(api_response)
+        api_instance.v1_id_password_recover_patch(authorization, id, body)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_id_password_recover_patch: %s\n" % e)
 ```
@@ -26477,7 +26746,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -26486,7 +26755,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -27503,7 +27772,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_onboarding_cloudinit_delete**
-> object v1_onboarding_cloudinit_delete(authorization)
+> v1_onboarding_cloudinit_delete(authorization)
 
 Delete the onboarding token
 
@@ -27540,9 +27809,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
 
     try:
-        api_response = api_instance.v1_onboarding_cloudinit_delete(authorization)
-        print("The response of DefaultApi->v1_onboarding_cloudinit_delete:\n")
-        pprint(api_response)
+        api_instance.v1_onboarding_cloudinit_delete(authorization)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_onboarding_cloudinit_delete: %s\n" % e)
 ```
@@ -27558,7 +27825,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -27567,7 +27834,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -27808,7 +28075,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_policy_prefix_sets_id_delete**
-> object v1_policy_prefix_sets_id_delete(authorization, id)
+> v1_policy_prefix_sets_id_delete(authorization, id)
 
 Delete a prefix-set
 
@@ -27846,9 +28113,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     id = 1234567891011 # int | 
 
     try:
-        api_response = api_instance.v1_policy_prefix_sets_id_delete(authorization, id)
-        print("The response of DefaultApi->v1_policy_prefix_sets_id_delete:\n")
-        pprint(api_response)
+        api_instance.v1_policy_prefix_sets_id_delete(authorization, id)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_policy_prefix_sets_id_delete: %s\n" % e)
 ```
@@ -27865,7 +28130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -27874,7 +28139,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -28812,7 +29077,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_portal_private_post**
-> object v1_portal_private_post(authorization, v1_portal_private_post_request)
+> v1_portal_private_post(authorization, v1_portal_private_post_request)
 
 ### Example
 
@@ -28849,9 +29114,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_portal_private_post_request = graphiant_sdk.V1PortalPrivatePostRequest() # V1PortalPrivatePostRequest | 
 
     try:
-        api_response = api_instance.v1_portal_private_post(authorization, v1_portal_private_post_request)
-        print("The response of DefaultApi->v1_portal_private_post:\n")
-        pprint(api_response)
+        api_instance.v1_portal_private_post(authorization, v1_portal_private_post_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_portal_private_post: %s\n" % e)
 ```
@@ -28868,7 +29131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -28877,7 +29140,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -28888,7 +29151,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_portal_private_register_post**
-> object v1_portal_private_register_post(authorization, v1_portal_private_register_post_request)
+> v1_portal_private_register_post(authorization, v1_portal_private_register_post_request)
 
 ### Example
 
@@ -28925,9 +29188,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_portal_private_register_post_request = graphiant_sdk.V1PortalPrivateRegisterPostRequest() # V1PortalPrivateRegisterPostRequest | 
 
     try:
-        api_response = api_instance.v1_portal_private_register_post(authorization, v1_portal_private_register_post_request)
-        print("The response of DefaultApi->v1_portal_private_register_post:\n")
-        pprint(api_response)
+        api_instance.v1_portal_private_register_post(authorization, v1_portal_private_register_post_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_portal_private_register_post: %s\n" % e)
 ```
@@ -28944,7 +29205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -28953,7 +29214,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -28964,7 +29225,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_portal_private_sync_post**
-> object v1_portal_private_sync_post(authorization, v1_portal_private_sync_post_request)
+> v1_portal_private_sync_post(authorization, v1_portal_private_sync_post_request)
 
 ### Example
 
@@ -29001,9 +29262,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_portal_private_sync_post_request = graphiant_sdk.V1PortalPrivateSyncPostRequest() # V1PortalPrivateSyncPostRequest | 
 
     try:
-        api_response = api_instance.v1_portal_private_sync_post(authorization, v1_portal_private_sync_post_request)
-        print("The response of DefaultApi->v1_portal_private_sync_post:\n")
-        pprint(api_response)
+        api_instance.v1_portal_private_sync_post(authorization, v1_portal_private_sync_post_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_portal_private_sync_post: %s\n" % e)
 ```
@@ -29020,7 +29279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -29029,7 +29288,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -29812,7 +30071,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_sites_site_id_delete**
-> object v1_sites_site_id_delete(authorization, site_id)
+> v1_sites_site_id_delete(authorization, site_id)
 
 Delete a site
 
@@ -29850,9 +30109,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     site_id = 1234567891011 # int | 
 
     try:
-        api_response = api_instance.v1_sites_site_id_delete(authorization, site_id)
-        print("The response of DefaultApi->v1_sites_site_id_delete:\n")
-        pprint(api_response)
+        api_instance.v1_sites_site_id_delete(authorization, site_id)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_sites_site_id_delete: %s\n" % e)
 ```
@@ -29869,7 +30126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -29878,7 +30135,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -30122,7 +30379,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_software_auto_upgrade_default_put**
-> object v1_software_auto_upgrade_default_put(authorization, v1_software_auto_upgrade_default_put_request)
+> v1_software_auto_upgrade_default_put(authorization, v1_software_auto_upgrade_default_put_request)
 
 ### Example
 
@@ -30159,9 +30416,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_software_auto_upgrade_default_put_request = graphiant_sdk.V1SoftwareAutoUpgradeDefaultPutRequest() # V1SoftwareAutoUpgradeDefaultPutRequest | 
 
     try:
-        api_response = api_instance.v1_software_auto_upgrade_default_put(authorization, v1_software_auto_upgrade_default_put_request)
-        print("The response of DefaultApi->v1_software_auto_upgrade_default_put:\n")
-        pprint(api_response)
+        api_instance.v1_software_auto_upgrade_default_put(authorization, v1_software_auto_upgrade_default_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_software_auto_upgrade_default_put: %s\n" % e)
 ```
@@ -30178,7 +30433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -30187,7 +30442,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -31729,7 +31984,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_users_id_delete**
-> object v1_users_id_delete(authorization, id)
+> v1_users_id_delete(authorization, id)
 
 Delete user account.
 
@@ -31767,9 +32022,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     id = 'example string' # str | 
 
     try:
-        api_response = api_instance.v1_users_id_delete(authorization, id)
-        print("The response of DefaultApi->v1_users_id_delete:\n")
-        pprint(api_response)
+        api_instance.v1_users_id_delete(authorization, id)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_users_id_delete: %s\n" % e)
 ```
@@ -31786,7 +32039,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -31795,7 +32048,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -32118,7 +32371,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_users_id_verify_patch**
-> object v1_users_id_verify_patch(authorization, id, body)
+> v1_users_id_verify_patch(authorization, id, body)
 
 Resend account verification email to user.
 
@@ -32157,9 +32410,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     body = None # object | 
 
     try:
-        api_response = api_instance.v1_users_id_verify_patch(authorization, id, body)
-        print("The response of DefaultApi->v1_users_id_verify_patch:\n")
-        pprint(api_response)
+        api_instance.v1_users_id_verify_patch(authorization, id, body)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_users_id_verify_patch: %s\n" % e)
 ```
@@ -32177,7 +32428,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -32186,7 +32437,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -32197,7 +32448,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_users_put**
-> object v1_users_put(authorization, v1_users_put_request)
+> v1_users_put(authorization, v1_users_put_request)
 
 Create a new user account with profile information. Assigns to specified group or default read-only group. Handles both IDP and non-IDP configured enterprises.
 
@@ -32236,9 +32487,7 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     v1_users_put_request = graphiant_sdk.V1UsersPutRequest() # V1UsersPutRequest | 
 
     try:
-        api_response = api_instance.v1_users_put(authorization, v1_users_put_request)
-        print("The response of DefaultApi->v1_users_put:\n")
-        pprint(api_response)
+        api_instance.v1_users_put(authorization, v1_users_put_request)
     except Exception as e:
         print("Exception when calling DefaultApi->v1_users_put: %s\n" % e)
 ```
@@ -32255,7 +32504,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -32264,7 +32513,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -37874,7 +38123,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_monitoring_extranet_edge_status_get**
-> V2MonitoringExtranetEdgeStatusGetResponse v2_monitoring_extranet_edge_status_get(authorization)
+> V2MonitoringExtranetEdgeStatusGetResponse v2_monitoring_extranet_edge_status_get(authorization, id, is_provider)
+
+Returns connectivity status for individual edges/gateways in extranet/ b2b application service monitoring. Provides granular view of which specific edges can reach server IP addresses. Shows per-edge connectivity status including healthy, impaired, or down states. Helps identify specific edge-level connectivity issues within sites.
 
 ### Example
 
@@ -37908,9 +38159,11 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
+    id = 1 # int | the id associated with an entity - consumer_id for consumer, and service_id for the producer/service
+    is_provider = true # bool | whether the entity is a provider or consumer
 
     try:
-        api_response = api_instance.v2_monitoring_extranet_edge_status_get(authorization)
+        api_response = api_instance.v2_monitoring_extranet_edge_status_get(authorization, id, is_provider)
         print("The response of DefaultApi->v2_monitoring_extranet_edge_status_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -37925,6 +38178,8 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
+ **id** | **int**| the id associated with an entity - consumer_id for consumer, and service_id for the producer/service | 
+ **is_provider** | **bool**| whether the entity is a provider or consumer | 
 
 ### Return type
 
@@ -37949,6 +38204,8 @@ Name | Type | Description  | Notes
 
 # **v2_monitoring_extranet_log_details_post**
 > V2MonitoringExtranetLogDetailsPostResponse v2_monitoring_extranet_log_details_post(authorization, v2_monitoring_extranet_log_details_post_request)
+
+Returns connectivity logs for service monitoring. Includes timestamps for when connectivity from an edge/gateway to a Server IP address was lost or regained.
 
 ### Example
 
@@ -38025,7 +38282,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_monitoring_extranet_service_status_details_get**
-> V2MonitoringExtranetServiceStatusDetailsGetResponse v2_monitoring_extranet_service_status_details_get(authorization)
+> V2MonitoringExtranetServiceStatusDetailsGetResponse v2_monitoring_extranet_service_status_details_get(authorization, id, is_provider)
+
+Returns a list of Site-to-ServerIPAddress statuses for a particular producer of consumer. Each element contains a Site object (with site information) and a mapping of Server Ip addresses to the corresponding Reachability status.Healthy status indicates all the edges/gateways within the Site can reach all the Server IP addresses.Impaired status indicates that some of the edges/gateways within the Site can reach only a subset of Server IP addresses.Down status indicates that none of the edges/gateways within the Site can reach any of the Server IP addresses.
 
 ### Example
 
@@ -38059,9 +38318,11 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
+    id = 1 # int | the id associated with an entity - consumer_id for consumer, and service_id for the producer/service
+    is_provider = true # bool | whether the entity is a provider or consumer
 
     try:
-        api_response = api_instance.v2_monitoring_extranet_service_status_details_get(authorization)
+        api_response = api_instance.v2_monitoring_extranet_service_status_details_get(authorization, id, is_provider)
         print("The response of DefaultApi->v2_monitoring_extranet_service_status_details_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -38076,6 +38337,8 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
+ **id** | **int**| the id associated with an entity - consumer_id for consumer, and service_id for the producer/service | 
+ **is_provider** | **bool**| whether the entity is a provider or consumer | 
 
 ### Return type
 
@@ -38099,7 +38362,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_monitoring_extranet_service_status_get**
-> V2MonitoringExtranetServiceStatusGetResponse v2_monitoring_extranet_service_status_get(authorization)
+> V2MonitoringExtranetServiceStatusGetResponse v2_monitoring_extranet_service_status_get(authorization, id, is_provider)
+
+Returns a list of Status objects indicating the availability/reachability of all the Server IP addresses configured to the service. Healthy status indicates the Server IP address is reachable from all provider sites. Impaired status indicates the Server IP address is reachable from a subset of provider sites. Down status indicates the Server IP address can't be reached from any of the provider sites.
 
 ### Example
 
@@ -38133,9 +38398,11 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
+    id = 1 # int | the id associated with an entity - consumer_id for consumer, and service_id for the producer/service
+    is_provider = true # bool | whether the entity is a provider or consumer
 
     try:
-        api_response = api_instance.v2_monitoring_extranet_service_status_get(authorization)
+        api_response = api_instance.v2_monitoring_extranet_service_status_get(authorization, id, is_provider)
         print("The response of DefaultApi->v2_monitoring_extranet_service_status_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -38150,6 +38417,8 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
+ **id** | **int**| the id associated with an entity - consumer_id for consumer, and service_id for the producer/service | 
+ **is_provider** | **bool**| whether the entity is a provider or consumer | 
 
 ### Return type
 
@@ -38173,7 +38442,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_monitoring_extranet_site_status_get**
-> V2MonitoringExtranetSiteStatusGetResponse v2_monitoring_extranet_site_status_get(authorization)
+> V2MonitoringExtranetSiteStatusGetResponse v2_monitoring_extranet_site_status_get(authorization, id, is_provider)
+
+Returns a list of Statuses objects indicating the availability/reachability of the Server IP addresses from the Sites configured to the Provider or Consumer of the service.Healthy status indicates the Site can reach all the Server IP Addresses.Impaired status indicates that the Site can reach only a subset of Server IP addresses.Down status indicates the Site can reach none of the Server IP addresses.
 
 ### Example
 
@@ -38207,9 +38478,11 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
+    id = 1 # int | the id associated with an entity - consumer_id for consumer, and service_id for the producer/service
+    is_provider = true # bool | whether the entity is a provider or consumer
 
     try:
-        api_response = api_instance.v2_monitoring_extranet_site_status_get(authorization)
+        api_response = api_instance.v2_monitoring_extranet_site_status_get(authorization, id, is_provider)
         print("The response of DefaultApi->v2_monitoring_extranet_site_status_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -38224,6 +38497,8 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
+ **id** | **int**| the id associated with an entity - consumer_id for consumer, and service_id for the producer/service | 
+ **is_provider** | **bool**| whether the entity is a provider or consumer | 
 
 ### Return type
 
@@ -38247,7 +38522,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_monitoring_extranet_status_details_get**
-> V2MonitoringExtranetStatusDetailsGetResponse v2_monitoring_extranet_status_details_get(authorization)
+> V2MonitoringExtranetStatusDetailsGetResponse v2_monitoring_extranet_status_details_get(authorization, id, is_provider, server_address, site_id)
+
+Detailed view of the reachability of the Server IP addresses from the selected (producer or consumer) Site.Lists Site-to-ServerIPAddress statuses for the selected SiteLists Edge-to-ServerIPAddress statuses for All Edges within the selected Site.Returns physical Location of the SiteReturns Region of the Site.
 
 ### Example
 
@@ -38281,9 +38558,13 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = graphiant_sdk.DefaultApi(api_client)
     authorization = 'authorization_example' # str | Bearer token. Format: Bearer <your_token_here>
+    id = 1 # int | the id associated with an entity - consumer_id for consumer, and service_id for the producer/service
+    is_provider = true # bool | whether the entity is a provider or consumer
+    server_address = '192.168.1.1' # str | the address of the server
+    site_id = 1 # int | the id of the site
 
     try:
-        api_response = api_instance.v2_monitoring_extranet_status_details_get(authorization)
+        api_response = api_instance.v2_monitoring_extranet_status_details_get(authorization, id, is_provider, server_address, site_id)
         print("The response of DefaultApi->v2_monitoring_extranet_status_details_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -38298,6 +38579,10 @@ with graphiant_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **str**| Bearer token. Format: Bearer &lt;your_token_here&gt; | 
+ **id** | **int**| the id associated with an entity - consumer_id for consumer, and service_id for the producer/service | 
+ **is_provider** | **bool**| whether the entity is a provider or consumer | 
+ **server_address** | **str**| the address of the server | 
+ **site_id** | **int**| the id of the site | 
 
 ### Return type
 

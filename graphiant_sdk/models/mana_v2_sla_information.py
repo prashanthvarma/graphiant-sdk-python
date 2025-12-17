@@ -26,9 +26,9 @@ class ManaV2SlaInformation(BaseModel):
     """
     ManaV2SlaInformation
     """ # noqa: E501
-    backup_circuit: Optional[StrictStr] = Field(default=None, alias="backupCircuit")
-    var_class: Optional[StrictStr] = Field(default=None, alias="class")
-    primary_circuit: Optional[StrictStr] = Field(default=None, alias="primaryCircuit")
+    backup_circuit: Optional[StrictStr] = Field(default=None, description="Backup circuit for the SLA information", alias="backupCircuit")
+    var_class: Optional[StrictStr] = Field(default=None, description="Class for the SLA information", alias="class")
+    primary_circuit: Optional[StrictStr] = Field(default=None, description="Primary circuit for the SLA information", alias="primaryCircuit")
     __properties: ClassVar[List[str]] = ["backupCircuit", "class", "primaryCircuit"]
 
     model_config = ConfigDict(

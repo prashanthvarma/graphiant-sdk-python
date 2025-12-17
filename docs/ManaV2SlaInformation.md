@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**backup_circuit** | **str** |  | [optional] 
-**var_class** | **str** |  | [optional] 
-**primary_circuit** | **str** |  | [optional] 
+**backup_circuit** | **str** | Backup circuit for the SLA information | [optional] 
+**var_class** | **str** | Class for the SLA information | [optional] 
+**primary_circuit** | **str** | Primary circuit for the SLA information | [optional] 
 
 ## Example
 

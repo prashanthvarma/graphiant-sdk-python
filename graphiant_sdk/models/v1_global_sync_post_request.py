@@ -28,12 +28,13 @@ class V1GlobalSyncPostRequest(BaseModel):
     """ # noqa: E501
     device_ids: Optional[List[StrictInt]] = Field(default=None, alias="deviceIds")
     ipfix_exported_id: Optional[StrictInt] = Field(default=None, alias="ipfixExportedId")
+    ntp_id: Optional[StrictInt] = Field(default=None, alias="ntpId")
     prefix_set_id: Optional[StrictInt] = Field(default=None, alias="prefixSetId")
     routing_policy_id: Optional[StrictInt] = Field(default=None, alias="routingPolicyId")
     snmp_id: Optional[StrictInt] = Field(default=None, alias="snmpId")
     syslog_server_id: Optional[StrictInt] = Field(default=None, alias="syslogServerId")
     traffic_policy_id: Optional[StrictInt] = Field(default=None, alias="trafficPolicyId")
-    __properties: ClassVar[List[str]] = ["deviceIds", "ipfixExportedId", "prefixSetId", "routingPolicyId", "snmpId", "syslogServerId", "trafficPolicyId"]
+    __properties: ClassVar[List[str]] = ["deviceIds", "ipfixExportedId", "ntpId", "prefixSetId", "routingPolicyId", "snmpId", "syslogServerId", "trafficPolicyId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,6 +89,7 @@ class V1GlobalSyncPostRequest(BaseModel):
         _obj = cls.model_validate({
             "deviceIds": obj.get("deviceIds"),
             "ipfixExportedId": obj.get("ipfixExportedId"),
+            "ntpId": obj.get("ntpId"),
             "prefixSetId": obj.get("prefixSetId"),
             "routingPolicyId": obj.get("routingPolicyId"),
             "snmpId": obj.get("snmpId"),

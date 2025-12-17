@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hostname** | **str** |  | [optional] 
-**reason** | **str** |  | [optional] 
-**server_address** | **str** |  | [optional] 
-**site_name** | **str** |  | [optional] 
+**hostname** | **str** | the hostname of the log | [optional] 
+**reason** | **str** | the reason for the log | [optional] 
+**server_address** | **str** | the address of the server | [optional] 
+**site_name** | **str** | the name of the site | [optional] 
 **ts** | [**GoogleProtobufTimestamp**](GoogleProtobufTimestamp.md) |  | [optional] 
 
 ## Example

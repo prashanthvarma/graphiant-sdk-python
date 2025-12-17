@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,8 +26,8 @@ class V1ExtranetB2bMonitoringPeeringServiceServiceHealthPostRequest(BaseModel):
     """
     V1ExtranetB2bMonitoringPeeringServiceServiceHealthPostRequest
     """ # noqa: E501
-    id: Optional[StrictInt] = None
-    is_provider: Optional[StrictBool] = Field(default=None, alias="isProvider")
+    id: StrictInt = Field(description="the id of the service (required)")
+    is_provider: StrictBool = Field(description="whether the entity is a provider/producer or consumer (required)", alias="isProvider")
     __properties: ClassVar[List[str]] = ["id", "isProvider"]
 
     model_config = ConfigDict(

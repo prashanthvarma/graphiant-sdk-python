@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,8 +27,8 @@ class ManaV2B2bExtranetPeeringServiceCustomerInvite(BaseModel):
     """
     ManaV2B2bExtranetPeeringServiceCustomerInvite
     """ # noqa: E501
-    admin_email: Optional[List[StrictStr]] = Field(default=None, alias="adminEmail")
-    maximum_number_of_sites: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="maximumNumberOfSites")
+    admin_email: List[StrictStr] = Field(alias="adminEmail")
+    maximum_number_of_sites: Annotated[int, Field(strict=True, ge=0)] = Field(description="Maximum number of sites for the peering service customer (required)", alias="maximumNumberOfSites")
     __properties: ClassVar[List[str]] = ["adminEmail", "maximumNumberOfSites"]
 
     model_config = ConfigDict(

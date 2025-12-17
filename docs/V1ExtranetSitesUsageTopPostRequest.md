@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
-**is_b2_b** | **bool** |  | [optional] 
-**is_provider** | **bool** |  | [optional] 
+**id** | **int** | the id associated with an entity - consumer_id for consumer, and service_id for the producer/service (required) | 
+**is_b2_b** | **bool** | whether the entity is a b2b entity (true for b2b entity, false for local extranet entity) (required) | 
+**is_provider** | **bool** | whether the entity is a provider or consumer (required) | 
 **service_id** | **int** |  | [optional] 
-**time_window** | [**StatsmonTimeWindow**](StatsmonTimeWindow.md) |  | [optional] 
+**time_window** | [**StatsmonTimeWindow**](StatsmonTimeWindow.md) |  | 
 
 ## Example
 

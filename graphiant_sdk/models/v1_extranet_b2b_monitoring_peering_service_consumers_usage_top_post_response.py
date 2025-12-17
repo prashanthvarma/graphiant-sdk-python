@@ -28,8 +28,8 @@ class V1ExtranetB2bMonitoringPeeringServiceConsumersUsageTopPostResponse(BaseMod
     V1ExtranetB2bMonitoringPeeringServiceConsumersUsageTopPostResponse
     """ # noqa: E501
     top_consumers: Optional[List[IpfixEntityUsage]] = Field(default=None, alias="topConsumers")
-    total_customers: Optional[StrictInt] = Field(default=None, alias="totalCustomers")
-    total_usage: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalUsage")
+    total_customers: Optional[StrictInt] = Field(default=None, description="total number of customers", alias="totalCustomers")
+    total_usage: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total service usage in kilo bytes", alias="totalUsage")
     __properties: ClassVar[List[str]] = ["topConsumers", "totalCustomers", "totalUsage"]
 
     model_config = ConfigDict(

@@ -9,9 +9,11 @@ Name | Type | Description | Notes
 **cloud_provider** | **str** |  | [optional] 
 **company_name** | **str** |  | [optional] 
 **credit_limit** | **int** |  | [optional] 
+**description** | **str** |  | [optional] 
 **enterprise_id** | **int** |  (required) | 
 **impersonation_enabled** | **bool** |  | [optional] 
 **logo** | **str** |  | [optional] 
+**marketplace_id** | **str** |  | [optional] 
 **portal_banner** | **str** |  | [optional] 
 **proxy_tenant_id** | **int** |  | [optional] 
 **small_logo** | **str** |  | [optional] 

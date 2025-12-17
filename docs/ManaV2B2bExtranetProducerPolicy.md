@@ -5,18 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | **str** |  | [optional] 
+**description** | **str** | Description for the service | [optional] 
 **global_object_device_summaries** | [**Dict[str, ManaV2GlobalObjectServiceSummaries]**](ManaV2GlobalObjectServiceSummaries.md) |  | [optional] 
 **global_object_summaries** | [**Dict[str, ManaV2GlobalObjectServiceSummaries]**](ManaV2GlobalObjectServiceSummaries.md) |  | [optional] 
-**nat_pools** | **List[str]** |  | [optional] 
+**nat_pools** | **List[str]** |  | 
 **prefix_tags** | [**List[ManaV2B2bExtranetPrefixTag]**](ManaV2B2bExtranetPrefixTag.md) |  | [optional] 
 **profiles** | [**List[ManaV2ApplicationProfile]**](ManaV2ApplicationProfile.md) |  | [optional] 
-**service_lan_segment** | **int** |  | [optional] 
-**service_prefixes** | **List[str]** |  | [optional] 
-**sites** | [**List[ManaV2B2bSiteInformation]**](ManaV2B2bSiteInformation.md) |  | [optional] 
+**service_lan_segment** | **int** | LAN segment for the service (required) | 
+**service_prefixes** | **List[str]** |  | 
+**sites** | [**List[ManaV2B2bSiteInformation]**](ManaV2B2bSiteInformation.md) |  | 
 **sla** | [**ManaV2SlaInformation**](ManaV2SlaInformation.md) |  | [optional] 
 **status** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
+**type** | **str** | Type of the service whether it is application or peering (required) | 
 **unmatched_customers** | **int** |  | [optional] 
 
 ## Example

@@ -26,8 +26,8 @@ class IpfixEntityUsage(BaseModel):
     """
     IpfixEntityUsage
     """ # noqa: E501
-    id: Optional[StrictInt] = Field(default=None, description="id of consumer or lan segment ")
-    name: Optional[StrictStr] = None
+    id: Optional[StrictInt] = Field(default=None, description="id of the entity")
+    name: Optional[StrictStr] = Field(default=None, description="name of the entity")
     usage: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="usage in kbps")
     __properties: ClassVar[List[str]] = ["id", "name", "usage"]
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **global_prefix_set_ops** | **Dict[str, str]** |  | [optional] 
 **ipfix_exporter_ops** | **Dict[str, str]** |  | [optional] 
 **ipfix_exporter_ops_v2** | [**Dict[str, ManaV2GlobalObjectOperationConfig]**](ManaV2GlobalObjectOperationConfig.md) |  | [optional] 
+**ntp_ops** | **Dict[str, str]** |  | [optional] 
 **prefix_set_ops** | **Dict[str, str]** |  | [optional] 
 **routing_policy_ops** | **Dict[str, str]** |  | [optional] 
 **site_id** | **int** |  | [optional] 

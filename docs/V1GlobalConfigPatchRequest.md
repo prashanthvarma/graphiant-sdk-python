@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **global_prefix_sets** | [**Dict[str, ManaV2NullablePrefixSetConfig]**](ManaV2NullablePrefixSetConfig.md) |  | [optional] 
 **ipfix_exporters** | [**Dict[str, ManaV2NullableIpfixExporterConfig]**](ManaV2NullableIpfixExporterConfig.md) |  | [optional] 
+**ntps** | [**Dict[str, ManaV2NullableNtpConfig]**](ManaV2NullableNtpConfig.md) |  | [optional] 
 **prefix_sets** | [**Dict[str, ManaV2NullableEnterprisePrefixSetConfig]**](ManaV2NullableEnterprisePrefixSetConfig.md) |  | [optional] 
 **routing_policies** | [**Dict[str, ManaV2NullableRoutingPolicyConfig]**](ManaV2NullableRoutingPolicyConfig.md) |  | [optional] 
 **snmps** | [**Dict[str, ManaV2NullableSnmpConfig]**](ManaV2NullableSnmpConfig.md) |  | [optional] 

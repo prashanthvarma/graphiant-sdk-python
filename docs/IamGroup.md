@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
 **enterprise_ids** | **List[int]** |  | [optional] 
+**enterprise_permissions** | [**Dict[str, IamEnterprisePermissions]**](IamEnterprisePermissions.md) |  | [optional] 
 **group_type** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 

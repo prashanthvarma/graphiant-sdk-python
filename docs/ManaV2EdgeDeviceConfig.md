@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **maintenance_mode** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **nat_policy** | [**ManaV2NatPolicyConfig**](ManaV2NatPolicyConfig.md) |  | [optional] 
+**ntp_global_object** | [**Dict[str, ManaV2NullableNtpConfig]**](ManaV2NullableNtpConfig.md) |  | [optional] 
 **ospfv2_enabled** | **bool** |  | [optional] 
 **ospfv3_enabled** | **bool** |  | [optional] 
 **prefix_sets** | [**Dict[str, ManaV2NullablePrefixSetConfig]**](ManaV2NullablePrefixSetConfig.md) |  | [optional] 

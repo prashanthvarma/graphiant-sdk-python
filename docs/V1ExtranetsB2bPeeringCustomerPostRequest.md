@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**invite** | [**ManaV2B2bExtranetPeeringServiceCustomerInvite**](ManaV2B2bExtranetPeeringServiceCustomerInvite.md) |  | [optional] 
-**name** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
+**invite** | [**ManaV2B2bExtranetPeeringServiceCustomerInvite**](ManaV2B2bExtranetPeeringServiceCustomerInvite.md) |  | 
+**name** | **str** | Name of the peering service customer (required) | 
+**type** | **str** | Type of the peerings servicecustomer whether it is a graphiant or non-graphiant (required) | 
 
 ## Example
 

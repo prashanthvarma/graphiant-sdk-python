@@ -29,12 +29,12 @@ class ManaV2B2bExtranetPeeringServiceProducerPolicy(BaseModel):
     """
     ManaV2B2bExtranetPeeringServiceProducerPolicy
     """ # noqa: E501
-    description: Optional[StrictStr] = None
+    description: Optional[StrictStr] = Field(default=None, description="Description for the service")
     global_object_ops: Optional[Dict[str, ManaV2GlobalObjectServiceOps]] = Field(default=None, alias="globalObjectOps")
-    prefix_tags: Optional[List[ManaV2B2bExtranetPrefixTag]] = Field(default=None, alias="prefixTags")
-    service_lan_segment: Optional[StrictInt] = Field(default=None, alias="serviceLanSegment")
-    site: Optional[List[ManaV2B2bSiteInformation]] = None
-    type: Optional[StrictStr] = None
+    prefix_tags: List[ManaV2B2bExtranetPrefixTag] = Field(alias="prefixTags")
+    service_lan_segment: StrictInt = Field(description="LAN segment ID for the service (required)", alias="serviceLanSegment")
+    site: List[ManaV2B2bSiteInformation]
+    type: StrictStr = Field(description="Type of the service whether it is application or peering (required)")
     __properties: ClassVar[List[str]] = ["description", "globalObjectOps", "prefixTags", "serviceLanSegment", "site", "type"]
 
     model_config = ConfigDict(

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**admin_email** | **List[str]** |  | [optional] 
-**maximum_number_of_sites** | **int** |  | [optional] 
+**admin_email** | **List[str]** |  | 
+**maximum_number_of_sites** | **int** | Maximum number of sites for the peering service customer (required) | 
 
 ## Example
 

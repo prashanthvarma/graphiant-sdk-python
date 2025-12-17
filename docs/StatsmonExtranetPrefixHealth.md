@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**health** | **str** |  | [optional] 
+**health** | **str** | the health status of the prefix (Healthy, Impaired, Down) | [optional] 
 **missing_prefixes** | **List[str]** |  | [optional] 
 
 ## Example

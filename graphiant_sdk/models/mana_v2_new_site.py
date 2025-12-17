@@ -35,6 +35,7 @@ class ManaV2NewSite(BaseModel):
     location: Optional[ManaV2Location] = None
     name: Optional[StrictStr] = None
     notes: Optional[StrictStr] = None
+    ntp_ops: Optional[Dict[str, StrictStr]] = Field(default=None, alias="ntpOps")
     prefix_set_ops: Optional[Dict[str, StrictStr]] = Field(default=None, alias="prefixSetOps")
     route_tag: Optional[ManaV2RouteTag] = Field(default=None, alias="routeTag")
     routing_policy_ops: Optional[Dict[str, StrictStr]] = Field(default=None, alias="routingPolicyOps")
@@ -42,7 +43,7 @@ class ManaV2NewSite(BaseModel):
     syslog_server_ops: Optional[Dict[str, StrictStr]] = Field(default=None, alias="syslogServerOps")
     syslog_server_ops_v2: Optional[Dict[str, ManaV2GlobalObjectOperationConfig]] = Field(default=None, alias="syslogServerOpsV2")
     traffic_policy_ops: Optional[Dict[str, StrictStr]] = Field(default=None, alias="trafficPolicyOps")
-    __properties: ClassVar[List[str]] = ["globalPrefixSetOps", "ipfixExporterOps", "ipfixExporterOpsV2", "location", "name", "notes", "prefixSetOps", "routeTag", "routingPolicyOps", "snmpOps", "syslogServerOps", "syslogServerOpsV2", "trafficPolicyOps"]
+    __properties: ClassVar[List[str]] = ["globalPrefixSetOps", "ipfixExporterOps", "ipfixExporterOpsV2", "location", "name", "notes", "ntpOps", "prefixSetOps", "routeTag", "routingPolicyOps", "snmpOps", "syslogServerOps", "syslogServerOpsV2", "trafficPolicyOps"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -126,6 +127,7 @@ class ManaV2NewSite(BaseModel):
             "location": ManaV2Location.from_dict(obj["location"]) if obj.get("location") is not None else None,
             "name": obj.get("name"),
             "notes": obj.get("notes"),
+            "ntpOps": obj.get("ntpOps"),
             "prefixSetOps": obj.get("prefixSetOps"),
             "routeTag": ManaV2RouteTag.from_dict(obj["routeTag"]) if obj.get("routeTag") is not None else None,
             "routingPolicyOps": obj.get("routingPolicyOps"),

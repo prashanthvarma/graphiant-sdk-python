@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
-**is_provider** | **bool** |  | [optional] 
+**id** | **int** | the id of the service (required) | 
+**is_provider** | **bool** | whether the entity is a provider/producer or consumer (required) | 
 
 ## Example
 

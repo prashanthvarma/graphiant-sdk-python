@@ -37,17 +37,19 @@ class IamEnterprise(BaseModel):
     counts: Optional[IamCounts] = None
     credit_limit: Optional[StrictInt] = Field(default=None, alias="creditLimit")
     customers: Optional[Dict[str, IamCustomer]] = None
+    description: Optional[StrictStr] = None
     enterprise_id: Optional[StrictInt] = Field(default=None, alias="enterpriseId")
     eula_agreement_date: Optional[GoogleProtobufTimestamp] = Field(default=None, alias="eulaAgreementDate")
     impersonation_enabled: Optional[StrictBool] = Field(default=None, alias="impersonationEnabled")
     logo: Optional[StrictStr] = None
+    marketplace_id: Optional[StrictStr] = Field(default=None, alias="marketplaceId")
     parent_company_name: Optional[StrictStr] = Field(default=None, alias="parentCompanyName")
     parent_enterprise_id: Optional[StrictInt] = Field(default=None, alias="parentEnterpriseId")
     portal_banner: Optional[StrictStr] = Field(default=None, alias="portalBanner")
     proxy_tenant_id: Optional[StrictInt] = Field(default=None, alias="proxyTenantId")
     small_logo: Optional[StrictStr] = Field(default=None, alias="smallLogo")
     token_expiry: Optional[StrictStr] = Field(default=None, alias="tokenExpiry")
-    __properties: ClassVar[List[str]] = ["acceptEula", "accountType", "adminEmail", "cloudProvider", "companyName", "counts", "creditLimit", "customers", "enterpriseId", "eulaAgreementDate", "impersonationEnabled", "logo", "parentCompanyName", "parentEnterpriseId", "portalBanner", "proxyTenantId", "smallLogo", "tokenExpiry"]
+    __properties: ClassVar[List[str]] = ["acceptEula", "accountType", "adminEmail", "cloudProvider", "companyName", "counts", "creditLimit", "customers", "description", "enterpriseId", "eulaAgreementDate", "impersonationEnabled", "logo", "marketplaceId", "parentCompanyName", "parentEnterpriseId", "portalBanner", "proxyTenantId", "smallLogo", "tokenExpiry"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -126,10 +128,12 @@ class IamEnterprise(BaseModel):
             )
             if obj.get("customers") is not None
             else None,
+            "description": obj.get("description"),
             "enterpriseId": obj.get("enterpriseId"),
             "eulaAgreementDate": GoogleProtobufTimestamp.from_dict(obj["eulaAgreementDate"]) if obj.get("eulaAgreementDate") is not None else None,
             "impersonationEnabled": obj.get("impersonationEnabled"),
             "logo": obj.get("logo"),
+            "marketplaceId": obj.get("marketplaceId"),
             "parentCompanyName": obj.get("parentCompanyName"),
             "parentEnterpriseId": obj.get("parentEnterpriseId"),
             "portalBanner": obj.get("portalBanner"),

@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from graphiant_sdk.models.common_permissions import CommonPermissions
+from graphiant_sdk.models.iam_enterprise_permissions import IamEnterprisePermissions
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,13 +30,14 @@ class IamGroup(BaseModel):
     """ # noqa: E501
     description: Optional[StrictStr] = None
     enterprise_ids: Optional[List[StrictInt]] = Field(default=None, alias="enterpriseIds")
+    enterprise_permissions: Optional[Dict[str, IamEnterprisePermissions]] = Field(default=None, alias="enterprisePermissions")
     group_type: Optional[StrictStr] = Field(default=None, alias="groupType")
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     permissions: Optional[CommonPermissions] = None
     time_window_end: Optional[StrictInt] = Field(default=None, alias="timeWindowEnd")
     time_window_start: Optional[StrictInt] = Field(default=None, alias="timeWindowStart")
-    __properties: ClassVar[List[str]] = ["description", "enterpriseIds", "groupType", "id", "name", "permissions", "timeWindowEnd", "timeWindowStart"]
+    __properties: ClassVar[List[str]] = ["description", "enterpriseIds", "enterprisePermissions", "groupType", "id", "name", "permissions", "timeWindowEnd", "timeWindowStart"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,6 +78,13 @@ class IamGroup(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each value in enterprise_permissions (dict)
+        _field_dict = {}
+        if self.enterprise_permissions:
+            for _key_enterprise_permissions in self.enterprise_permissions:
+                if self.enterprise_permissions[_key_enterprise_permissions]:
+                    _field_dict[_key_enterprise_permissions] = self.enterprise_permissions[_key_enterprise_permissions].to_dict()
+            _dict['enterprisePermissions'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of permissions
         if self.permissions:
             _dict['permissions'] = self.permissions.to_dict()
@@ -93,6 +102,12 @@ class IamGroup(BaseModel):
         _obj = cls.model_validate({
             "description": obj.get("description"),
             "enterpriseIds": obj.get("enterpriseIds"),
+            "enterprisePermissions": dict(
+                (_k, IamEnterprisePermissions.from_dict(_v))
+                for _k, _v in obj["enterprisePermissions"].items()
+            )
+            if obj.get("enterprisePermissions") is not None
+            else None,
             "groupType": obj.get("groupType"),
             "id": obj.get("id"),
             "name": obj.get("name"),

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,8 +26,8 @@ class ManaV2B2bExtranetPrefixTag(BaseModel):
     """
     ManaV2B2bExtranetPrefixTag
     """ # noqa: E501
-    prefix: Optional[StrictStr] = None
-    tag: Optional[StrictStr] = None
+    prefix: StrictStr = Field(description="Prefix advertised by the service (required)")
+    tag: Optional[StrictStr] = Field(default=None, description="Tag for the prefix")
     __properties: ClassVar[List[str]] = ["prefix", "tag"]
 
     model_config = ConfigDict(

@@ -26,7 +26,7 @@ class StatsmonExtranetPrefixHealth(BaseModel):
     """
     StatsmonExtranetPrefixHealth
     """ # noqa: E501
-    health: Optional[StrictStr] = None
+    health: Optional[StrictStr] = Field(default=None, description="the health status of the prefix (Healthy, Impaired, Down)")
     missing_prefixes: Optional[List[StrictStr]] = Field(default=None, alias="missingPrefixes")
     __properties: ClassVar[List[str]] = ["health", "missingPrefixes"]
 

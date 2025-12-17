@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **customer_id** | **int** |  | [optional] 
 **global_object_ops** | [**Dict[str, ManaV2GlobalObjectServiceOps]**](ManaV2GlobalObjectServiceOps.md) |  | [optional] 
-**id** | **int** | ID of the service. | [optional] 
-**nat** | [**List[ManaV2B2bNat]**](ManaV2B2bNat.md) |  | [optional] 
-**policy** | [**List[ManaV2B2bExtranetPeeringServiceConsumerLanSegmentPolicy]**](ManaV2B2bExtranetPeeringServiceConsumerLanSegmentPolicy.md) |  | [optional] 
-**site_information** | [**List[ManaV2B2bSiteInformation]**](ManaV2B2bSiteInformation.md) |  | [optional] 
+**id** | **int** | ID of the service which is being consumed by the customer (required) | 
+**nat** | [**List[ManaV2B2bNat]**](ManaV2B2bNat.md) |  | 
+**policy** | [**List[ManaV2B2bExtranetPeeringServiceConsumerLanSegmentPolicy]**](ManaV2B2bExtranetPeeringServiceConsumerLanSegmentPolicy.md) |  | 
+**site_information** | [**List[ManaV2B2bSiteInformation]**](ManaV2B2bSiteInformation.md) |  | 
 **site_to_site_vpn** | [**ManaV2GuestConsumerSiteToSiteVpnConfig**](ManaV2GuestConsumerSiteToSiteVpnConfig.md) |  | [optional] 
 
 ## Example

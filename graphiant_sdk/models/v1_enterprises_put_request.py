@@ -34,9 +34,11 @@ class V1EnterprisesPutRequest(BaseModel):
     cloud_provider: Optional[StrictStr] = Field(default=None, alias="cloudProvider")
     company_name: StrictStr = Field(description=" (required)", alias="companyName")
     credit_limit: Optional[StrictInt] = Field(default=None, alias="creditLimit")
+    description: Optional[StrictStr] = None
     logo: Optional[StrictStr] = None
+    marketplace_id: Optional[StrictStr] = Field(default=None, alias="marketplaceId")
     small_logo: Optional[StrictStr] = Field(default=None, alias="smallLogo")
-    __properties: ClassVar[List[str]] = ["accountType", "adminEmail", "adminFirstName", "adminLastName", "adminTimeZone", "cloudProvider", "companyName", "creditLimit", "logo", "smallLogo"]
+    __properties: ClassVar[List[str]] = ["accountType", "adminEmail", "adminFirstName", "adminLastName", "adminTimeZone", "cloudProvider", "companyName", "creditLimit", "description", "logo", "marketplaceId", "smallLogo"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,7 +99,9 @@ class V1EnterprisesPutRequest(BaseModel):
             "cloudProvider": obj.get("cloudProvider"),
             "companyName": obj.get("companyName"),
             "creditLimit": obj.get("creditLimit"),
+            "description": obj.get("description"),
             "logo": obj.get("logo"),
+            "marketplaceId": obj.get("marketplaceId"),
             "smallLogo": obj.get("smallLogo")
         })
         return _obj

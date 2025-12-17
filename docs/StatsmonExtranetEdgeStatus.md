@@ -6,11 +6,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | [**GoogleProtobufTimestamp**](GoogleProtobufTimestamp.md) |  | [optional] 
-**disconnected_reason** | **str** |  | [optional] 
-**hostname** | **str** |  | [optional] 
-**id** | **int** |  | [optional] 
-**site_name** | **str** |  | [optional] 
-**status** | **str** |  | [optional] 
+**disconnected_reason** | **str** | the reason for the edge being disconnected | [optional] 
+**hostname** | **str** | the hostname of the edge | [optional] 
+**id** | **int** | the id of the edge/device | [optional] 
+**site_name** | **str** | the name of the site | [optional] 
+**status** | **str** | the health status of the edge (Healthy, Impaired, Down) | [optional] 
 
 ## Example
 

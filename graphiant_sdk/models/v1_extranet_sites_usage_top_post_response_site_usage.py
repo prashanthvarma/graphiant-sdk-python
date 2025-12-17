@@ -26,9 +26,9 @@ class V1ExtranetSitesUsageTopPostResponseSiteUsage(BaseModel):
     """
     V1ExtranetSitesUsageTopPostResponseSiteUsage
     """ # noqa: E501
-    site_id: Optional[StrictInt] = Field(default=None, alias="siteId")
-    site_name: Optional[StrictStr] = Field(default=None, alias="siteName")
-    usage: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="service usage in kilo bytes")
+    site_id: Optional[StrictInt] = Field(default=None, description="the id of the site", alias="siteId")
+    site_name: Optional[StrictStr] = Field(default=None, description="the name of the site", alias="siteName")
+    usage: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="usage/consumption of the service on the site in kilo bytes")
     __properties: ClassVar[List[str]] = ["siteId", "siteName", "usage"]
 
     model_config = ConfigDict(

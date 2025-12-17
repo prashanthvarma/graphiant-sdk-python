@@ -27,14 +27,14 @@ class V1ExtranetSitesUsagePostRequest(BaseModel):
     """
     V1ExtranetSitesUsagePostRequest
     """ # noqa: E501
-    id: Optional[StrictInt] = Field(default=None, description="the id associated with an entity - consumer_id for consumer, and service_id for the producer/service")
-    is_b2_b: Optional[StrictBool] = Field(default=None, alias="isB2B")
-    is_provider: Optional[StrictBool] = Field(default=None, alias="isProvider")
+    id: StrictInt = Field(description="the id associated with an entity - consumer_id for consumer, or service_id for the producer/service (required)")
+    is_b2_b: StrictBool = Field(description="whether the entity is a b2b entity (required)", alias="isB2B")
+    is_provider: StrictBool = Field(description="whether the entity is a provider or consumer (required)", alias="isProvider")
     service_id: Optional[StrictInt] = Field(default=None, alias="serviceId")
-    site_id: Optional[StrictInt] = Field(default=None, alias="siteId")
+    site_id: Optional[StrictInt] = Field(default=None, description="a filter to get usage for a specific site (id of the site)", alias="siteId")
     subscription_name: Optional[StrictStr] = Field(default=None, description="Optional subscription name for filter", alias="subscriptionName")
-    time_window: Optional[StatsmonTimeWindow] = Field(default=None, alias="timeWindow")
-    vrf_id: Optional[StrictInt] = Field(default=None, alias="vrfId")
+    time_window: StatsmonTimeWindow = Field(alias="timeWindow")
+    vrf_id: Optional[StrictInt] = Field(default=None, description="a filter to get usage for a specific lan segment (id of the lan segment)", alias="vrfId")
     __properties: ClassVar[List[str]] = ["id", "isB2B", "isProvider", "serviceId", "siteId", "subscriptionName", "timeWindow", "vrfId"]
 
     model_config = ConfigDict(

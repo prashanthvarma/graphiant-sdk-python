@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**invites** | [**List[ManaV2B2bExtranetApplicationInvite]**](ManaV2B2bExtranetApplicationInvite.md) |  | [optional] 
+**invites** | [**List[ManaV2B2bExtranetApplicationInvite]**](ManaV2B2bExtranetApplicationInvite.md) |  | 
 
 ## Example
 

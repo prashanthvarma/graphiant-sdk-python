@@ -31,14 +31,16 @@ class V1EnterprisesPatchRequest(BaseModel):
     cloud_provider: Optional[StrictStr] = Field(default=None, alias="cloudProvider")
     company_name: Optional[StrictStr] = Field(default=None, alias="companyName")
     credit_limit: Optional[StrictInt] = Field(default=None, alias="creditLimit")
+    description: Optional[StrictStr] = None
     enterprise_id: StrictInt = Field(description=" (required)", alias="enterpriseId")
     impersonation_enabled: Optional[StrictBool] = Field(default=None, alias="impersonationEnabled")
     logo: Optional[StrictStr] = None
+    marketplace_id: Optional[StrictStr] = Field(default=None, alias="marketplaceId")
     portal_banner: Optional[StrictStr] = Field(default=None, alias="portalBanner")
     proxy_tenant_id: Optional[StrictInt] = Field(default=None, alias="proxyTenantId")
     small_logo: Optional[StrictStr] = Field(default=None, alias="smallLogo")
     token_expiry: Optional[V1EnterprisesPatchRequestTokenExpiry] = Field(default=None, alias="tokenExpiry")
-    __properties: ClassVar[List[str]] = ["adminEmail", "cloudProvider", "companyName", "creditLimit", "enterpriseId", "impersonationEnabled", "logo", "portalBanner", "proxyTenantId", "smallLogo", "tokenExpiry"]
+    __properties: ClassVar[List[str]] = ["adminEmail", "cloudProvider", "companyName", "creditLimit", "description", "enterpriseId", "impersonationEnabled", "logo", "marketplaceId", "portalBanner", "proxyTenantId", "smallLogo", "tokenExpiry"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,9 +100,11 @@ class V1EnterprisesPatchRequest(BaseModel):
             "cloudProvider": obj.get("cloudProvider"),
             "companyName": obj.get("companyName"),
             "creditLimit": obj.get("creditLimit"),
+            "description": obj.get("description"),
             "enterpriseId": obj.get("enterpriseId"),
             "impersonationEnabled": obj.get("impersonationEnabled"),
             "logo": obj.get("logo"),
+            "marketplaceId": obj.get("marketplaceId"),
             "portalBanner": obj.get("portalBanner"),
             "proxyTenantId": obj.get("proxyTenantId"),
             "smallLogo": obj.get("smallLogo"),

@@ -28,6 +28,7 @@ class V1GlobalConfigPatchResponse(BaseModel):
     """ # noqa: E501
     global_prefix_sets: Optional[Dict[str, StrictInt]] = Field(default=None, alias="globalPrefixSets")
     ipfix_exporters: Optional[Dict[str, StrictInt]] = Field(default=None, alias="ipfixExporters")
+    ntps: Optional[Dict[str, StrictInt]] = None
     prefix_sets: Optional[Dict[str, StrictInt]] = Field(default=None, alias="prefixSets")
     routing_policies: Optional[Dict[str, StrictInt]] = Field(default=None, alias="routingPolicies")
     snmps: Optional[Dict[str, StrictInt]] = None
@@ -35,7 +36,7 @@ class V1GlobalConfigPatchResponse(BaseModel):
     syslog_servers: Optional[Dict[str, StrictInt]] = Field(default=None, alias="syslogServers")
     traffic_policies: Optional[Dict[str, StrictInt]] = Field(default=None, alias="trafficPolicies")
     vpn_profiles: Optional[Dict[str, StrictInt]] = Field(default=None, alias="vpnProfiles")
-    __properties: ClassVar[List[str]] = ["globalPrefixSets", "ipfixExporters", "prefixSets", "routingPolicies", "snmps", "status", "syslogServers", "trafficPolicies", "vpnProfiles"]
+    __properties: ClassVar[List[str]] = ["globalPrefixSets", "ipfixExporters", "ntps", "prefixSets", "routingPolicies", "snmps", "status", "syslogServers", "trafficPolicies", "vpnProfiles"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,6 +91,7 @@ class V1GlobalConfigPatchResponse(BaseModel):
         _obj = cls.model_validate({
             "globalPrefixSets": obj.get("globalPrefixSets"),
             "ipfixExporters": obj.get("ipfixExporters"),
+            "ntps": obj.get("ntps"),
             "prefixSets": obj.get("prefixSets"),
             "routingPolicies": obj.get("routingPolicies"),
             "snmps": obj.get("snmps"),

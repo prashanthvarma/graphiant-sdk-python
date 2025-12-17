@@ -28,7 +28,7 @@ class StatsmonTimeWindow(BaseModel):
     """
     StatsmonTimeWindow
     """ # noqa: E501
-    bucket_size_sec: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="bucketSizeSec")
+    bucket_size_sec: Annotated[int, Field(strict=True, ge=0)] = Field(description="the size of the time window in seconds (required)", alias="bucketSizeSec")
     old_ts: Optional[GoogleProtobufTimestamp] = Field(default=None, alias="oldTs")
     recent_ts: Optional[GoogleProtobufTimestamp] = Field(default=None, alias="recentTs")
     __properties: ClassVar[List[str]] = ["bucketSizeSec", "oldTs", "recentTs"]

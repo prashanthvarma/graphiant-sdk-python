@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bw_allocation_site_lists** | **int** |  | [optional] 
-**bw_allocation_sites** | **int** |  | [optional] 
+**bw_allocation_site_lists** | **int** | Total Bandwidth allocation for the service on these site lists | [optional] 
+**bw_allocation_sites** | **int** | Total Bandwidth allocation for the service on these sites | [optional] 
 **policer_site_lists** | [**ManaV2Policer**](ManaV2Policer.md) |  | [optional] 
 **policer_sites** | [**ManaV2Policer**](ManaV2Policer.md) |  | [optional] 
 **site_lists** | **List[int]** |  | [optional] 

@@ -13,7 +13,9 @@ Name | Type | Description | Notes
 **cloud_provider** | **str** |  | [optional] 
 **company_name** | **str** |  (required) | 
 **credit_limit** | **int** |  | [optional] 
+**description** | **str** |  | [optional] 
 **logo** | **str** |  | [optional] 
+**marketplace_id** | **str** |  | [optional] 
 **small_logo** | **str** |  | [optional] 
 
 ## Example

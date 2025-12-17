@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**customer_name** | **str** |  | [optional] 
+**customer_name** | **str** | the name of the customer | [optional] 
 **customer_prefix_health** | [**StatsmonExtranetPrefixHealth**](StatsmonExtranetPrefixHealth.md) |  | [optional] 
-**overall_health** | **str** |  | [optional] 
+**overall_health** | **str** | the overall connectivity status of the service (Healthy, Impaired, Down) | [optional] 
 **producer_prefix_health** | [**StatsmonExtranetPrefixHealth**](StatsmonExtranetPrefixHealth.md) |  | [optional] 
 
 ## Example

@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | service id | [optional] 
-**is_provider** | **bool** |  | [optional] 
-**time_window** | [**StatsmonTimeWindow**](StatsmonTimeWindow.md) |  | [optional] 
+**id** | **int** | service id (required) | 
+**is_provider** | **bool** | whether the entity is a provider or consumer (required) | 
+**time_window** | [**StatsmonTimeWindow**](StatsmonTimeWindow.md) |  | 
 
 ## Example
 

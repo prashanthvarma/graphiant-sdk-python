@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ports** | **List[int]** |  | [optional] 
-**protocol** | **int** |  | [optional] 
+**ports** | **List[int]** |  | 
+**protocol** | **int** | Protocol for the application profile (required) | 
 
 ## Example
 

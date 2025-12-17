@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bw_allocation** | **int** |  | [optional] 
+**bw_allocation** | **int** | the bandwidth allocation for the entity in kbps | [optional] 
 **dl_stats** | [**List[IpfixStats]**](IpfixStats.md) |  | [optional] 
 **ul_stats** | [**List[IpfixStats]**](IpfixStats.md) |  | [optional] 
 

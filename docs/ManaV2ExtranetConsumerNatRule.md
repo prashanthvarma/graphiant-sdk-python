@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **outside_nat_prefix** | **str** | Optional nat prefix associated with a service prefix with an empty string indicating no NATing | [optional] 
-**service_prefix** | **str** |  | [optional] 
+**service_prefix** | **str** | Service prefix for the NAT rule (required) | 
 
 ## Example
 
