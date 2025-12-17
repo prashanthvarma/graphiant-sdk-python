@@ -23,6 +23,7 @@ from graphiant_sdk.models.mana_v2_forwarding_policy_config import ManaV2Forwardi
 from graphiant_sdk.models.mana_v2_nullable_enterprise_prefix_set_config import ManaV2NullableEnterprisePrefixSetConfig
 from graphiant_sdk.models.mana_v2_nullable_i_psec_vpn_profiles_config import ManaV2NullableIPsecVpnProfilesConfig
 from graphiant_sdk.models.mana_v2_nullable_ipfix_exporter_config import ManaV2NullableIpfixExporterConfig
+from graphiant_sdk.models.mana_v2_nullable_ntp_config import ManaV2NullableNtpConfig
 from graphiant_sdk.models.mana_v2_nullable_prefix_set_config import ManaV2NullablePrefixSetConfig
 from graphiant_sdk.models.mana_v2_nullable_routing_policy_config import ManaV2NullableRoutingPolicyConfig
 from graphiant_sdk.models.mana_v2_nullable_snmp_config import ManaV2NullableSnmpConfig
@@ -36,13 +37,14 @@ class V1GlobalConfigPatchRequest(BaseModel):
     """ # noqa: E501
     global_prefix_sets: Optional[Dict[str, ManaV2NullablePrefixSetConfig]] = Field(default=None, alias="globalPrefixSets")
     ipfix_exporters: Optional[Dict[str, ManaV2NullableIpfixExporterConfig]] = Field(default=None, alias="ipfixExporters")
+    ntps: Optional[Dict[str, ManaV2NullableNtpConfig]] = None
     prefix_sets: Optional[Dict[str, ManaV2NullableEnterprisePrefixSetConfig]] = Field(default=None, alias="prefixSets")
     routing_policies: Optional[Dict[str, ManaV2NullableRoutingPolicyConfig]] = Field(default=None, alias="routingPolicies")
     snmps: Optional[Dict[str, ManaV2NullableSnmpConfig]] = None
     syslog_servers: Optional[Dict[str, ManaV2NullableSyslogCollectorConfig]] = Field(default=None, alias="syslogServers")
     traffic_policies: Optional[ManaV2ForwardingPolicyConfig] = Field(default=None, alias="trafficPolicies")
     vpn_profiles: Optional[Dict[str, ManaV2NullableIPsecVpnProfilesConfig]] = Field(default=None, alias="vpnProfiles")
-    __properties: ClassVar[List[str]] = ["globalPrefixSets", "ipfixExporters", "prefixSets", "routingPolicies", "snmps", "syslogServers", "trafficPolicies", "vpnProfiles"]
+    __properties: ClassVar[List[str]] = ["globalPrefixSets", "ipfixExporters", "ntps", "prefixSets", "routingPolicies", "snmps", "syslogServers", "trafficPolicies", "vpnProfiles"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,6 +99,13 @@ class V1GlobalConfigPatchRequest(BaseModel):
                 if self.ipfix_exporters[_key_ipfix_exporters]:
                     _field_dict[_key_ipfix_exporters] = self.ipfix_exporters[_key_ipfix_exporters].to_dict()
             _dict['ipfixExporters'] = _field_dict
+        # override the default output from pydantic by calling `to_dict()` of each value in ntps (dict)
+        _field_dict = {}
+        if self.ntps:
+            for _key_ntps in self.ntps:
+                if self.ntps[_key_ntps]:
+                    _field_dict[_key_ntps] = self.ntps[_key_ntps].to_dict()
+            _dict['ntps'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in prefix_sets (dict)
         _field_dict = {}
         if self.prefix_sets:
@@ -158,6 +167,12 @@ class V1GlobalConfigPatchRequest(BaseModel):
                 for _k, _v in obj["ipfixExporters"].items()
             )
             if obj.get("ipfixExporters") is not None
+            else None,
+            "ntps": dict(
+                (_k, ManaV2NullableNtpConfig.from_dict(_v))
+                for _k, _v in obj["ntps"].items()
+            )
+            if obj.get("ntps") is not None
             else None,
             "prefixSets": dict(
                 (_k, ManaV2NullableEnterprisePrefixSetConfig.from_dict(_v))

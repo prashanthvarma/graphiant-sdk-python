@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**backup** | **str** |  | [optional] 
-**var_class** | **str** |  | [optional] 
-**primary** | **str** |  | [optional] 
-**result** | **str** |  | [optional] 
+**backup** | **str** | Backup circuit for the traffic policy action | [optional] 
+**var_class** | **str** | Class for the traffic policy action | [optional] 
+**primary** | **str** | Primary circuit for the traffic policy action | [optional] 
+**result** | **str** | Result for the traffic policy action | [optional] 
 
 ## Example
 

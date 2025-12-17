@@ -32,18 +32,18 @@ class ManaV2B2bExtranetProducerPolicy(BaseModel):
     """
     ManaV2B2bExtranetProducerPolicy
     """ # noqa: E501
-    description: Optional[StrictStr] = None
+    description: Optional[StrictStr] = Field(default=None, description="Description for the service")
     global_object_device_summaries: Optional[Dict[str, ManaV2GlobalObjectServiceSummaries]] = Field(default=None, alias="globalObjectDeviceSummaries")
     global_object_summaries: Optional[Dict[str, ManaV2GlobalObjectServiceSummaries]] = Field(default=None, alias="globalObjectSummaries")
-    nat_pools: Optional[List[StrictStr]] = Field(default=None, alias="natPools")
+    nat_pools: List[StrictStr] = Field(alias="natPools")
     prefix_tags: Optional[List[ManaV2B2bExtranetPrefixTag]] = Field(default=None, alias="prefixTags")
     profiles: Optional[List[ManaV2ApplicationProfile]] = None
-    service_lan_segment: Optional[StrictInt] = Field(default=None, alias="serviceLanSegment")
-    service_prefixes: Optional[List[StrictStr]] = Field(default=None, alias="servicePrefixes")
-    sites: Optional[List[ManaV2B2bSiteInformation]] = None
+    service_lan_segment: StrictInt = Field(description="LAN segment for the service (required)", alias="serviceLanSegment")
+    service_prefixes: List[StrictStr] = Field(alias="servicePrefixes")
+    sites: List[ManaV2B2bSiteInformation]
     sla: Optional[ManaV2SlaInformation] = None
     status: Optional[StrictStr] = None
-    type: Optional[StrictStr] = None
+    type: StrictStr = Field(description="Type of the service whether it is application or peering (required)")
     unmatched_customers: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="unmatchedCustomers")
     __properties: ClassVar[List[str]] = ["description", "globalObjectDeviceSummaries", "globalObjectSummaries", "natPools", "prefixTags", "profiles", "serviceLanSegment", "servicePrefixes", "sites", "sla", "status", "type", "unmatchedCustomers"]
 

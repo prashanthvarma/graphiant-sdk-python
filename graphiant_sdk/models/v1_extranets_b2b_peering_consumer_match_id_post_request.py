@@ -33,10 +33,10 @@ class V1ExtranetsB2bPeeringConsumerMatchIdPostRequest(BaseModel):
     """ # noqa: E501
     customer_id: Optional[StrictInt] = Field(default=None, alias="customerId")
     global_object_ops: Optional[Dict[str, ManaV2GlobalObjectServiceOps]] = Field(default=None, alias="globalObjectOps")
-    id: Optional[StrictInt] = Field(default=None, description="ID of the service.")
-    nat: Optional[List[ManaV2B2bNat]] = None
-    policy: Optional[List[ManaV2B2bExtranetPeeringServiceConsumerLanSegmentPolicy]] = None
-    site_information: Optional[List[ManaV2B2bSiteInformation]] = Field(default=None, alias="siteInformation")
+    id: StrictInt = Field(description="ID of the service which is being consumed by the customer (required)")
+    nat: List[ManaV2B2bNat]
+    policy: List[ManaV2B2bExtranetPeeringServiceConsumerLanSegmentPolicy]
+    site_information: List[ManaV2B2bSiteInformation] = Field(alias="siteInformation")
     site_to_site_vpn: Optional[ManaV2GuestConsumerSiteToSiteVpnConfig] = Field(default=None, alias="siteToSiteVpn")
     __properties: ClassVar[List[str]] = ["customerId", "globalObjectOps", "id", "nat", "policy", "siteInformation", "siteToSiteVpn"]
 

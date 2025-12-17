@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **edge_statuses** | [**List[StatsmonExtranetEdgeStatus]**](StatsmonExtranetEdgeStatus.md) |  | [optional] 
-**location** | **str** |  | [optional] 
-**region** | **str** |  | [optional] 
+**location** | **str** | the location of the site | [optional] 
+**region** | **str** | the region of the site | [optional] 
 **site_status** | [**StatsmonExtranetSiteStatus**](StatsmonExtranetSiteStatus.md) |  | [optional] 
 
 ## Example

@@ -27,11 +27,11 @@ class ManaV2B2bExtranetApplicationInvite(BaseModel):
     """
     ManaV2B2bExtranetApplicationInvite
     """ # noqa: E501
-    admin_email: Optional[StrictStr] = Field(default=None, alias="adminEmail")
-    consumer_burst_size: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="consumerBurstSize")
-    consumer_bw_site: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="consumerBwSite")
-    enterprise_id: Optional[StrictInt] = Field(default=None, alias="enterpriseId")
-    maximum_site_count: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="maximumSiteCount")
+    admin_email: StrictStr = Field(description="Admin email of the customer (required)", alias="adminEmail")
+    consumer_burst_size: Annotated[int, Field(strict=True, ge=0)] = Field(description="Maximum Burst size per site for the customer (required)", alias="consumerBurstSize")
+    consumer_bw_site: Annotated[int, Field(strict=True, ge=0)] = Field(description="Maximum Bandwidth allocation per site for the customer (required)", alias="consumerBwSite")
+    enterprise_id: StrictInt = Field(description="Enterprise ID of the customer (required)", alias="enterpriseId")
+    maximum_site_count: Annotated[int, Field(strict=True, ge=0)] = Field(description="Maximum number of sites for the customer (required)", alias="maximumSiteCount")
     service_prefixes: Optional[List[StrictStr]] = Field(default=None, alias="servicePrefixes")
     __properties: ClassVar[List[str]] = ["adminEmail", "consumerBurstSize", "consumerBwSite", "enterpriseId", "maximumSiteCount", "servicePrefixes"]
 

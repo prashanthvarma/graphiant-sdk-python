@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **lan_segments** | [**List[IpfixConnectionMap]**](IpfixConnectionMap.md) |  | [optional] 
 **regions** | [**List[IpfixConnectionMap]**](IpfixConnectionMap.md) |  | [optional] 
 **sites** | [**List[IpfixConnectionMap]**](IpfixConnectionMap.md) |  | [optional] 
-**total_usage** | **float** |  | [optional] 
+**total_usage** | **float** | total service usage in kilo bytes | [optional] 
 
 ## Example
 

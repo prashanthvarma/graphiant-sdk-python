@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **global_prefix_sets** | **Dict[str, int]** |  | [optional] 
 **ipfix_exporters** | **Dict[str, int]** |  | [optional] 
+**ntps** | **Dict[str, int]** |  | [optional] 
 **prefix_sets** | **Dict[str, int]** |  | [optional] 
 **routing_policies** | **Dict[str, int]** |  | [optional] 
 **snmps** | **Dict[str, int]** |  | [optional] 

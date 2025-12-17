@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ipfix_exported_ids** | **List[int]** |  | [optional] 
+**ntp_ids** | **List[int]** |  | [optional] 
 **prefix_set_ids** | **List[int]** |  | [optional] 
 **routing_policy_ids** | **List[int]** |  | [optional] 
 **snmp_ids** | **List[int]** |  | [optional] 

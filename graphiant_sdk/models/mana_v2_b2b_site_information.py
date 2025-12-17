@@ -27,8 +27,8 @@ class ManaV2B2bSiteInformation(BaseModel):
     """
     ManaV2B2bSiteInformation
     """ # noqa: E501
-    bw_allocation_site_lists: Optional[StrictInt] = Field(default=None, alias="bwAllocationSiteLists")
-    bw_allocation_sites: Optional[StrictInt] = Field(default=None, alias="bwAllocationSites")
+    bw_allocation_site_lists: Optional[StrictInt] = Field(default=None, description="Total Bandwidth allocation for the service on these site lists", alias="bwAllocationSiteLists")
+    bw_allocation_sites: Optional[StrictInt] = Field(default=None, description="Total Bandwidth allocation for the service on these sites", alias="bwAllocationSites")
     policer_site_lists: Optional[ManaV2Policer] = Field(default=None, alias="policerSiteLists")
     policer_sites: Optional[ManaV2Policer] = Field(default=None, alias="policerSites")
     site_lists: Optional[List[StrictInt]] = Field(default=None, alias="siteLists")

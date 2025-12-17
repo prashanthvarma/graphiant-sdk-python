@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List
 from graphiant_sdk.models.mana_v2_b2b_extranet_peering_service_customer_invite import ManaV2B2bExtranetPeeringServiceCustomerInvite
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,9 +27,9 @@ class V1ExtranetsB2bPeeringCustomerPostRequest(BaseModel):
     """
     V1ExtranetsB2bPeeringCustomerPostRequest
     """ # noqa: E501
-    invite: Optional[ManaV2B2bExtranetPeeringServiceCustomerInvite] = None
-    name: Optional[StrictStr] = None
-    type: Optional[StrictStr] = None
+    invite: ManaV2B2bExtranetPeeringServiceCustomerInvite
+    name: StrictStr = Field(description="Name of the peering service customer (required)")
+    type: StrictStr = Field(description="Type of the peerings servicecustomer whether it is a graphiant or non-graphiant (required)")
     __properties: ClassVar[List[str]] = ["invite", "name", "type"]
 
     model_config = ConfigDict(

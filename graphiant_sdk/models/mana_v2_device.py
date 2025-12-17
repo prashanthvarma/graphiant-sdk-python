@@ -30,6 +30,7 @@ from graphiant_sdk.models.mana_v2_interface import ManaV2Interface
 from graphiant_sdk.models.mana_v2_ipfix_exporter import ManaV2IpfixExporter
 from graphiant_sdk.models.mana_v2_location import ManaV2Location
 from graphiant_sdk.models.mana_v2_nat_policy import ManaV2NatPolicy
+from graphiant_sdk.models.mana_v2_ntp import ManaV2Ntp
 from graphiant_sdk.models.mana_v2_prefix_set import ManaV2PrefixSet
 from graphiant_sdk.models.mana_v2_region import ManaV2Region
 from graphiant_sdk.models.mana_v2_route_tag import ManaV2RouteTag
@@ -68,6 +69,7 @@ class ManaV2Device(BaseModel):
     maintenance_mode: Optional[StrictBool] = Field(default=None, alias="maintenanceMode")
     nat_policy: Optional[ManaV2NatPolicy] = Field(default=None, alias="natPolicy")
     notes: Optional[StrictStr] = None
+    ntp: Optional[ManaV2Ntp] = None
     oper_staled: Optional[StrictBool] = Field(default=None, alias="operStaled")
     oper_staled_at: Optional[GoogleProtobufTimestamp] = Field(default=None, alias="operStaledAt")
     oper_updated_at: Optional[GoogleProtobufTimestamp] = Field(default=None, alias="operUpdatedAt")
@@ -90,7 +92,7 @@ class ManaV2Device(BaseModel):
     traffic_policy: Optional[ManaV2ForwardingPolicy] = Field(default=None, alias="trafficPolicy")
     uptime: Optional[GoogleProtobufDuration] = None
     vrrp_enabled: Optional[StrictBool] = Field(default=None, alias="vrrpEnabled")
-    __properties: ClassVar[List[str]] = ["bgp", "bgpEnabled", "circuits", "configUpdatedAt", "createdAt", "dhcpServerEnabled", "dns", "gdi", "hostname", "id", "interfaces", "internalState", "ipfixEnabled", "ipfixExporters", "ipsecTunnels", "lastBootedAt", "lldpEnabled", "localRouteTag", "localWebServerPassword", "location", "maintenanceMode", "natPolicy", "notes", "operStaled", "operStaledAt", "operUpdatedAt", "ospfv2Enabled", "ospfv3Enabled", "platform", "prefixSets", "rebootReason", "region", "regionOverride", "role", "routingPolicies", "segments", "serialNumber", "site", "snmp", "softwareVersion", "staticRoutesEnabled", "status", "trafficPolicy", "uptime", "vrrpEnabled"]
+    __properties: ClassVar[List[str]] = ["bgp", "bgpEnabled", "circuits", "configUpdatedAt", "createdAt", "dhcpServerEnabled", "dns", "gdi", "hostname", "id", "interfaces", "internalState", "ipfixEnabled", "ipfixExporters", "ipsecTunnels", "lastBootedAt", "lldpEnabled", "localRouteTag", "localWebServerPassword", "location", "maintenanceMode", "natPolicy", "notes", "ntp", "operStaled", "operStaledAt", "operUpdatedAt", "ospfv2Enabled", "ospfv3Enabled", "platform", "prefixSets", "rebootReason", "region", "regionOverride", "role", "routingPolicies", "segments", "serialNumber", "site", "snmp", "softwareVersion", "staticRoutesEnabled", "status", "trafficPolicy", "uptime", "vrrpEnabled"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -183,6 +185,9 @@ class ManaV2Device(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of nat_policy
         if self.nat_policy:
             _dict['natPolicy'] = self.nat_policy.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of ntp
+        if self.ntp:
+            _dict['ntp'] = self.ntp.to_dict()
         # override the default output from pydantic by calling `to_dict()` of oper_staled_at
         if self.oper_staled_at:
             _dict['operStaledAt'] = self.oper_staled_at.to_dict()
@@ -263,6 +268,7 @@ class ManaV2Device(BaseModel):
             "maintenanceMode": obj.get("maintenanceMode"),
             "natPolicy": ManaV2NatPolicy.from_dict(obj["natPolicy"]) if obj.get("natPolicy") is not None else None,
             "notes": obj.get("notes"),
+            "ntp": ManaV2Ntp.from_dict(obj["ntp"]) if obj.get("ntp") is not None else None,
             "operStaled": obj.get("operStaled"),
             "operStaledAt": GoogleProtobufTimestamp.from_dict(obj["operStaledAt"]) if obj.get("operStaledAt") is not None else None,
             "operUpdatedAt": GoogleProtobufTimestamp.from_dict(obj["operUpdatedAt"]) if obj.get("operUpdatedAt") is not None else None,

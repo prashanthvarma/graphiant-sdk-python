@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**admin_email** | **str** |  | [optional] 
-**consumer_burst_size** | **int** |  | [optional] 
-**consumer_bw_site** | **int** |  | [optional] 
-**enterprise_id** | **int** |  | [optional] 
-**maximum_site_count** | **int** |  | [optional] 
+**admin_email** | **str** | Admin email of the customer (required) | 
+**consumer_burst_size** | **int** | Maximum Burst size per site for the customer (required) | 
+**consumer_bw_site** | **int** | Maximum Bandwidth allocation per site for the customer (required) | 
+**enterprise_id** | **int** | Enterprise ID of the customer (required) | 
+**maximum_site_count** | **int** | Maximum number of sites for the customer (required) | 
 **service_prefixes** | **List[str]** |  | [optional] 
 
 ## Example

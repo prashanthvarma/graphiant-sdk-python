@@ -27,12 +27,13 @@ class V1GlobalSummaryPostRequest(BaseModel):
     V1GlobalSummaryPostRequest
     """ # noqa: E501
     ipfix_exported_type: Optional[StrictBool] = Field(default=None, alias="ipfixExportedType")
+    ntp_type: Optional[StrictBool] = Field(default=None, alias="ntpType")
     prefix_set_type: Optional[StrictBool] = Field(default=None, alias="prefixSetType")
     routing_policy_type: Optional[StrictBool] = Field(default=None, alias="routingPolicyType")
     snmp_type: Optional[StrictBool] = Field(default=None, alias="snmpType")
     syslog_server_type: Optional[StrictBool] = Field(default=None, alias="syslogServerType")
     traffic_policy_type: Optional[StrictBool] = Field(default=None, alias="trafficPolicyType")
-    __properties: ClassVar[List[str]] = ["ipfixExportedType", "prefixSetType", "routingPolicyType", "snmpType", "syslogServerType", "trafficPolicyType"]
+    __properties: ClassVar[List[str]] = ["ipfixExportedType", "ntpType", "prefixSetType", "routingPolicyType", "snmpType", "syslogServerType", "trafficPolicyType"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,6 +87,7 @@ class V1GlobalSummaryPostRequest(BaseModel):
 
         _obj = cls.model_validate({
             "ipfixExportedType": obj.get("ipfixExportedType"),
+            "ntpType": obj.get("ntpType"),
             "prefixSetType": obj.get("prefixSetType"),
             "routingPolicyType": obj.get("routingPolicyType"),
             "snmpType": obj.get("snmpType"),

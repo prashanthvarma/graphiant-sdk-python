@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **location** | [**ManaV2Location**](ManaV2Location.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **notes** | **str** |  | [optional] 
+**ntp_ops** | **Dict[str, str]** |  | [optional] 
 **prefix_set_ops** | **Dict[str, str]** |  | [optional] 
 **route_tag** | [**ManaV2RouteTag**](ManaV2RouteTag.md) |  | [optional] 
 **routing_policy_ops** | **Dict[str, str]** |  | [optional] 

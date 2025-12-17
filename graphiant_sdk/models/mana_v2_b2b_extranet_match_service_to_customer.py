@@ -29,11 +29,11 @@ class ManaV2B2bExtranetMatchServiceToCustomer(BaseModel):
     """
     ManaV2B2bExtranetMatchServiceToCustomer
     """ # noqa: E501
-    id: Optional[StrictInt] = None
+    id: StrictInt = Field(description="ID of the service being subscribed by the customer (required)")
     lan_segment: Optional[StrictInt] = Field(default=None, alias="lanSegment")
-    nat: Optional[List[ManaV2B2bNat]] = None
-    num_customers: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="numCustomers")
-    service_prefixes: Optional[List[ManaV2B2bExtranetPrefixTag]] = Field(default=None, alias="servicePrefixes")
+    nat: List[ManaV2B2bNat]
+    num_customers: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Number of customers subscribed to the service", alias="numCustomers")
+    service_prefixes: List[ManaV2B2bExtranetPrefixTag] = Field(alias="servicePrefixes")
     __properties: ClassVar[List[str]] = ["id", "lanSegment", "nat", "numCustomers", "servicePrefixes"]
 
     model_config = ConfigDict(

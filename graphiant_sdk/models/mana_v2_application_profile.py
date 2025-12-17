@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,8 +26,8 @@ class ManaV2ApplicationProfile(BaseModel):
     """
     ManaV2ApplicationProfile
     """ # noqa: E501
-    ports: Optional[List[StrictInt]] = None
-    protocol: Optional[StrictInt] = None
+    ports: List[StrictInt]
+    protocol: StrictInt = Field(description="Protocol for the application profile (required)")
     __properties: ClassVar[List[str]] = ["ports", "protocol"]
 
     model_config = ConfigDict(

@@ -27,12 +27,13 @@ class V1GlobalAttachedEdgesPostRequest(BaseModel):
     V1GlobalAttachedEdgesPostRequest
     """ # noqa: E501
     ipfix_exported_ids: Optional[List[StrictInt]] = Field(default=None, alias="ipfixExportedIds")
+    ntp_ids: Optional[List[StrictInt]] = Field(default=None, alias="ntpIds")
     prefix_set_ids: Optional[List[StrictInt]] = Field(default=None, alias="prefixSetIds")
     routing_policy_ids: Optional[List[StrictInt]] = Field(default=None, alias="routingPolicyIds")
     snmp_ids: Optional[List[StrictInt]] = Field(default=None, alias="snmpIds")
     syslog_server_ids: Optional[List[StrictInt]] = Field(default=None, alias="syslogServerIds")
     traffic_policy_ids: Optional[List[StrictInt]] = Field(default=None, alias="trafficPolicyIds")
-    __properties: ClassVar[List[str]] = ["ipfixExportedIds", "prefixSetIds", "routingPolicyIds", "snmpIds", "syslogServerIds", "trafficPolicyIds"]
+    __properties: ClassVar[List[str]] = ["ipfixExportedIds", "ntpIds", "prefixSetIds", "routingPolicyIds", "snmpIds", "syslogServerIds", "trafficPolicyIds"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,6 +87,7 @@ class V1GlobalAttachedEdgesPostRequest(BaseModel):
 
         _obj = cls.model_validate({
             "ipfixExportedIds": obj.get("ipfixExportedIds"),
+            "ntpIds": obj.get("ntpIds"),
             "prefixSetIds": obj.get("prefixSetIds"),
             "routingPolicyIds": obj.get("routingPolicyIds"),
             "snmpIds": obj.get("snmpIds"),

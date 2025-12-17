@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **device_ids** | **List[int]** |  | [optional] 
 **ipfix_exported_id** | **int** |  | [optional] 
+**ntp_id** | **int** |  | [optional] 
 **prefix_set_id** | **int** |  | [optional] 
 **routing_policy_id** | **int** |  | [optional] 
 **snmp_id** | **int** |  | [optional] 

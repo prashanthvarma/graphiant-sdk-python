@@ -50,8 +50,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     @field_validator('licensing')
@@ -60,8 +60,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     @field_validator('order_status')
@@ -70,8 +70,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     @field_validator('support')
@@ -80,8 +80,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     @field_validator('user_and_tenant_management')
@@ -90,8 +90,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     @field_validator('asset_manager')
@@ -100,8 +100,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     @field_validator('global_services')
@@ -110,8 +110,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     @field_validator('network_configurations')
@@ -120,8 +120,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     @field_validator('safety_and_security')
@@ -130,8 +130,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     @field_validator('service_policies')
@@ -140,8 +140,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     @field_validator('compliance')
@@ -150,8 +150,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     @field_validator('developer_tools')
@@ -160,8 +160,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     @field_validator('insights')
@@ -170,8 +170,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     @field_validator('logs')
@@ -180,8 +180,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     @field_validator('monitoring_and_troubleshooting')
@@ -190,8 +190,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     @field_validator('reports')
@@ -200,8 +200,8 @@ class AuthPermissions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS']):
-            raise ValueError("must be one of enum values ('NO_ACCESS', 'READ_ONLY', 'FULL_ACCESS')")
+        if value not in set(['none', 'read', 'read_write']):
+            raise ValueError("must be one of enum values ('none', 'read', 'read_write')")
         return value
 
     model_config = ConfigDict(

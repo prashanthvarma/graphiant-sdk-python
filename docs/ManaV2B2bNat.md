@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**outside_nat_prefix** | **str** |  | [optional] 
-**prefix** | **str** |  | [optional] 
+**outside_nat_prefix** | **str** | Outside NAT prefix for the customer prefix | [optional] 
+**prefix** | **str** | Prefix imported into the service (required) | 
 
 ## Example
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **first_level** | [**List[IpfixConnectionMap]**](IpfixConnectionMap.md) |  | [optional] 
 **second_level** | [**List[IpfixConnectionMap]**](IpfixConnectionMap.md) |  | [optional] 
 **third_level** | [**List[IpfixConnectionMap]**](IpfixConnectionMap.md) |  | [optional] 
-**total_usage** | **float** |  | [optional] 
+**total_usage** | **float** | total service usage in kilo bytes | [optional] 
 
 ## Example
 

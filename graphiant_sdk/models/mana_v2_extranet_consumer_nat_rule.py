@@ -27,7 +27,7 @@ class ManaV2ExtranetConsumerNatRule(BaseModel):
     ManaV2ExtranetConsumerNatRule
     """ # noqa: E501
     outside_nat_prefix: Optional[StrictStr] = Field(default=None, description="Optional nat prefix associated with a service prefix with an empty string indicating no NATing", alias="outsideNatPrefix")
-    service_prefix: Optional[StrictStr] = Field(default=None, alias="servicePrefix")
+    service_prefix: StrictStr = Field(description="Service prefix for the NAT rule (required)", alias="servicePrefix")
     __properties: ClassVar[List[str]] = ["outsideNatPrefix", "servicePrefix"]
 
     model_config = ConfigDict(

@@ -30,6 +30,7 @@ class V1GlobalConfigSitePostRequest(BaseModel):
     global_prefix_set_ops: Optional[Dict[str, StrictStr]] = Field(default=None, alias="globalPrefixSetOps")
     ipfix_exporter_ops: Optional[Dict[str, StrictStr]] = Field(default=None, alias="ipfixExporterOps")
     ipfix_exporter_ops_v2: Optional[Dict[str, ManaV2GlobalObjectOperationConfig]] = Field(default=None, alias="ipfixExporterOpsV2")
+    ntp_ops: Optional[Dict[str, StrictStr]] = Field(default=None, alias="ntpOps")
     prefix_set_ops: Optional[Dict[str, StrictStr]] = Field(default=None, alias="prefixSetOps")
     routing_policy_ops: Optional[Dict[str, StrictStr]] = Field(default=None, alias="routingPolicyOps")
     site_id: Optional[StrictInt] = Field(default=None, alias="siteId")
@@ -37,7 +38,7 @@ class V1GlobalConfigSitePostRequest(BaseModel):
     syslog_server_ops: Optional[Dict[str, StrictStr]] = Field(default=None, alias="syslogServerOps")
     syslog_server_ops_v2: Optional[Dict[str, ManaV2GlobalObjectOperationConfig]] = Field(default=None, alias="syslogServerOpsV2")
     traffic_policy_ops: Optional[Dict[str, StrictStr]] = Field(default=None, alias="trafficPolicyOps")
-    __properties: ClassVar[List[str]] = ["globalPrefixSetOps", "ipfixExporterOps", "ipfixExporterOpsV2", "prefixSetOps", "routingPolicyOps", "siteId", "snmpOps", "syslogServerOps", "syslogServerOpsV2", "trafficPolicyOps"]
+    __properties: ClassVar[List[str]] = ["globalPrefixSetOps", "ipfixExporterOps", "ipfixExporterOpsV2", "ntpOps", "prefixSetOps", "routingPolicyOps", "siteId", "snmpOps", "syslogServerOps", "syslogServerOpsV2", "trafficPolicyOps"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -112,6 +113,7 @@ class V1GlobalConfigSitePostRequest(BaseModel):
             )
             if obj.get("ipfixExporterOpsV2") is not None
             else None,
+            "ntpOps": obj.get("ntpOps"),
             "prefixSetOps": obj.get("prefixSetOps"),
             "routingPolicyOps": obj.get("routingPolicyOps"),
             "siteId": obj.get("siteId"),

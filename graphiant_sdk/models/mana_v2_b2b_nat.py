@@ -26,8 +26,8 @@ class ManaV2B2bNat(BaseModel):
     """
     ManaV2B2bNat
     """ # noqa: E501
-    outside_nat_prefix: Optional[StrictStr] = Field(default=None, alias="outsideNatPrefix")
-    prefix: Optional[StrictStr] = None
+    outside_nat_prefix: Optional[StrictStr] = Field(default=None, description="Outside NAT prefix for the customer prefix", alias="outsideNatPrefix")
+    prefix: StrictStr = Field(description="Prefix imported into the service (required)")
     __properties: ClassVar[List[str]] = ["outsideNatPrefix", "prefix"]
 
     model_config = ConfigDict(

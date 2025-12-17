@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**policy** | [**ManaV2B2bExtranetProducerPolicy**](ManaV2B2bExtranetProducerPolicy.md) |  | [optional] 
-**service_name** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
+**policy** | [**ManaV2B2bExtranetProducerPolicy**](ManaV2B2bExtranetProducerPolicy.md) |  | 
+**service_name** | **str** | Name of the service (required) | 
+**type** | **str** | Type of the service whether it is application or peering (required) | 
 
 ## Example
 

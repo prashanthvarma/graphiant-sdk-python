@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**site_id** | **int** |  | [optional] 
-**site_name** | **str** |  | [optional] 
-**usage** | **float** | service usage in kilo bytes | [optional] 
+**site_id** | **int** | the id of the site | [optional] 
+**site_name** | **str** | the name of the site | [optional] 
+**usage** | **float** | usage/consumption of the service on the site in kilo bytes | [optional] 
 
 ## Example
 

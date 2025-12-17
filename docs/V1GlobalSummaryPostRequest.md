@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ipfix_exported_type** | **bool** |  | [optional] 
+**ntp_type** | **bool** |  | [optional] 
 **prefix_set_type** | **bool** |  | [optional] 
 **routing_policy_type** | **bool** |  | [optional] 
 **snmp_type** | **bool** |  | [optional] 

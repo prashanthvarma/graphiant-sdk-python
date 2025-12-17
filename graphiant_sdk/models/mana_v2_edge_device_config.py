@@ -30,6 +30,7 @@ from graphiant_sdk.models.mana_v2_nullable_i_psec_tunnel_config import ManaV2Nul
 from graphiant_sdk.models.mana_v2_nullable_interface_config import ManaV2NullableInterfaceConfig
 from graphiant_sdk.models.mana_v2_nullable_ipfix_exporter_config import ManaV2NullableIpfixExporterConfig
 from graphiant_sdk.models.mana_v2_nullable_lag_interface_config import ManaV2NullableLagInterfaceConfig
+from graphiant_sdk.models.mana_v2_nullable_ntp_config import ManaV2NullableNtpConfig
 from graphiant_sdk.models.mana_v2_nullable_prefix_set_config import ManaV2NullablePrefixSetConfig
 from graphiant_sdk.models.mana_v2_nullable_route_tag_set import ManaV2NullableRouteTagSet
 from graphiant_sdk.models.mana_v2_nullable_routing_policy_config import ManaV2NullableRoutingPolicyConfig
@@ -58,6 +59,7 @@ class ManaV2EdgeDeviceConfig(BaseModel):
     maintenance_mode: Optional[StrictBool] = Field(default=None, alias="maintenanceMode")
     name: Optional[StrictStr] = None
     nat_policy: Optional[ManaV2NatPolicyConfig] = Field(default=None, alias="natPolicy")
+    ntp_global_object: Optional[Dict[str, ManaV2NullableNtpConfig]] = Field(default=None, alias="ntpGlobalObject")
     ospfv2_enabled: Optional[StrictBool] = Field(default=None, alias="ospfv2Enabled")
     ospfv3_enabled: Optional[StrictBool] = Field(default=None, alias="ospfv3Enabled")
     prefix_sets: Optional[Dict[str, ManaV2NullablePrefixSetConfig]] = Field(default=None, alias="prefixSets")
@@ -72,7 +74,7 @@ class ManaV2EdgeDeviceConfig(BaseModel):
     static_routes_enabled: Optional[StrictBool] = Field(default=None, alias="staticRoutesEnabled")
     traffic_policy: Optional[ManaV2ForwardingPolicyConfig] = Field(default=None, alias="trafficPolicy")
     vrrp_enabled: Optional[StrictBool] = Field(default=None, alias="vrrpEnabled")
-    __properties: ClassVar[List[str]] = ["bgpEnabled", "bgpInstance", "circuits", "dhcpServerEnabled", "dns", "interfaces", "ipfixEnabled", "ipfixExporters", "lagInterfaces", "lldpEnabled", "localRouteTag", "localWebServerPassword", "location", "maintenanceMode", "name", "natPolicy", "ospfv2Enabled", "ospfv3Enabled", "prefixSets", "region", "regionName", "routePolicies", "segments", "site", "siteToSiteVpn", "snmp", "snmpGlobalObject", "staticRoutesEnabled", "trafficPolicy", "vrrpEnabled"]
+    __properties: ClassVar[List[str]] = ["bgpEnabled", "bgpInstance", "circuits", "dhcpServerEnabled", "dns", "interfaces", "ipfixEnabled", "ipfixExporters", "lagInterfaces", "lldpEnabled", "localRouteTag", "localWebServerPassword", "location", "maintenanceMode", "name", "natPolicy", "ntpGlobalObject", "ospfv2Enabled", "ospfv3Enabled", "prefixSets", "region", "regionName", "routePolicies", "segments", "site", "siteToSiteVpn", "snmp", "snmpGlobalObject", "staticRoutesEnabled", "trafficPolicy", "vrrpEnabled"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -156,6 +158,13 @@ class ManaV2EdgeDeviceConfig(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of nat_policy
         if self.nat_policy:
             _dict['natPolicy'] = self.nat_policy.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each value in ntp_global_object (dict)
+        _field_dict = {}
+        if self.ntp_global_object:
+            for _key_ntp_global_object in self.ntp_global_object:
+                if self.ntp_global_object[_key_ntp_global_object]:
+                    _field_dict[_key_ntp_global_object] = self.ntp_global_object[_key_ntp_global_object].to_dict()
+            _dict['ntpGlobalObject'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in prefix_sets (dict)
         _field_dict = {}
         if self.prefix_sets:
@@ -248,6 +257,12 @@ class ManaV2EdgeDeviceConfig(BaseModel):
             "maintenanceMode": obj.get("maintenanceMode"),
             "name": obj.get("name"),
             "natPolicy": ManaV2NatPolicyConfig.from_dict(obj["natPolicy"]) if obj.get("natPolicy") is not None else None,
+            "ntpGlobalObject": dict(
+                (_k, ManaV2NullableNtpConfig.from_dict(_v))
+                for _k, _v in obj["ntpGlobalObject"].items()
+            )
+            if obj.get("ntpGlobalObject") is not None
+            else None,
             "ospfv2Enabled": obj.get("ospfv2Enabled"),
             "ospfv3Enabled": obj.get("ospfv3Enabled"),
             "prefixSets": dict(

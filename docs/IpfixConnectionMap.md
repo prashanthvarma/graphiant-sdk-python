@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **connections** | **Dict[str, int]** |  | [optional] 
 **connections_v2** | **Dict[str, float]** |  | [optional] 
-**name** | **str** |  | [optional] 
+**name** | **str** | the name of the connection | [optional] 
 
 ## Example
 

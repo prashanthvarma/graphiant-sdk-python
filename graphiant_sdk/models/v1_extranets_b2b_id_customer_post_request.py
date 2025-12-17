@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from graphiant_sdk.models.mana_v2_b2b_extranet_application_invite import ManaV2B2bExtranetApplicationInvite
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,7 @@ class V1ExtranetsB2bIdCustomerPostRequest(BaseModel):
     """
     V1ExtranetsB2bIdCustomerPostRequest
     """ # noqa: E501
-    invites: Optional[List[ManaV2B2bExtranetApplicationInvite]] = None
+    invites: List[ManaV2B2bExtranetApplicationInvite]
     __properties: ClassVar[List[str]] = ["invites"]
 
     model_config = ConfigDict(

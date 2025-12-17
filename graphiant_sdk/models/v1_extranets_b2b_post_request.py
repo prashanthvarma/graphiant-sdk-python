@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from graphiant_sdk.models.mana_v2_b2b_extranet_producer_policy import ManaV2B2bExtranetProducerPolicy
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,9 +27,9 @@ class V1ExtranetsB2bPostRequest(BaseModel):
     """
     V1ExtranetsB2bPostRequest
     """ # noqa: E501
-    policy: Optional[ManaV2B2bExtranetProducerPolicy] = None
-    service_name: Optional[StrictStr] = Field(default=None, alias="serviceName")
-    type: Optional[StrictStr] = None
+    policy: ManaV2B2bExtranetProducerPolicy
+    service_name: StrictStr = Field(description="Name of the service (required)", alias="serviceName")
+    type: StrictStr = Field(description="Type of the service whether it is application or peering (required)")
     __properties: ClassVar[List[str]] = ["policy", "serviceName", "type"]
 
     model_config = ConfigDict(

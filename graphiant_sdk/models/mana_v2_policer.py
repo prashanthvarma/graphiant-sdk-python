@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,8 +26,8 @@ class ManaV2Policer(BaseModel):
     """
     ManaV2Policer
     """ # noqa: E501
-    burst_size: Optional[StrictInt] = Field(default=None, alias="burstSize")
-    bw: Optional[StrictInt] = None
+    burst_size: StrictInt = Field(description="Burst size for the policer (required)", alias="burstSize")
+    bw: StrictInt = Field(description="Bandwidth for the policer (required)")
     __properties: ClassVar[List[str]] = ["burstSize", "bw"]
 
     model_config = ConfigDict(

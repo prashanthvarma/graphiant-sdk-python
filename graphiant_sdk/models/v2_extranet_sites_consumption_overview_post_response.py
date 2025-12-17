@@ -30,7 +30,7 @@ class V2ExtranetSitesConsumptionOverviewPostResponse(BaseModel):
     lan_segments: Optional[List[IpfixConnectionMap]] = Field(default=None, alias="lanSegments")
     regions: Optional[List[IpfixConnectionMap]] = None
     sites: Optional[List[IpfixConnectionMap]] = None
-    total_usage: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalUsage")
+    total_usage: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total service usage in kilo bytes", alias="totalUsage")
     __properties: ClassVar[List[str]] = ["lanSegments", "regions", "sites", "totalUsage"]
 
     model_config = ConfigDict(

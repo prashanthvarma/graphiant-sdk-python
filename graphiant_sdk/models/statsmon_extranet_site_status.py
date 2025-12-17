@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from graphiant_sdk.models.statsmon_extranet_server_status import StatsmonExtranetServerStatus
 from typing import Optional, Set
@@ -27,9 +27,9 @@ class StatsmonExtranetSiteStatus(BaseModel):
     """
     StatsmonExtranetSiteStatus
     """ # noqa: E501
-    id: Optional[StrictInt] = None
-    name: Optional[StrictStr] = None
-    status: Optional[StrictStr] = None
+    id: Optional[StrictInt] = Field(default=None, description="the id of the site")
+    name: Optional[StrictStr] = Field(default=None, description="the name of the site")
+    status: Optional[StrictStr] = Field(default=None, description="the status of the site (Healthy, Impaired, Down)")
     statuses: Optional[List[StatsmonExtranetServerStatus]] = None
     __properties: ClassVar[List[str]] = ["id", "name", "status", "statuses"]
 

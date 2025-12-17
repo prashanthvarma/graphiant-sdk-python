@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **maintenance_mode** | **bool** |  | [optional] 
 **nat_policy** | [**ManaV2NatPolicy**](ManaV2NatPolicy.md) |  | [optional] 
 **notes** | **str** |  | [optional] 
+**ntp** | [**ManaV2Ntp**](ManaV2Ntp.md) |  | [optional] 
 **oper_staled** | **bool** |  | [optional] 
 **oper_staled_at** | [**GoogleProtobufTimestamp**](GoogleProtobufTimestamp.md) |  | [optional] 
 **oper_updated_at** | [**GoogleProtobufTimestamp**](GoogleProtobufTimestamp.md) |  | [optional] 

@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | ID of the service being subscribed by the customer (required) | 
 **lan_segment** | **int** |  | [optional] 
-**nat** | [**List[ManaV2B2bNat]**](ManaV2B2bNat.md) |  | [optional] 
-**num_customers** | **int** |  | [optional] 
-**service_prefixes** | [**List[ManaV2B2bExtranetPrefixTag]**](ManaV2B2bExtranetPrefixTag.md) |  | [optional] 
+**nat** | [**List[ManaV2B2bNat]**](ManaV2B2bNat.md) |  | 
+**num_customers** | **int** | Number of customers subscribed to the service | [optional] 
+**service_prefixes** | [**List[ManaV2B2bExtranetPrefixTag]**](ManaV2B2bExtranetPrefixTag.md) |  | 
 
 ## Example
 

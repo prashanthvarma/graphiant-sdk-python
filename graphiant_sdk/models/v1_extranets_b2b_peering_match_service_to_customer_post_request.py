@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
+from typing import Any, ClassVar, Dict, List
 from graphiant_sdk.models.mana_v2_b2b_extranet_match_service_to_customer import ManaV2B2bExtranetMatchServiceToCustomer
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,8 +27,8 @@ class V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequest(BaseModel):
     """
     V1ExtranetsB2bPeeringMatchServiceToCustomerPostRequest
     """ # noqa: E501
-    id: Optional[StrictInt] = None
-    service: Optional[ManaV2B2bExtranetMatchServiceToCustomer] = None
+    id: StrictInt = Field(description="ID of the customer (required)")
+    service: ManaV2B2bExtranetMatchServiceToCustomer
     __properties: ClassVar[List[str]] = ["id", "service"]
 
     model_config = ConfigDict(

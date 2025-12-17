@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**prefix** | **str** |  | [optional] 
-**tag** | **str** |  | [optional] 
+**prefix** | **str** | Prefix advertised by the service (required) | 
+**tag** | **str** | Tag for the prefix | [optional] 
 
 ## Example
 

@@ -27,14 +27,14 @@ class V1ExtranetB2bMonitoringPeeringServiceConsumptionOverviewPostRequest(BaseMo
     """
     V1ExtranetB2bMonitoringPeeringServiceConsumptionOverviewPostRequest
     """ # noqa: E501
-    customer_name: Optional[StrictStr] = Field(default=None, alias="customerName")
-    flipped_view: Optional[StrictBool] = Field(default=None, alias="flippedView")
-    id: Optional[StrictInt] = Field(default=None, description="the id associated with an entity - consumer_id for consumer, and service_id for the producer/service")
-    is_b2_b: Optional[StrictBool] = Field(default=None, alias="isB2B")
-    is_provider: Optional[StrictBool] = Field(default=None, alias="isProvider")
-    site_id: Optional[StrictInt] = Field(default=None, alias="siteId")
-    time_window: Optional[StatsmonTimeWindow] = Field(default=None, alias="timeWindow")
-    vrf_id: Optional[StrictInt] = Field(default=None, alias="vrfId")
+    customer_name: Optional[StrictStr] = Field(default=None, description="a filter to get usage for a specific customer", alias="customerName")
+    flipped_view: StrictBool = Field(description="whether to view the data from the consumer's perspective (true) or the provider's perspective (false) (required)", alias="flippedView")
+    id: StrictInt = Field(description="the id associated with an entity - consumer_id for consumer, and service_id for the producer/service (required)")
+    is_b2_b: StrictBool = Field(description="whether the entity is a b2b entity (true for b2b entity, false for local extranet entity) (required)", alias="isB2B")
+    is_provider: StrictBool = Field(description="whether the entity is a provider or consumer (required)", alias="isProvider")
+    site_id: Optional[StrictInt] = Field(default=None, description="a filter to get usage for a specific site", alias="siteId")
+    time_window: StatsmonTimeWindow = Field(alias="timeWindow")
+    vrf_id: Optional[StrictInt] = Field(default=None, description="a filter to get usage for a specific vrf", alias="vrfId")
     __properties: ClassVar[List[str]] = ["customerName", "flippedView", "id", "isB2B", "isProvider", "siteId", "timeWindow", "vrfId"]
 
     model_config = ConfigDict(

@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | **str** |  | [optional] 
+**description** | **str** | Description for the service | [optional] 
 **global_object_ops** | [**Dict[str, ManaV2GlobalObjectServiceOps]**](ManaV2GlobalObjectServiceOps.md) |  | [optional] 
-**prefix_tags** | [**List[ManaV2B2bExtranetPrefixTag]**](ManaV2B2bExtranetPrefixTag.md) |  | [optional] 
-**service_lan_segment** | **int** |  | [optional] 
-**site** | [**List[ManaV2B2bSiteInformation]**](ManaV2B2bSiteInformation.md) |  | [optional] 
-**type** | **str** |  | [optional] 
+**prefix_tags** | [**List[ManaV2B2bExtranetPrefixTag]**](ManaV2B2bExtranetPrefixTag.md) |  | 
+**service_lan_segment** | **int** | LAN segment ID for the service (required) | 
+**site** | [**List[ManaV2B2bSiteInformation]**](ManaV2B2bSiteInformation.md) |  | 
+**type** | **str** | Type of the service whether it is application or peering (required) | 
 
 ## Example
 

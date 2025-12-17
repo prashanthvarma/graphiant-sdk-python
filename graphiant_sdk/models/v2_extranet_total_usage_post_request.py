@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from graphiant_sdk.models.statsmon_time_window import StatsmonTimeWindow
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,10 +27,10 @@ class V2ExtranetTotalUsagePostRequest(BaseModel):
     """
     V2ExtranetTotalUsagePostRequest
     """ # noqa: E501
-    id: Optional[StrictInt] = Field(default=None, description="the ID associated with an entity - consumer_id for consumer, and service_id for the producer/service")
-    is_b2_b: Optional[StrictBool] = Field(default=None, alias="isB2B")
-    is_provider: Optional[StrictBool] = Field(default=None, alias="isProvider")
-    time_window: Optional[StatsmonTimeWindow] = Field(default=None, alias="timeWindow")
+    id: StrictInt = Field(description="the ID associated with an entity - consumer_id for consumer, and service_id for the producer/service (required)")
+    is_b2_b: StrictBool = Field(description="whether the entity is a b2b entity (true for b2b entity, false for local extranet entity) (required)", alias="isB2B")
+    is_provider: StrictBool = Field(description="whether the entity is a provider or consumer (required)", alias="isProvider")
+    time_window: StatsmonTimeWindow = Field(alias="timeWindow")
     __properties: ClassVar[List[str]] = ["id", "isB2B", "isProvider", "timeWindow"]
 
     model_config = ConfigDict(

@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | the ID associated with an entity - consumer_id for consumer, and service_id for the producer/service | [optional] 
-**is_b2_b** | **bool** |  | [optional] 
-**is_provider** | **bool** |  | [optional] 
-**time_window** | [**StatsmonTimeWindow**](StatsmonTimeWindow.md) |  | [optional] 
+**id** | **int** | the ID associated with an entity - consumer_id for consumer, and service_id for the producer/service (required) | 
+**is_b2_b** | **bool** | whether the entity is a b2b entity (true for b2b entity, false for local extranet entity) (required) | 
+**is_provider** | **bool** | whether the entity is a provider or consumer (required) | 
+**time_window** | [**StatsmonTimeWindow**](StatsmonTimeWindow.md) |  | 
 
 ## Example
 

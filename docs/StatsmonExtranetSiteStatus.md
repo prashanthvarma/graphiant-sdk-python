@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
-**name** | **str** |  | [optional] 
-**status** | **str** |  | [optional] 
+**id** | **int** | the id of the site | [optional] 
+**name** | **str** | the name of the site | [optional] 
+**status** | **str** | the status of the site (Healthy, Impaired, Down) | [optional] 
 **statuses** | [**List[StatsmonExtranetServerStatus]**](StatsmonExtranetServerStatus.md) |  | [optional] 
 
 ## Example

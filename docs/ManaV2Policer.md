@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**burst_size** | **int** |  | [optional] 
-**bw** | **int** |  | [optional] 
+**burst_size** | **int** | Burst size for the policer (required) | 
+**bw** | **int** | Bandwidth for the policer (required) | 
 
 ## Example
 
